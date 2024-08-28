@@ -1,0 +1,2892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Hyper Text Markup Language - 4. HTML Embedded Content and APIs</title>
+    <link rel="icon" type="image/x-icon" href="page_icon.ico">
+</head>
+
+<body><h1>Hyper Text Markup Language (HTML): 4. HTML Embedded Content and APIs</h1> - Follows the
+latest standard: <em>HTML5</em>
+<nav>
+    <hr>
+    <a href="index.html">Main-Webpage</a> |
+    <a href="html_basics.html">1. HTML Basics: Elements and Attributes</a> |
+    <a href="formatting_and_css.html">2. HTML Formatting and Style(CSS)</a> |
+    <a href="tables_and_input.html">3. HTML Tables and Input</a> |
+    <a href="embedded_content_and_apis.html">4. HTML Embedded Content and APIs</a> | &emsp; | -
+    <a href="history.html">The History of HTML</a> - | <br/> &#9635; ||
+    <a href="#">Web Accessibility - <i>{Coming Soon}</i></a> |
+    <a href="#">HTML Graphics - SVG and Canvas - <i>{Coming Soon}</i></a> || &#9635; ||
+    <a href="#">CSS - <i>{Coming Soon}</i></a> |
+    <a href="#">Javascript and HTML DOM - <i>{Coming Soon}</i></a> || &#9635;
+</nav>
+<hr>
+
+<main><h2>Embedded Content</h2>
+    <p>Embedded content is content that imports another resource into the document, or content from
+        another vocabulary inserted into the document.
+        Some Embedded Content Elements can have <em>'Fallback Content'</em>, witch is content that
+        is used when an external resource cannot be.
+    </p>
+
+    <section><h3>HTML Hyperlinks</h3>
+        <p>Links are a conceptual construct, and represent a connection between two resources; they
+            are created with: <em>&lt;a>, &lt;area>, &lt;form> and &lt;link></em> elements.
+            HTML Links are <em>Hyperlinks</em>, and are found in nearly all web pages; they allow
+            users to click their way from page to page.
+            A linked page is normally displayed in the current browser window, unless you specify
+            another target.
+            To indicate a resource be downloaded, rather than immediately used, the
+            <em>download</em> attribute can be specified on &lt;a> or &lt;area> elements (creates
+            the hyperlink to that resource).
+            The HTML <em>&lt;a></em> tag defines a hyperlink, the most important attribute of this
+            element is the <em>href</em> attribute;
+            which indicates a link's destination.
+            When you move the mouse over a link, the arrow will turn into a 'little hand';
+            by default, links will appear as follows in all browsers (Links can also be styled with
+            <em><b>CSS</b></em>):
+        <ul>
+            <li><em>Unvisited Link</em> - Is underlined and blue.</li>
+            <li><em>Visited Link</em> - Is underlined and purple.</li>
+            <li><em>Active Link</em> - Is underlined and red.</li>
+        </ul>
+        Interactive user agents may also provide users with a means to follow hyperlinks using the
+        &lt;link> element, somewhere within their user interface.
+        </p>
+        <p>A <em><b>file path</b></em> describes the location of a file in a web site's <em>folder
+            structure</em>, there are two kinds of links in HTML:
+        <ol>
+            <li><em><strong>Absolute URLs</strong>: Links to an <b>External Resources</b></em>, this
+                uses a <em>full URL</em> to link to a web page; this links to an external image or
+                document hosted on another website.
+            </li>
+            <li><em><strong>Relative URLs</strong>: Witch are <b>Hyperlinks</b></em>, this is a <em>local
+                link</em> to a page within the same website, and is specified with a <em>relative
+                URL</em>;
+                if the URL begins without a slash, it will be relative to the current page.
+            </li>
+        </ol>
+        </p>
+        <aside><h4>Bookmark Links</h4>
+            <p>HTML links can be used to create bookmarks, so that readers can jump to specific
+                parts of a web page; this is useful if a web page is very long.
+                To create a bookmark, first create the bookmark, then add a link to it; when
+                clicked, the page will scroll to the specified location of the bookmark:
+            <ol>
+                <li>Use the <em>id</em> attribute to create a bookmark: <code>&lt;h2
+                    <em>id="C4"</em>>Chapter 4&lt;/h2></code>
+                </li>
+                <li>Then add a link to the bookmark, using the <em>hash character (<b>#</b>)</em>
+                    from within the same page: <code>&lt;a <em>href="#C4"</em>>Jump to Chapter 4&lt;/a></code>
+                    <br/>Or, you can add a link to a bookmark on another page, by specifying the
+                    <em>webpage URL</em>: <code>&lt;a <em>href="html_page.html#C4"</em>>Jump to
+                        Chapter 4 on the html_page&lt;/a></code>
+                </li>
+            </ol>
+            To link to the top of the current page, you can use both of these methods:
+            <code>href=<em>"#top"</em> | href=<em>"#"</em></code>
+            </p>
+            <p>A link does not have to only be text, it can also be an image or any other HTML
+                element:
+            <ul>
+                <li><strong>Image Links</strong> - To use an image as a link, just put an &lt;img>
+                    tag inside of an &lt;a> element's tag.
+                </li>
+                <li><strong>Email Address Links</strong> - Use <em>mailto:</em> inside of the <em>href</em>
+                    attribute, to create a link that opens the user's email program, and lets them
+                    send a new email:
+                    <code>&lt;a href=<em>"mailto:an_email@example.com"</em>>Send an
+                        E-Mail&lt;/a></code>
+                </li>
+                <li><strong>Button Links</strong> - To use an HTML button as a link, you have to add
+                    <em>JavaScript</em> code;
+                    this allows to specify what happens on certain events, like a button click.
+                </li>
+            </ul>
+            </p>
+        </aside>
+
+        <h4>nav Element - &lt;nav></h4>
+        <p>Element represents a section of a page that links to other pages, or parts within the
+            page; it is a section with <em>navigation links</em>.
+            Not all groups of links on a page need to be in a &lt;nav> element, it is primarily
+            intended for sections that consist of major navigation blocks.
+            It is common for footers to have a short list of links to various pages of a site, such
+            as the <i>terms of service, the home page or a copyright page</i>.
+            Screen readers, can also use this element to determine whether to omit the initial
+            rendering of this content.
+            You can use the &lt;nav> element as a way to determine what content on the page to
+            initially skip or provide on request (or both).
+        </p>
+
+        <h4>a Element - &lt;a></h4>
+        <p>Element defines a <em>Hyperlink</em> and is used to link from one page to another, the
+            link text is the part visible; clicking it will send the reader to the specified URL
+            address.
+        <details>
+            <summary><b><em>a Attributes</em></b> - The link's destination is specified in the <em>href</em>
+                attribute, if specified, it represents a hypertext anchor labeled by its contents.
+                If no <em>href</em> attribute is specified, then the element represents a
+                placeholder for where a link might otherwise have been placed, consisting of just
+                the element's contents.
+                If the global <em>itemprop</em> attribute is specified, then the <em>href</em>
+                attribute must also be specified.
+                The <em>target, download, ping, rel, hreflang, type and referrerpolicy</em>
+                attributes must be omitted if the <em>href</em> attribute is not present.
+            </summary>
+            <dl>
+                <dt><strong>href</strong></dt>
+                <dd>The href attribute specifies the URL of the page the link goes to (address of
+                    the hyperlink), and is the most important attribute of the &lt;a> element:
+                    <code>&lt;a href=<em>"value"</em>></code>
+                    { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                    <code>href="http://www.website.com/an_html_page.htm"</code> | <em>Relative
+                        URL</em> - Points to a file within a web site, like: <code>href="local_.page.htm"</code>
+                    |
+                    <em>Element Id</em> - Link to an element with a specified id within the page,
+                    like: <code>href="#page-section"</code> | <em>Other Protocols</em> - like an
+                    <code>https://, ftp://, mailto:, file:</code>, etc. | <em>Script</em> - Such as:
+                    <code>href="javascript:alert('Hello');"</code> }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>target</strong></dt>
+                <dd>The target attribute specifies where to open the linked document: <code>&lt;a
+                    target=<em>"_self|_blank|_parent|_top|framename"</em>></code>
+                    { <em>_self</em> (Default) - Opens the linked document in the same frame as it
+                    was clicked. | <em>_blank</em> - Opens the linked document in a new window or
+                    tab. | <em>_parent</em> - Opens the linked document in the parent frame.
+                    | <em>_top</em> - Opens the linked document in the full body of the window. |
+                    <em>framename</em> - Opens the linked document in the named iframe. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>download</strong></dt>
+                <dd>The download attribute specifies a target file specified in an <em>href</em>
+                    attribute, and will be downloaded when a user clicks on the hyperlink, instead
+                    of navigating to it.
+                    The optional value of the attribute will be the new name of the file after it is
+                    downloaded, if the value is omitted, the original filename is used.
+                    There are no restrictions on allowed values, and the browser will automatically
+                    detect the correct file extension, then add it to the file: <code>&lt;a
+                        download=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>ping</strong></dt>
+                <dd>The ping attribute specifies a list of URLs to be notified if the user follows
+                    the hyperlink (URLs to ping).
+                    When the user clicks on the hyperlink, the ping attribute will send a short HTTP
+                    POST request to the specified URL.
+                    Values must be a space separated list of one or more valid URLs, and is
+                    typically used for tracking: <code>&lt;a ping=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>rel</strong></dt>
+                <dd>The rel attribute specifies the relationship between the current document and
+                    the linked document, it is only used if the <em>href</em> attribute is present.
+                    Search engines can use this attribute to get more information about a link:
+                    <code>&lt;a rel=<em>alternate|author|bookmark|external|help|license|next|nofollow|noreferrer|noopener|prev|search|tag</em>></code>
+                    { <em>alternate</em> - Provides a link to an alternate representation of the
+                    document (i.e. print page, translated or mirror). | <em>author</em> - Provides a
+                    link to the author of the document. | <em>bookmark</em> - Permanent URL used for
+                    bookmarking. | <em>external</em> - Indicates that the referenced document is not
+                    part of the same site as the current document.
+                    | <em>help</em> - Provides a link to a help document. | <em>license</em> -
+                    Provides a link to licensing information for the document. | <em>next</em> -
+                    Provides a link to the next document in the series. | <em>nofollow</em> - Links
+                    to an unendorsed document, like a paid link; is used by Google, to specify the
+                    Google search spider should not follow that link.
+                    | <em>noopener</em> - Requires that any browsing context created by following
+                    the hyperlink must not have an opener browsing context. | <em>noreferrer</em> -
+                    Makes the referrer unknown, a no referer header will be included when the user
+                    clicks the hyperlink. | <em>prev</em> - The previous document in a selection. |
+                    <em>search</em> - Links to a search tool for the document. | <em>tag</em> - A
+                    tag (keyword) for the current document. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>hreflang</strong></dt>
+                <dd>The hreflang attribute specifies the language of the linked document or
+                    resource, is purely advisory, and is only used if the <em>href</em> attribute is
+                    set.
+                    The two-letter language code specifies the language of the linked document, to
+                    view all available language codes, go to Language code reference:
+                    https://www.w3schools.com/tags/ref_language_codes.asp: <code>&lt;a hreflang=<em>"value"</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>type</strong></dt>
+                <dd>The type attribute specifies the Internet media type (formerly known as MIME
+                    type) or hint of the linked document/resource. This attribute is purely
+                    advisory, and is only used if the <em>href</em> attribute is set: <code>&lt;a
+                        type=<em>"value"</em>></code> - Look at IANA Media Types for a complete list
+                    of standard media types: http://www.iana.org/assignments/media-types/
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>referrerpolicy</strong></dt>
+                <dd>The referrerpolicy attribute specifies which referrer information to send when
+                    the user clicks on the hyperlink (a referrer policy for fetches initiated by the
+                    element): <code>&lt;a referrerpolicy=<em>no-referrer-when-downgrade|no-referrer|origin|origin-when-cross-origin|same-origin|strict-origin-when-cross-origin|unsafe-url</em>></code>
+                    { <em>no-referrer-when-downgrade</em> (Default) - Sends the origin, path and
+                    query string, if the protocol security level stays the same, or is higher; sends
+                    nothing to a less secure level (HTTPS to HTTP is not ok). | <em>no-referrer</em>
+                    - No referrer information is sent. | <em>origin</em> - Sends the origin (scheme,
+                    host and port) of the document. |
+                    <em>origin-when-cross-origin</em> - Sends the origin of the document for
+                    cross-origin request, and sends the origin, path and query string for
+                    same-origin request. | <em>same-origin</em> - Sends a referrer for same-origin
+                    request, and sends no referrer for cross-origin request. | <em>strict-origin-when-cross-origin</em>
+                    - Sends the origin if the protocol security level stays the same or is higher;
+                    or sends nothing to a less secure level (like HTTPS to HTTP). |
+                    <em>unsafe-url</em> - Sends the origin, path and query string, regardless of
+                    security; use this value carefully. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>media</strong></dt>
+                <dd>The media attribute specifies what media or device the linked document is
+                    optimized or designed for, like iPhone, speech or print media. This attribute is
+                    purely advisory, and only used if the <em>href</em> attribute is present; it can
+                    accept several values: <code>a media=<em>"value"</em>></code>
+                    <ul><strong>Devices:</strong>
+                        <li><em>all</em> - (Default) Suitable for all devices.</li>
+                        <li><em>aural</em> - Speech synthesizers.</li>
+                        <li><em>braille</em> - Braille feedback devices.</li>
+                        <li><em>handheld</em> - Handheld devices (small screen and limited
+                            bandwidth).
+                        </li>
+                        <li><em>projection</em> - Projectors.</li>
+                        <li><em>print</em> - Print preview mode/printed pages.</li>
+                        <li><em>screen</em> - Computer screens.</li>
+                        <li><em>tty</em> - Teletypes and similar media using a fixed-pitch character
+                            grid.
+                        </li>
+                        <li><em>tv</em> - Television type devices (low resolution and limited scroll
+                            ability).
+                        </li>
+                    </ul>
+                    <ul><strong>Possible Operators:</strong>
+                        <li><em>and</em> - Specifies an <em>AND</em> operator.</li>
+                        <li><em>not</em> - Specifies a <em>NOT</em> operator.</li>
+                        <li><em>,</em> - Specifies an <em>OR</em> operator.</li>
+                    </ul>
+                    <ul><strong>Values:</strong>
+                        <li><em>width</em> - Specifies the width of the targeted display area,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (min-width:500px)"</em></code></li>
+                        <li><em>height</em> - Specifies the height of the targeted display area,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (max-height:700px)"</em></code></li>
+                        <li><em>device-width</em> - Specifies the width of the target display/paper,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (device-width:500px)"</em></code></li>
+                        <li><em>device-height</em> - Specifies the height of the target
+                            display/paper, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (device-height:500px)"</em></code></li>
+                        <li><em>orientation</em> - Specifies the orientation of the target
+                            display/paper, possible values are <em>"portrait" or "landscape"</em>:
+                            <code>media=<em>"all and (orientation: landscape)"</em></code></li>
+                        <li><em>aspect-ratio</em> - Specifies the width/height ratio of the targeted
+                            display area, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                        <li><em>device-aspect-ratio</em> - Specifies the device-width/device-height
+                            ratio of the target display/paper, "min-" and "max-" prefixes can be
+                            used:
+                            <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                        <li><em>color</em> - Specifies the bits per color of target display, "min-"
+                            and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (color:3)"</em></code></li>
+                        <li><em>color-index</em> - Specifies the number of colors the target display
+                            can handle, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (min-color-index:256)"</em></code></li>
+                        <li><em>monochrome</em> - Specifies the bits per pixel in a monochrome frame
+                            buffer, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (monochrome:2)"</em></code></li>
+                        <li><em>resolution</em> - Specifies the pixel density (dpi or dpcm) of the
+                            target display/paper, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"print and (resolution:300dpi)"</em></code></li>
+                        <li><em>scan</em> - Specifies scanning method of a tv display, possible
+                            values are <em>"progressive" and "interlace"</em>:
+                            <code>media=<em>"tv and (scan:interlace)"</em></code></li>
+                        <li><em>grid</em> - Specifies if the output device is grid or bitmap,
+                            possible values are <em>"1"</em> for grid, and <em>"0"</em> otherwise:
+                            <code>media=<em>"handheld and (grid:1)"</em></code></li>
+                    </ul>
+                </dd>
+            </dl>
+        </details>
+        </p>
+    </section>
+
+    <section><h3>Images</h3>
+        <p>Images can improve the design and the appearance of a web page, the HTML
+            <em>&lt;img></em> tag is used to embed an image in a web page.
+            Images are technically linked to web pages, the &lt;img> tag creates a holding space for
+            the referenced image.
+            The tag is empty, and does not have a closing tag, it contains attributes only.
+        <ul><strong>HTML Image Tags</strong>
+            <li><em>&lt;img></em> - Defines an image.</li>
+            <li><em>&lt;picture></em> - Defines a container for multiple image resources.</li>
+            <li><em>&lt;map></em> - Defines an <em><b>image map</b></em>, witch is an image with
+                clickable areas; defined with one or more &lt;area> tags.
+            </li>
+            <li><em>&lt;area></em> - Defines a clickable area inside an <em>image map</em>.</li>
+        </ul>
+        <strong><em>Image as a Link</em></strong> - To use an image as a link, put the &lt;img> tag
+        inside the &lt;a> tag: &lt;a href="web_page.asp"> &lt;img src="anImage.gif" alt="HTML
+        Tutorial"> &lt;/a>
+        - A background image can also be specified for almost any HTML element, using the HTML <em>style</em>
+        attribute.
+        Here is a list of the most common image file types, which are supported in all browsers (<i>Chrome,
+            Edge, Firefox, Safari, Opera</i>):
+        <table>
+            <caption><b><em>Common Image Formats</em></b></caption>
+            <tr>
+                <th>File Format</th>
+                <th>File Extension</th>
+            </tr>
+            <tr>
+                <td>Animated Portable Network Graphics (APNG)</td>
+                <td>.apng</td>
+            </tr>
+            <tr>
+                <td>Graphics Interchange Format (GIF)</td>
+                <td>.gif</td>
+            </tr>
+            <tr>
+                <td>Microsoft Icon (ICO)</td>
+                <td>.ico | .cur</td>
+            </tr>
+            <tr>
+                <td>Joint Photographic Expert Group image (JPEG)</td>
+                <td>.jpg | .jpeg | .jfif | .pjpeg | .pjp</td>
+            </tr>
+            <tr>
+                <td>Portable Network Graphics (PNG)</td>
+                <td>.png</td>
+            </tr>
+            <tr>
+                <td>Scalable Vector Graphics (SVG)</td>
+                <td>.svg</td>
+            </tr>
+        </table>
+        Loading large images takes time, and can slow down a web page - use images carefully.
+        </p>
+
+        <h4>img Element - &lt;img></h4>
+        <p>Element is used to define/embed an image, the tag creates a holding space for the
+            referenced image. The &lt;img> tag is empty, it contains attributes only, with no
+            closing tag.
+            To link an image to another document, simply nest the &lt;img> tag inside of an &lt;a>
+            tag.
+        <details>
+            <summary><b><em>img Attributes</em></b> The &lt;img> tag has two required attributes,
+                the <em>src</em> attribute; witch specifies the path to the image.
+                And the <em>alt</em> attribute, witch specifies an alternate text for the image (it
+                describes the image).
+                It is the &lt;img> element's fallback content, if a browser cannot process or find
+                an image, will display the value of the <em>alt</em> attribute - also used for
+                screen readers.
+                If the images are in a <em>sub-folder</em>, you must include the folder name in the
+                <em>src</em> attribute: <code>&lt;img <em>src="/images/image1.gif"</em> alt="Image
+                    Description"></code>
+                <br/>An &lt;img> element also has a dimension attribute source, initially set to the
+                element itself. The <em>width and height</em> attributes always define width and
+                height of the image in pixels.
+                Always specify the width and height of an image, if not specified, the web page
+                might flicker while the image loads. The width, height and style attributes all
+                valid in HTML; however, using the global <em>style</em> attribute, prevents styles
+                sheets from changing the size of images - Suggest using.
+            </summary>
+            <dl>
+                <dt><strong>alt</strong> (Required)</dt>
+                <dd>The alt attribute provides alternative information for an image, if a user
+                    cannot view it or it is not available; also for users who use a screen reader.
+                    Value should describe the image, and should explain where the link goes if the
+                    image inside an &lt;a> element; use <i>alt=""</i> if the image is for
+                    decoration.
+                    A broken link icon and alt text are shown if the browser cannot find the image:
+                    <code>&lt;img alt=<em>"value"</em>></code> - To create a tooltip for an image,
+                    use the global <em>title</em> attribute.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>src</strong> (Required)</dt>
+                <dd>The src attribute specifies the URL or address of the resource, there are two
+                    ways to specify the URL in the src attribute. When a web page loads, the browser
+                    gets the image from a web server and inserts it into the page.
+                    Therefore, make sure the image stays in the same spot in relation to the web
+                    page, otherwise visitors will get a broken link icon and the <em>alt</em>
+                    attribute text (its value): <code>&lt;img src=<em>"value"</em>></code>
+                    { 1. Relative URL - Links to an image file hosted within the website, the URL
+                    does not include a domain name. If the URL begins with a slash, it will be
+                    relative to the domain: <code>src="/images/image.jpg" | src="image.jpg"</code> -
+                    It is almost always best to use relative URLs. They will not break if you change
+                    domain.
+                    | 2. Absolute URL - Links to an external image hosted on another website:
+                    src="https://www.w3schools.com/images/image.jpg" }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>srcset</strong></dt>
+                <dd>The srcset attribute specifies a list of image files to use in different
+                    situations (e.g. high-resolution displays, small monitors, etc.). If the
+                    attribute has any image candidate strings using a width descriptor, the <em>sizes</em>
+                    attribute must also be present.[]
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>sizes</strong></dt>
+                <dd>The sizes attribute specifies image sizes for different page layouts or source
+                    set, if no &lt;source> element was selected).[]
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>crossorigin</strong></dt>
+                <dd>The crossorigin attribute is a CORS settings attribute, how the element handles
+                    crossorigin requests. Its purpose is to allow images from third-party sites that
+                    allow cross-origin access to be used with canvas. []<i>anonymous |
+                        use-credentials</i></dd>
+            </dl>
+            <dl>
+                <dt><strong>usemap</strong></dt>
+                <dd>The usemap attribute is associated with a &lt;map> element's <em>name</em>
+                    attribute, and creates a relationship between the &lt;img> and the &lt;map>. It
+                    specifies an image as a client-side image map, witch is an image with clickable
+                    areas; using a hash character ("#") plus name of the &lt;map> element to use.
+                    The usemap attribute cannot be used if the &lt;img> element is a descendant of
+                    an &lt;a> or &lt;button> element: <code>&lt;img usemap=<em>"value"</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>ismap</strong></dt>
+                <dd>The ismap attribute is a boolean attribute, it specifies the image is part of a
+                    server-side image map (image with clickable areas). When clicking on a
+                    server-side image map, the click coordinates are sent to the server as a URL
+                    query string.
+                    The attribute must not be specified on an element that does not have an ancestor
+                    a element with an <em>href</em> attribute: <code>&lt;img <em>ismap</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>width</strong></dt>
+                <dd>The width attribute specifies the width of an image (the horizontal dimension),
+                    in pixels: <code>&lt;img width=<em>"value"</em>></code> - Always specify both
+                    the height and width attributes for images.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>height</strong></dt>
+                <dd>The height attribute specifies the height of an image (the vertical dimension),
+                    in pixels: <code>&lt;img height=<em>"value"</em>></code> - Always specify both
+                    the height and width attributes for images.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>referrerpolicy</strong></dt>
+                <dd>The referrerpolicy attribute specifies which referrer information (referrer
+                    policy) to use when fetching an image: <code>img referrerpolicy=<em>"no-referrer-when-downgrade|no-referrer|origin|origin-when-cross-origin|unsafe-url"></em>></code>
+                    { <em>no-referrer-when-downgrade</em> (Default) - The referrer header will not
+                    be sent to origins without HTTPS. | <em>no-referrer</em> - No referrer
+                    information is sent. | <em>origin</em> - Sends the origin (scheme, host, and
+                    port) of the document. | <em>origin-when-cross-origin</em> - For cross-origin
+                    requests, send only scheme, host and port; but for same-origin requests, also
+                    include the path. | <em>unsafe-url</em> - Send origin, path and query string,
+                    but not fragment, password or username - This value considered unsafe. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>decoding</strong></dt>
+                <dd>The decoding attribute indicates the preferred method to decode this image, when
+                    processing this image for presentation. The attribute, must be an image decoding
+                    hint; attribute's missing value default and invalid value default are both the
+                    auto state.[]
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>loading</strong></dt>
+                <dd>The loading attribute is a lazy loading attribute, it specifies whether browser
+                    should load an image immediately or defer loading of off-screen images until
+                    conditions are met. Its purpose is to indicate the policy for loading images
+                    that are outside the viewport: <code>- img src="URL" loading=<em>eager|lazy</em>></code>
+                    { <em>eager</em> (Default) - Loads an image immediately. | <em>lazy</em> - Defer
+                    loading of images until some conditions are met, add loading="lazy" only to
+                    images positioned below the fold. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>fetchpriority</strong></dt>
+                <dd>The fetchpriority attribute sets the priority for fetches initiated by the
+                    element. Its purpose is to set the priority used when fetching the image:[]
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>longdesc</strong></dt>
+                <dd>The longdesc attribute specifies a hyperlink (URL) to a detailed description of
+                    an image: <code>img longdesc=<em>"value"</em>></code>
+                    { Possible values: <em>id</em> - An id to another element. | <em>Absolute
+                        URL</em> - Points to another web site, like: <em>longdesc="http://www.website.com/a_description.txt"</em>
+                    | <em>Relative URL</em> - Points to a file within a web site, like: <em>longdesc="a_description.txt"</em>
+                    }
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <section><h4>Image Maps</h4>
+            <p>An image map allows geometric areas on an image to be associated with
+                <em>hyperlinks</em>, you can then create clickable areas on an image.
+                The HTML &lt;map> tag defines an <em>image map</em>, and the areas are defined with
+                one or more &lt;area> tags.
+                An image, in the form of an &lt;img> element, may be associated with an image map.
+                The image is inserted using the &lt;img> tag, the only difference from other images,
+                is that you add a <em>usemap</em> attribute.
+                The usemap value starts with a <em>hash tag (<b>#</b>)</em>, followed by the name of
+                the image map, it is used to create a relationship between the image and the image
+                map:
+                <code>&lt;map <em>name="imagemap"</em>> &lt;img src="animage.jpg" alt="Image
+                    Description" <em>usemap="#imagemap"</em>></code>
+                <br/>Then, add the clickable areas defined using an &lt;area> element; you must also
+                define the shape of the clickable area.
+                You must also define coordinates to be able to place the clickable area onto the
+                image, and can choose one of these shape values:
+            <ul>
+                <li><em>default</em> - Defines the entire region.</li>
+                <li><em>rect</em> - Defines a rectangular region, the coordinates come in pairs, one
+                    for each x-axis and y-axis.
+                </li>
+                <li><em>circle</em> - Defines a circular region, to add the circle area, first
+                    locate the coordinates of the center of the circle; then specify the radius.
+                </li>
+                <li><em>poly</em> - Defines a polygonal region, and contains several coordinate
+                    points, which creates a shape formed with straight lines (as a polygon). This
+                    can be used to create any shape, and coordinates come in pairs, one for each
+                    x-axis and y-axis.
+                </li>
+            </ul>
+            </p>
+
+            <h4>map Element - &lt;map></h4>
+            <p>Element defines a client-side <em>image map</em> (image with clickable areas), the
+                element represents its children.
+                The &lt;map> element, in conjunction with an &lt;img> element and any &lt;area>
+                element descendants, defines an image map.
+                The areas are defined with one or more &lt;area> element tags, that defines the
+                clickable areas.
+            <details>
+                <summary><b><em>map Attributes</em></b> - The <em>name</em> attribute gives the map
+                    a name so that it can be referenced - The attribute must be present.
+                    If the <em>id</em> attribute is also specified, both attributes must have the
+                    same value.
+                </summary>
+                <dl>
+                    <dt><strong>name</strong> (Required)</dt>
+                    <dd>The name attribute specifies the name of the image map, it gives the map a
+                        name so that it can be referenced. The name attribute is associated and
+                        referenced with the &lt;img> element's <em>usemap</em> attribute; it creates
+                        a relationship between the image and map: <code>&lt;map
+                            name=<em>"value"</em>></code>
+                        <br/>The name attribute must be present and must have a non-empty value with
+                        no whitespace. The value must not be equal to the value of the name
+                        attribute of another map element in the same tree.
+                        If the global <em>id</em> attribute is also specified, both attributes must
+                        have the same value.
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>area Element - &lt;area></h4>
+            <p>Element defines an area inside an <em>image map</em> (image with clickable areas),
+                elements are always nested inside a &lt;map> tag; this element has no end tag.
+                The element represents either a hyperlink with text and a corresponding area on an
+                image map, or a dead area on an image map.
+                The <em>usemap</em> attribute in an &lt;img> element, is associated with the &lt;map>
+                element's <em>name</em> attribute;
+                it creates a relationship between the image and map.
+            <details>
+                <summary><b><em>area Attributes</em></b> - If the global <em>itemprop</em> attribute
+                    is specified on an area element, then the <em>href</em> attribute must also be
+                    specified.
+                </summary>
+                <dl>
+                    <dt><strong>shape</strong></dt>
+                    <dd>The shape attribute is an enumerated attribute, and specifies the kind of
+                        shape to be created in an image map area. The shape attribute is used
+                        together with the <em>coords</em> attribute to specify the size, shape and
+                        placement of an area.
+                        The attribute may be omitted, its missing value default and invalid value
+                        default are the rectangle state. In the default state, area elements must
+                        not have a <em>coords</em> attribute - The area is the whole image: <code>&lt;area
+                            shape=<em>default|rect|circle|poly</em>></code>
+                        { <em>default</em> - Specifies the entire region. | <em>rect</em> - Defines
+                        a rectangular region. | <em>circle</em> - Defines a circular region. | <em>poly</em>
+                        - Defines a polygonal region. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>coords</strong></dt>
+                    <dd>The coords attribute specifies the coordinates for the shape of an area to
+                        be created in an image map; and must contain a valid list of floating-point
+                        numbers. The coords attribute is used together with the <em>shape</em>
+                        attribute to specify the size, shape and placement of an area.
+                        This gives coordinates for the shape described by the shape attribute,
+                        coordinates of the top-left corner of an area are 0,0; the following applies
+                        to each shape:
+                        <ul>
+                            <li><em>default</em> - In the default state, area elements must not have
+                                a coords attribute - area is the whole image.
+                            </li>
+                            <li><em>rectangle</em> - In the rectangle state, area elements must have
+                                a coords attribute with exactly four integers. The first, must be
+                                less than the third, the second of which must be less than the
+                                fourth.
+                                The four points must represent, respectively, the distance from the
+                                left edge of the image to the left side of the rectangle. The
+                                distance from the top edge to the top side, the distance from the
+                                left edge to the right side, and distance from the top edge to the
+                                bottom side (all in pixels).
+                            </li>
+                            <li><em>circle</em> - In the circle state, &lt;area> elements must have
+                                a coords attribute with three integers, the last of which must be
+                                non-negative. The first, must be the distance in pixels from the
+                                left edge of the image to the center of the circle. The second
+                                integer, must be the distance in pixels from the top edge of the
+                                image to the center of the circle.
+                                The third, must be the radius of the circle, again in pixels.
+                            </li>
+                            <li><em>polygon</em> - In the polygon state, area elements must have a
+                                coords attribute with at least six integers, and the number of
+                                integers must be even. Each pair of integers, must represent a
+                                coordinate given as the distances from the left and the top of the
+                                image in pixels respectively.
+                                And all the coordinates together, must represent the points of the
+                                polygon in order.
+                            </li>
+                        </ul>
+                        <code>&lt;area coords=<em>"x1,y1,x2,y2|x,y,radius|x1,y1,x2,y2,..,xn,yn"</em>></code>
+                        { <em>x1,y1,x2,y2</em> (shape="rect") - Specifies the coordinates of the
+                        top-left and bottom-right corner of the rectangle. | <em>x,y,radius</em>
+                        (shape="circle") - Specifies the coordinates of the circle center and the
+                        radius.
+                        | <em>x1,y1,x2,y2,..,xn,yn</em> (shape="poly") - Specifies the coordinates
+                        of the edges of the polygon, if the first and last coordinate pairs not the
+                        same, the browser will add the last coordinate pair to close the polygon. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>alt</strong></dt>
+                    <dd>The alt attribute provides alternative information for an image or area, if
+                        the image cannot be displayed or if the user uses a screen reader. The
+                        attribute is required if the <em>href</em> attribute is present, and may be
+                        left blank if another area element's (in same image map) alt attribute
+                        points to the same resource: <code>&lt;area alt=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>href</strong></dt>
+                    <dd>The href attribute specifies the hyperlink target (address of the hyperlink)
+                        for the area, the <em>alt</em> attribute must be present; it specifies the
+                        text of the hyperlink. If the &lt;area> element has no <em>href</em>
+                        attribute, the area represented by the element cannot be selected (and is
+                        not a hyperlink), and the <em>alt</em> attribute must be omitted.
+                        The <em>target, download, ping, rel and referrerpolicy</em> attributes must
+                        be omitted if the href attribute is not present. If the global
+                        <em>itemprop</em> attribute is specified on an &lt;area> element, then the
+                        href attribute must also be specified: <code>&lt;area href=<em>"value"</em>></code>
+                        { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                        <code>href="http://www.website.com/webpage.htm")</code> | <em>Relative
+                            URL</em> - Points to a file within a web site, like: <code>href="localpage.htm"</code>
+                        | <em>id</em> - Link to an element with a specified id within the page,
+                        like: <code>href="#pageSection"</code>
+                        | <em>Other Protocols</em> - Other protocols, like: <code>https://, ftp://,
+                            mailto:, file:,</code> etc.. | <em>Script</em> - A script, like <code>href="javascript:alert('Hello');")</code>
+                        }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>target</strong></dt>
+                    <dd>The target attribute specifies where to open the linked document, and is
+                        only used if the <em>href</em> attribute is present: <code>- area
+                            target=<em>"_blank|_self|_parent|_top|framename"</em>></code>
+                        { <em>_blank</em> - Opens the linked document in a new window or tab. | <em>_self</em>
+                        - Opens the linked document in the same frame as it was clicked. | <em>_parent</em>
+                        - Opens the linked document in the parent frame. | <em>_top</em> - Opens the
+                        linked document in the full body of the window. | <em>framename</em> - Opens
+                        the linked document in a named iframe. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>download</strong></dt>
+                    <dd>The download attribute specifies that the target of the <em>href</em>
+                        attribute, will be downloaded when a user clicks on the hyperlink (instead
+                        of navigating to it). The value of the download attribute will be the new
+                        name of the file after it is downloaded, if the value omitted, the original
+                        filename is used.
+                        There are no restrictions on allowed values, and the browser will
+                        automatically detect the correct file extension and add it to the file:
+                        <code>&lt;area download=<em>"value"</em>></code> - Chrome 65+ and Firefox
+                        only support same-origin download links.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>ping</strong></dt>
+                    <dd>URLs to ping, if present, this gives the URLs of the resources that are
+                        interested in being notified if the user follows the hyperlink. The value
+                        must be a set of space-separated tokens, each of which must be a valid
+                        non-empty URL whose scheme is an HTTP(S) scheme.[]
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>rel</strong></dt>
+                    <dd>The rel attribute specifies the relationship between the current document
+                        and the linked document, is only used if the <em>href</em> attribute is
+                        present: <code>&lt;area rel=<em>alternate|author|bookmark|help|license|next|nofollow|noreferrer|prefetch|prev|search|tag</em>></code>
+                        { <em>alternate</em> - Links to an alternate version of the document (i.e.
+                        print page, translated or mirror). | <em>author</em> - Links to the author
+                        of the document. | <em>bookmark</em> - Permanent URL used for bookmarking. |
+                        <em>help</em> - Links to a help document. | <em>license</em> - Links to
+                        copyright information for the document.
+                        | <em>next</em> - The next document in a selection. | <em>nofollow</em> -
+                        Links to an unendorsed document, like a paid link, "nofollow" is used by
+                        Google, to specify that the Google search spider should not follow that
+                        link. | <em>noreferrer</em> - Specifies that the browser should not send a
+                        HTTP referer header if the user follows the hyperlink.
+                        | <em>prefetch</em> - Specifies that the target document should be cached. |
+                        <em>prev</em> - The previous document in a selection. | <em>search</em> -
+                        Links to a search tool for the document. | <em>tag</em> - A tag (keyword)
+                        for the current document. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>referrerpolicy</strong></dt>
+                    <dd>The referrerpolicy attribute specifies which referrer information or
+                        referrer policy to send when the user clicks on the hyperlink (for fetches
+                        initiated by the element): <code>&lt;area referrerpolicy=<em>"no-referrer-when-downgrade|no-referrer|origin|origin-when-cross-origin|same-origin|strict-origin-when-cross-origin|unsafe-url"></em>></code>
+                        { <em>no-referrer-when-downgrade</em> (Default) - Sends the origin, path and
+                        query string if the protocol security level stays the same or is higher; and
+                        will send nothing to a less secure level (HTTPS to HTTP not ok). | <em>no-referrer</em>
+                        - No referrer information is sent. | <em>origin</em> - Sends the origin
+                        (scheme, host and port) of the document. | <em>origin-when-cross-origin</em>
+                        - Sends the origin of the document for cross-origin request, and sends the
+                        origin, path and query string for same-origin request.
+                        | <em>same-origin</em> - Sends a referrer for same-origin request, and sends
+                        no referrer for cross-origin request. |
+                        <em>strict-origin-when-cross-origin</em> - Sends the origin if the protocol
+                        security level stays the same or is higher, and will send nothing to a less
+                        secure level (HTTPS to HTTP). | <em>unsafe-url</em> - Sends the origin, path
+                        and query string (regardless of security) - Use this value carefully. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>hreflang</strong></dt>
+                    <dd>The hreflang attribute specifies the language of the target URL in the area,
+                        this attribute is only used if the <em>href</em> attribute is set. This
+                        attribute is purely advisory, a two-letter language code specifies the
+                        language of the linked document: <code>&lt;area
+                            hreflang=<em>"value"</em>></code>
+                        - To view all available language codes, see the <a target="_blank"
+                                                                           href="https://www.w3schools.com/tags/ref_language_codes.asp">Language
+                            code reference</a>.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>media</strong></dt>
+                    <dd>The media attribute specifies what media/device the target URL is optimized
+                        or designed for (like iPhone, speech or print media). This attribute is
+                        purely advisory, it is only used if the <em>href</em> attribute is present;
+                        and can accept several values: <code>&lt;area media=<em>"value"</em>></code>
+                        <ul><strong>Devices:</strong>
+                            <li><em>all</em> - (Default) Suitable for all devices.</li>
+                            <li><em>aural</em> - Speech synthesizers.</li>
+                            <li><em>braille</em> - Braille feedback devices.</li>
+                            <li><em>handheld</em> - Handheld devices (small screen and limited
+                                bandwidth).
+                            </li>
+                            <li><em>projection</em> - Projectors.</li>
+                            <li><em>print</em> - Print preview mode/printed pages.</li>
+                            <li><em>screen</em> - Computer screens.</li>
+                            <li><em>tty</em> - Teletypes and similar media using a fixed-pitch
+                                character grid.
+                            </li>
+                            <li><em>tv</em> - Television type devices (low resolution and limited
+                                scroll ability).
+                            </li>
+                        </ul>
+                        <ul><strong>Possible Operators:</strong>
+                            <li><em>and</em> - Specifies an <em>AND</em> operator.</li>
+                            <li><em>not</em> - Specifies a <em>NOT</em> operator.</li>
+                            <li><em>,</em> - Specifies an <em>OR</em> operator.</li>
+                        </ul>
+                        <ul><strong>Values:</strong>
+                            <li><em>width</em> - Specifies the width of the targeted display area,
+                                "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (min-width:500px)"</em></code></li>
+                            <li><em>height</em> - Specifies the height of the targeted display area,
+                                "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (max-height:700px)"</em></code></li>
+                            <li><em>device-width</em> - Specifies the width of the target
+                                display/paper, "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (device-width:500px)"</em></code></li>
+                            <li><em>device-height</em> - Specifies the height of the target
+                                display/paper, "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (device-height:500px)"</em></code></li>
+                            <li><em>orientation</em> - Specifies the orientation of the target
+                                display/paper, possible values are <em>"portrait" or
+                                    "landscape"</em>:
+                                <code>media=<em>"all and (orientation: landscape)"</em></code></li>
+                            <li><em>aspect-ratio</em> - Specifies the width/height ratio of the
+                                targeted display area, "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                            <li><em>device-aspect-ratio</em> - Specifies the
+                                device-width/device-height ratio of the target display/paper, "min-"
+                                and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                            <li><em>color</em> - Specifies the bits per color of target display,
+                                "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (color:3)"</em></code></li>
+                            <li><em>color-index</em> - Specifies the number of colors the target
+                                display can handle, "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (min-color-index:256)"</em></code></li>
+                            <li><em>monochrome</em> - Specifies the bits per pixel in a monochrome
+                                frame buffer, "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"screen and (monochrome:2)"</em></code></li>
+                            <li><em>resolution</em> - Specifies the pixel density (dpi or dpcm) of
+                                the target display/paper, "min-" and "max-" prefixes can be used:
+                                <code>media=<em>"print and (resolution:300dpi)"</em></code></li>
+                            <li><em>scan</em> - Specifies scanning method of a tv display, possible
+                                values are <em>"progressive" and "interlace"</em>:
+                                <code>media=<em>"tv and (scan:interlace)"</em></code></li>
+                            <li><em>grid</em> - Specifies if the output device is grid or bitmap,
+                                possible values are <em>"1"</em> for grid, and <em>"0"</em>
+                                otherwise:
+                                <code>media=<em>"handheld and (grid:1)"</em></code></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>type</strong></dt>
+                    <dd>The type attribute specifies the Internet media type (formerly known as MIME
+                        type) of the target URL. This attribute is only used if the <em>href</em>
+                        attribute is set, and is purely advisory: <code>&lt;area
+                            type=<em>"value"</em>></code>
+                        - Look at the <a target="_blank"
+                                         href="http://www.iana.org/assignments/media-types/">IANA
+                            Media Types</a>, for a complete list of standard media types.
+                    </dd>
+                </dl>
+            </details>
+            </p>
+        </section>
+
+    </section>
+
+    <section><h3>HTML Multimedia</h3>
+        <p>Multimedia comes in many different formats, it can be almost anything you can hear or
+            see, like <i>images, music, sound, videos, records, films, animations and more</i>.
+            Multimedia elements (media data) are stored in media files, the most common way to
+            discover the type, is to look at the file extension.
+            Multimedia files have formats and different extensions like, <em>.wav, .mp3, .mp4, .mpg,
+                .wmv and .avi</em>.
+            Web pages often contain multimedia elements of different types and formats, the first
+            browsers had support for text only;
+            limited to one font in a single color.
+        </p>
+        <h4>source Element - &lt;source></h4>
+        <p>Element defines multiple media resources (source sets) for &lt;media> elements, and
+            allows to specify <i>alternative video, audio and image files</i>.
+            The browser will choose the first &lt;source> element it supports, based on support or
+            viewport width.
+        <details>
+            <summary><b><em>source Attributes</em></b></summary>
+            <dl>
+                <dt><strong>type</strong></dt>
+                <dd>The type attribute specifies the Internet media type (formerly known as MIME
+                    type) of the media resource. The type attribute value, must be a valid MIME type
+                    string: <code>&lt;source type=<em>"value"</em>></code>
+                    <br/>Common media types: { Video: <em>video/ogg | video/mp4 | video/webm</em> -
+                    <em>Audio</em>: audio/ogg | audio/mpeg }
+                    - Look at <a target="_blank"
+                                 href="http://www.iana.org/assignments/media-types/">IANA Media
+                        Types</a>, for a complete list of standard media types.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>src</strong></dt>
+                <dd>The src attribute specifies the URL of the media file (the resource) to play,
+                    this attribute is required when &lt;source> is used in &lt;audio> and &lt;video>
+                    elements: <code>&lt;source src=<em>"value"</em>></code>
+                    { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                    <code>href="http://www.website.com/AnImage.ogg"</code> | <em>Relative URL</em> -
+                    Points to a file within a web site, like: <code>href="LocalImage.ogg"</code> }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>srcset</strong></dt>
+                <dd>The srcset attribute specifies the URL of the images to use in different
+                    situations (e.g., high-resolution displays, small monitors, etc). This attribute
+                    is required when &lt;source> is used in &lt;picture>: <code>&lt;source
+                        srcset=<em>"value"</em>></code>
+                    { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                    <code>href="http://www.website.com/AnImage.ogg"</code> | <em>Relative URL</em> -
+                    Points to a file within a web site, like: <code>href="LocalImage.ogg"</code> }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>sizes</strong></dt>
+                <dd>The sizes attribute contributes the source size (or image sizes) to the source
+                    set, if the source element is selected.[]
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>media</strong></dt>
+                <dd>The media attribute accepts any valid media query that would normally be defined
+                    in a CSS, and can accept several values: <code>&lt;source media=<em>"value"</em>></code>
+                    <ul><strong>Devices:</strong>
+                        <li><em>all</em> - (Default) Suitable for all devices.</li>
+                        <li><em>aural</em> - Speech synthesizers.</li>
+                        <li><em>braille</em> - Braille feedback devices.</li>
+                        <li><em>handheld</em> - Handheld devices (small screen and limited
+                            bandwidth).
+                        </li>
+                        <li><em>projection</em> - Projectors.</li>
+                        <li><em>print</em> - Print preview mode/printed pages.</li>
+                        <li><em>screen</em> - Computer screens.</li>
+                        <li><em>tty</em> - Teletypes and similar media using a fixed-pitch character
+                            grid.
+                        </li>
+                        <li><em>tv</em> - Television type devices (low resolution and limited scroll
+                            ability).
+                        </li>
+                    </ul>
+                    <ul><strong>Possible Operators:</strong>
+                        <li><em>and</em> - Specifies an <em>AND</em> operator.</li>
+                        <li><em>not</em> - Specifies a <em>NOT</em> operator.</li>
+                        <li><em>,</em> - Specifies an <em>OR</em> operator.</li>
+                    </ul>
+                    <ul><strong>Values:</strong>
+                        <li><em>width</em> - Specifies the width of the targeted display area,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (min-width:500px)"</em></code></li>
+                        <li><em>height</em> - Specifies the height of the targeted display area,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (max-height:700px)"</em></code></li>
+                        <li><em>device-width</em> - Specifies the width of the target display/paper,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (device-width:500px)"</em></code></li>
+                        <li><em>device-height</em> - Specifies the height of the target
+                            display/paper, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (device-height:500px)"</em></code></li>
+                        <li><em>orientation</em> - Specifies the orientation of the target
+                            display/paper, possible values are <em>"portrait" or "landscape"</em>:
+                            <code>media=<em>"all and (orientation: landscape)"</em></code></li>
+                        <li><em>aspect-ratio</em> - Specifies the width/height ratio of the targeted
+                            display area, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                        <li><em>device-aspect-ratio</em> - Specifies the device-width/device-height
+                            ratio of the target display/paper, "min-" and "max-" prefixes can be
+                            used:
+                            <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                        <li><em>color</em> - Specifies the bits per color of target display, "min-"
+                            and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (color:3)"</em></code></li>
+                        <li><em>color-index</em> - Specifies the number of colors the target display
+                            can handle, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (min-color-index:256)"</em></code></li>
+                        <li><em>monochrome</em> - Specifies the bits per pixel in a monochrome frame
+                            buffer, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (monochrome:2)"</em></code></li>
+                        <li><em>resolution</em> - Specifies the pixel density (dpi or dpcm) of the
+                            target display/paper, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"print and (resolution:300dpi)"</em></code></li>
+                        <li><em>scan</em> - Specifies scanning method of a tv display, possible
+                            values are <em>"progressive" and "interlace"</em>:
+                            <code>media=<em>"tv and (scan:interlace)"</em></code></li>
+                        <li><em>grid</em> - Specifies if the output device is grid or bitmap,
+                            possible values are <em>"1"</em> for grid, and <em>"0"</em> otherwise:
+                            <code>media=<em>"handheld and (grid:1)"</em></code></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>width</strong></dt>
+                <dd>Horizontal dimension (in picture)[]</dd>
+            </dl>
+            <dl>
+                <dt><strong>height</strong></dt>
+                <dd>Vertical dimension (in picture)[]</dd>
+            </dl>
+        </details>
+        </p>
+
+        <h4>picture Element - &lt;picture></h4>
+        <p>Element defines a container for multiple <em>image resources</em>, and allows to display
+            for different devices or screen sizes.
+            This can be based on the <i>screen pixel density, viewport size, image format and other
+                factors</i>.
+            The &lt;picture> element contains two tags, one or more &lt;source> tags; each referring
+            to different images through the <em>srcset</em> attribute, and one &lt;img> tag.
+            The &lt;img> element is required as the last child of the &lt;picture> element, used as
+            a fallback option if none of the &lt;source> tags matches.
+            Each source element has a <em>media</em> attribute that defines when the image is the
+            most suitable.
+            The browser will look for the first &lt;source> element, where the media query matches
+            the current viewport width, and ignore any following &lt;source> elements.
+            Then it will display the proper image that is specified within the <em>srcset</em>
+            attribute:
+            <code>&lt;source <em>media="(min-width: 285px)"</em> <em>srcset="image_option1.jpg"</em>></code>
+            <br/>Instead of having one image scaled up or down based on the viewport width, multiple
+            images can be designed to more nicely fill the browser viewport.
+            This way the browser can choose the image that best fits the current view or device.
+            Some browsers or devices may not support all image formats, if you have a small
+            screen/device; its not necessary to load a large image file.
+            There are two main purposes for the &lt;picture> element: <em><b>Bandwidth</b></em> - If
+            you have a small screen or device, it is not necessary to load a large image file.
+            And <em><b>Format Support</b></em> - Some browsers or devices may not support all image
+            formats.
+        </p>
+
+        <section><h3>HTML Audio</h3>
+            <p>The HTML &lt;audio> element is used to play an audio file on a web page, and the <em>controls</em>
+                attribute adds audio controls;
+                like <i>play, pause and volume</i>.
+                The &lt;source> element allows to specify alternative audio files, which the browser
+                may choose from; the browser will use the first recognized format.
+                The text between the &lt;audio> tags will only be displayed in browsers that do not
+                support the &lt;audio> element.
+            </p>
+            <aside><strong>HTML Audio DOM - Methods, Properties and Events</strong>
+                <p>The HTML DOM defines methods, properties and events for the &lt;audio> element,
+                    this allows to <i>load, play and pause audios</i>
+                    ; as well as set <i>duration and volume</i>.
+                    There are also <strong>DOM events</strong>, that can notify you when an audio
+                    begins to <i>play, is paused, etc</i>;
+                    for a full DOM reference, see the <a target="_blank"
+                                                         href="https://www.w3schools.com/tags/ref_av_dom.asp">HTML
+                        Audio and Video DOM Reference</a>.
+                </p>
+            </aside>
+            <table>
+                <caption><b>Common Audio Formats</b>
+                    <p>Only <em>MP3, WAV and Ogg</em> audio are supported by the HTML standard.
+                        MP3 however, is the best format for compressed recorded music, the term has
+                        become synonymous with digital music.
+                    </p></caption>
+                <tr>
+                    <th>Format</th>
+                    <th>File</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Musical Instrument Digital Interface - MIDI</td>
+                    <td>.mid | .midi</td>
+                    <td>Is the main format for all electronic music devices (like synthesizers and
+                        sound cards), the files do not contain sound, but digital notes that can be
+                        played by electronics. It plays well on all computers and music hardware,
+                        but not in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>RealAudio</td>
+                    <td>.rm | .ram</td>
+                    <td>RealAudio was developed by Real Media to allow streaming of audio with low
+                        bandwidths, it does not play in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Windows Media Audio - WMA</td>
+                    <td>.wma</td>
+                    <td>Was developed by Microsoft, and plays well on Windows computers, but not in
+                        web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Advanced Audio Coding - AAC</td>
+                    <td>.aac</td>
+                    <td>Was developed by Apple as the default format for iTunes, and it plays well
+                        on Apple computers, but not in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>WAV</td>
+                    <td>.wav</td>
+                    <td>Was developed by IBM and Microsoft, and it plays well on Windows, Macintosh
+                        and Linux operating systems; it is supported by HTML.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ogg</td>
+                    <td>.ogg</td>
+                    <td>Was developed by the Xiph.Org Foundation, and is supported by HTML.</td>
+                </tr>
+                <tr>
+                    <td>MP3</td>
+                    <td>.mp3</td>
+                    <td>MP3 files actually the sound part of MPEG files, and it is the most popular
+                        format for music players; it combines good compression (small files) with
+                        high quality and is supported by all browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>MP4</td>
+                    <td>.mp4</td>
+                    <td>MP4 is a video format, but can also be used for audio, and is supported by
+                        all browsers.
+                    </td>
+                </tr>
+            </table>
+
+            <h4>audio Element - &lt;audio></h4>
+            <p>Element defines sound content, it is used to embed sound content into a document;
+                such as music or other audio streams.
+                The tag contains one or more &lt;source> tags, with different audio sources; the
+                browser will choose the first source it supports.
+                There are three supported audio formats in HTML: <em><b>MP3, WAV and OGG</b></em>.
+                Content may also be provided inside of the &lt;audio> element, intended for older
+                web browsers which do not support audio;
+                so legacy audio plugins can be tried.
+                Or, to show text to the users of these older browsers, informing them of how to
+                access the audio contents.
+                To make audio content accessible, <em><b>chapter titles</b></em> can be provided to
+                aid navigation; using the &lt;track> element and a WebVTT (Web Video Text Tracks
+                Format) file.
+                If captions or sign language are available, the &lt;video> element can be used
+                instead of the &lt;audio> element;
+                thus allowing users to enable the visual alternatives.
+                And, naturally, <em>transcripts or other textual alternatives</em>, can be provided
+                by simply linking to them in prose near the &lt;audio> element.
+            <details>
+                <summary><b><em>audio Attributes</em></b> - The <em>src, crossorigin, preload,
+                    autoplay, loop, muted and controls</em> attributes are the attributes common to
+                    all media elements.
+                </summary>
+                <dl>
+                    <dt><strong>src</strong></dt>
+                    <dd>The src attribute specifies the location (URL) of the audio file: <code>&lt;audio
+                        src=<em>"value"</em>></code>
+                        { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                        <code>src="http://www.website.com/audiofile.ogg"</code> | <em>Relative
+                            URL</em> - Points to a file within a web site, like: <code>src="audiofile.ogg"</code>
+                        }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>crossorigin</strong></dt>
+                    <dd>The crossorigin attribute on media elements, is a CORS settings attribute;
+                        and specifies how the element handles crossorigin requests.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>preload</strong></dt>
+                    <dd>The preload attribute specifies if and how the author thinks that the audio
+                        file should be loaded when the page loads. It hints how much buffering the
+                        media resource will likely need, and this attribute may be ignored in some
+                        instances: <code>&lt;audio preload=<em>auto|metadata|none</em>></code>
+                        { <em>auto</em> - The author thinks the browser should load the entire audio
+                        file when the page loads. | <em>metadata</em> - The author thinks the
+                        browser should load only metadata when the page loads. | <em>none</em> - The
+                        author thinks the browser should not load the audio file when the page
+                        loads. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>autoplay</strong></dt>
+                    <dd>The autoplay attribute is a boolean attribute, if present, the audio will
+                        automatically start playing as soon as it can do so without stopping: <code>audio
+                            <em>autoplay</em>></code>
+                        - Can add the <em>muted</em> attribute after autoplay, to let your audio
+                        file start playing automatically and muted. Chromium browsers do not allow
+                        autoplay in most cases, however, muted autoplay is always allowed.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>muted</strong></dt>
+                    <dd>The muted attribute is a boolean attribute, it specifies that the audio
+                        output should be muted: <code>&lt;audio <em>muted</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>loop</strong></dt>
+                    <dd>The loop attribute is a boolean attribute, when present, it specifies the
+                        audio will start over again, every time it is finished (will loop the media
+                        resource): <code>&lt;audio <em>loop</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>controls</strong></dt>
+                    <dd>The controls attribute is a boolean attribute, it specifies that user agent
+                        audio controls should be displayed: <code>&lt;audio
+                            <em>controls</em>></code> - The audio controls should include: <i>Play,
+                            Pause, Seeking and Volume</i>.
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>track Element - &lt;track></h4>
+            <p>Element is used to specify <i>subtitles, caption files or other files containing
+                text</i>, that should be visible when the media is playing, and it has no end tag.
+                The tag specifies text tracks for both &lt;audio> or &lt;video> elements, tracks are
+                formatted in WebVTT or <em>Web Video Text Tracks</em> format (.vtt files).
+            <details>
+                <summary><b><em>track Attributes</em></b></summary>
+                <dl>
+                    <dt><strong>kind</strong></dt>
+                    <dd>The kind attribute specifies the kind of text track, and is an enumerated
+                        attribute. The missing value default is the <em>subtitles</em> state, and
+                        the invalid value default is the <em>metadata</em> state: <code>&lt;track
+                            src="subtitles_en.vtt" kind=<em>"captions|chapters|descriptions|metadata|subtitles"</em>
+                            srclang="en"></code>
+                        { <em>subtitles</em> - The track defines subtitles, used to display
+                        subtitles in a video as a transcription or translation of the dialogue, and
+                        is suitable for when the sound is available but not understood. | <em>captions</em>
+                        - The track defines translation of dialogue and sound effects, as a
+                        transcription or translation of the dialogue, sound effects, relevant
+                        musical cues and other relevant audio information. Is suitable for when
+                        sound is unavailable or not clearly audible, it is labeled as appropriate
+                        for the hard-of-hearing.
+                        | <em>descriptions</em> - The track defines a textual description of the
+                        video content, as textual descriptions of the video component of the media
+                        resource. Is intended for audio synthesis when the visual component is
+                        obscured, unavailable or not usable. | <em>chapters</em> - The track defines
+                        chapter titles, as tracks intended for use from script and are not displayed
+                        by the user agent; is suitable for navigating the media resource. | <em>metadata</em>
+                        - The track defines content used by scripts, not visible for the user. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>src</strong> (Required)</dt>
+                    <dd>The src attribute gives the URL of the text track data, the value must be a
+                        valid non-empty URL potentially surrounded by spaces. Tracks are formatted
+                        in WebVTT Web Video Text Tracks format (.vtt files): <code>&lt;track
+                            src=<em>"value"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>srclang</strong></dt>
+                    <dd>The srclang attribute specifies the language of the track text data, using a
+                        two-letter language; the value must be a valid BCP 47 language tag. This
+                        attribute must be present if the element's <em>kind</em> attribute is in the
+                        subtitles state: <code>&lt;track src="subtitles_en.vtt" kind="subtitles"
+                            srclang=<em>"value"</em>></code>
+                        - To view all available language codes, see the <a target="_blank"
+                                                                           href="https://www.w3schools.com/tags/ref_language_codes.asp">Language
+                            Code Reference</a>.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>label</strong></dt>
+                    <dd>The label attribute gives a user-readable title (a user-visible label) for
+                        the track; it must not be the empty string. This title is used by user
+                        agents when listing subtitle, caption and audio description tracks in their
+                        user interface: <code>&lt;track src="subtitles_en.vtt" kind="subtitles"
+                            srclang="en" label=<em>"value"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>default</strong></dt>
+                    <dd>The default attribute is a boolean attribute, it specifies the track is to
+                        be enabled if the user's preferences do not indicate another track would be
+                        more appropriate. There must only be one &lt;track> element with a default
+                        attribute per &lt;media> element: <code>&lt;track src="subtitles_en.vtt"
+                            <em>default</em>></code></dd>
+                </dl>
+            </details>
+            </p>
+        </section>
+
+        <section><h3>HTML Video</h3>
+            <p>The HTML &lt;video> element is used to show a video on a web page, and the <em>controls</em>
+                attribute adds video controls, like <i>play, pause and volume</i>.
+                The &lt;source> element allows to specify alternative video files, which the browser
+                may choose from;
+                the browser will use the first recognized format.
+                The text between the &lt;video> tags will only be displayed in browsers that do not
+                support this element.
+                It is also a good idea to always include <em>width and height</em> attributes, if
+                not; the page might flicker while the video loads.
+            </p>
+            <aside><strong>HTML Video DOM - Methods, Properties, and Events</strong>
+                <p>The <strong>HTML DOM</strong> defines <em>methods, properties and events</em> for
+                    the &lt;video> element, this allows to <i>load, play and pause</i> videos;
+                    as well as <i>setting duration and volume</i>.
+                    There are also <em><b>DOM events</b></em>, that can notify you when a video
+                    begins to <i>play, is paused, etc</i>;
+                    for a full DOM reference, see the <a target="_blank"
+                                                         href="https://www.w3schools.com/tags/ref_av_dom.asp">HTML
+                        Audio and Video DOM Reference</a>.
+                </p>
+            </aside>
+            <table>
+                <caption><b>Common Video Formats</b>
+                    <p>There are many video formats, but only the <em>MP4, WebM, and Ogg</em>
+                        formats are supported by the HTML standard;
+                        MP4 is recommended by YouTube.
+                    </p></caption>
+                <tr>
+                    <th>Format</th>
+                    <th>File</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>MPEG</td>
+                    <td>.mpg | .mpeg</td>
+                    <td> Developed by the Moving Pictures Expert Group, and is the first popular
+                        video format on the web; but it is not supported anymore in HTML.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Audio Video Interleave - AVI</td>
+                    <td>.avi</td>
+                    <td> Developed by Microsoft, and is commonly used in video cameras and TV
+                        hardware; it plays well on Windows computers, but not in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Windows Media Video - WMV</td>
+                    <td>.wmv</td>
+                    <td>Developed by Microsoft, and is commonly used in video cameras and TV
+                        hardware; it plays well on Windows computers, but not in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>QuickTime</td>
+                    <td>.mov</td>
+                    <td>Developed by Apple, and is commonly used in video cameras and TV hardware;
+                        it plays well on Apple computers, but not in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>RealVideo</td>
+                    <td>.rm | .ram</td>
+                    <td>Developed by Real Media to allow video streaming with low bandwidths, it
+                        does not play in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Flash</td>
+                    <td>.swf | .flv</td>
+                    <td>Developed by Macromedia, and often requires an extra component (plug-in) to
+                        play in web browsers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Theora Ogg</td>
+                    <td>.ogg</td>
+                    <td>Developed by the Xiph.Org Foundation, and is supported by HTML.</td>
+                </tr>
+                <tr>
+                    <td>WebM</td>
+                    <td>.webm</td>
+                    <td>Developed by Mozilla, Opera, Adobe and Google, and is supported by HTML.
+                    </td>
+                </tr>
+                <tr>
+                    <td>MPEG-4/MP4</td>
+                    <td>.mp4</td>
+                    <td>Developed by the Moving Pictures Expert Group, and is commonly used in video
+                        cameras and TV hardware; it is supported by all browsers, and recommended by
+                        YouTube.
+                    </td>
+                </tr>
+            </table>
+
+            <h4>video Element - &lt;video></h4>
+            <p>Element is used for playing videos or movies, and also audio files with captions;
+                this element also supports dimension attributes.
+                The &lt;video> tag contains one or more &lt;source> tags with different video
+                sources, the browser will choose the first source it supports.
+                There are three supported video formats in HTML: <em><b>MP4, WebM, and OGG</b></em>.
+                Content may be provided inside of the &lt;video> element, witch is intended for
+                older web browsers that do not support video;
+                so legacy video plugins can be tried.
+                Or, also to show text to the users of these older browsers, informing them of how to
+                access the video contents.
+                The text between the &lt;video> tags will only be displayed in browsers that do not
+                support the element.
+                To make video content more accessible, a variety of features are available; like
+                <em>sign-language tracks</em>, witch can be embedded in the video stream.
+                <em>Captions</em> can also be provided, either embedded in the video stream or as
+                external files using the &lt;track> element.
+                <em>Audio descriptions</em> can also be embedded in the video stream, or in text
+                form, using a WebVTT (<em>Web Video Text Tracks Format</em>) file referenced using
+                the &lt;track> element.
+                Witch then can be synthesized into speech, by the user agent; WebVTT can also be
+                used to provide <em>chapter titles</em>.
+                <em>Transcripts or other textual alternatives</em>, can also be provided by simply
+                linking to them in the prose near the &lt;video> element.
+            <details>
+                <summary><b><em>video Attributes</em></b> - The <em>src, crossorigin, preload,
+                    autoplay, loop, muted and controls</em> attributes are the attributes common to
+                    all media elements.
+                </summary>
+                <dl>
+                    <dt><strong>src</strong></dt>
+                    <dd>The src attribute specifies the location (URL) of the video file, and is
+                        supported in all of the major browsers; however, the file format may not be
+                        supported. To make it work in all browsers, add &lt;source> elements inside
+                        the &lt;video> element; each &lt;source> tag can link to different video
+                        files (browser will use first recognized format): <code>&lt;video src=<em>"value"</em>></code>
+                        { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                        <code>src="http://www.website.com/amovie.ogg"</code> | <em>Relative URL</em>
+                        - Points to a file within a web site, like: <em>src="movie_file.ogg"</em> }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>crossorigin</strong></dt>
+                    <dd>The crossorigin attribute on media elements is a CORS settings attribute,
+                        and handles crossorigin requests.[]
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>poster</strong></dt>
+                    <dd>The poster attribute specifies an image to be shown while the video is
+                        downloading, or until the user hits the play button (while no video data is
+                        available). The image given, is the poster frame, and it is intended to be a
+                        representative frame of the video, that gives the user an idea of the video.
+                        If this is not included, the first frame of the video will be used instead:
+                        <code>&lt;video poster=<em>"value"</em>></code> { Possible values:
+                        <em>Absolute URL</em> - Points to another web site, like: <code>href="http://www.website.com/poster.jpg"</code>
+                        | <em>Relative URL</em> - Points to a file within a web site, like: <code>href="local_poster.jpg"</code>
+                        }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>preload</strong></dt>
+                    <dd>The preload attribute specifies if and how the author thinks the video
+                        should be loaded when the page loads, it hints how much buffering the media
+                        resource will likely need. This attribute may be ignored in some instances,
+                        and is ignored if <em>autoplay</em> is present: <code>&lt;video preload=<em>auto|metadata|none</em>></code>
+                        { <em>auto</em> - The author thinks that the browser should load the entire
+                        video when the page loads. | <em>metadata</em> - The author thinks the
+                        browser should load only metadata when the page loads. | <em>none</em> - The
+                        author thinks that the browser should not load the video when the page
+                        loads. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>autoplay</strong></dt>
+                    <dd>The autoplay attribute is a boolean attribute, if present, the video will
+                        automatically start playing, when the page is loaded. Add the <em>muted</em>
+                        attribute after autoplay, to let the video file start playing automatically
+                        and muted.
+                        Chromium browsers do not allow autoplay in most cases, however, muted
+                        autoplay is always allowed: <code>&lt;video <em>autoplay</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>playsinline</strong></dt>
+                    <dd>The playsinline attribute is a boolean attribute, it serves as a hint to the
+                        user agent that the video is to be displayed "inline" in the document by
+                        default. It will be constrained to the element's playback area, instead of
+                        displayed fullscreen or in an independent resizable window.
+                        The absence of the playsinline attribute does not imply the video will
+                        display fullscreen by default. Most user agents have chosen to play all
+                        videos inline by default, and in such user agents, the playsinline attribute
+                        has no effect.[]
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>loop</strong></dt>
+                    <dd>The loop attribute is a boolean attribute, it specifies the video (or media
+                        resource) will start over again, every time it is finished: <code>&lt;video
+                            <em>loop</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>muted</strong></dt>
+                    <dd>The muted attribute is a boolean attribute, it specifies the audio output of
+                        the video should be muted: <code>&lt;video <em>muted</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>controls</strong></dt>
+                    <dd>The controls attribute is a boolean attribute, when present, it specifies
+                        that video controls should be displayed: <code>&lt;video <em>controls</em>></code>
+                        - Video controls should include: <i>Play, Pause, Seeking, Volume, Fullscreen
+                            toggle, Captions/Subtitles (when available) and Track (when
+                            available)</i>.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>width</strong></dt>
+                    <dd>The width attribute specifies the width (horizontal dimension) of a video
+                        player, in pixels (i.e. width="100"): <code>&lt;video width=<em>"value"</em>></code>
+                        - Always specify <em>height and width</em> attributes for videos, the
+                        required space for is then reserved when the page is loaded - Do not rescale
+                        with these attributes.
+                        Downsizing a large video with these attributes forces a user to download the
+                        original video (even if it looks small on the page). The correct way to
+                        rescale a video is with a program, before using it on a web page.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>height</strong></dt>
+                    <dd>The height attribute specifies the height (vertical dimension) of a video
+                        player, in pixels (i.e. height="100"): <code>&lt;video
+                            height=<em>"value"</em>></code> - Always specify <em>height and
+                            width</em> attributes for videos, the required space is then reserved
+                        when the page is loaded - Do not rescale with height and width attributes.
+                        Downsizing a large video with these attributes, forces a user to download
+                        the original video (even if it looks small on the page). The correct way to
+                        rescale a video is with a program, before using it on a web page.
+                    </dd>
+                </dl>
+            </details>
+            </p>
+        </section>
+
+    </section>
+
+    <section><h3>HTML Iframes</h3>
+        <p>An HTML iframe is used to display a web page within a web page, the &lt;iframe> element
+            specifies an inline frame.
+            An inline frame is used to embed another document within the current HTML document.
+            It is a good practice to always include a <em>title</em> attribute, this is used by
+            screen readers to read what the content of the iframe is.
+            An iframe can also be used as the target frame for a link, the <em>target</em> attribute
+            of the link must refer to the <em>name</em> attribute of the iframe.
+        </p>
+        <h4>iframe element - &lt;iframe></h4>
+        <p>Element defines an inline frame, an inline frame is used to embed another document within
+            the current HTML document, it represents its nested browsing context (content
+            navigable).
+            The element never has fallback content, as it will create a new child navigable,
+            regardless of whether initial contents successfully used.
+            In <em>legacy user agents</em> that do not support &lt;iframe> elements, the contents
+            would be parsed as markup that could act as fallback content.
+            The &lt;iframe> element also supports dimension attributes, for cases where the embedded
+            content has specific dimensions.
+            It is a good practice to always include a <em>title</em> attribute for the &lt;iframe>,
+            it is used by screen readers to read out what the content of the &lt;iframe> is.
+        <details>
+            <summary><b><em>iframe Attributes</em></b> - If the global <em>itemprop</em> attribute
+                is specified on an &lt;iframe> element, then the <em>src</em> attribute must also be
+                specified.
+                If the <em>src</em> attribute and the <em>srcdoc</em> attribute are both specified
+                together, the <em>srcdoc</em> attribute takes priority.
+                This allows authors to provide a fallback URL, for legacy user agents that do not
+                support the <em>srcdoc</em> attribute.
+            </summary>
+            <dl>
+                <dt><strong>src</strong></dt>
+                <dd>The src attribute specifies the address (the URL) of the document to embed in an
+                    &lt;iframe>. If the src attribute and the <em>srcdoc</em> attribute are both
+                    specified together, the srcdoc attribute takes priority.
+                    This allows authors to provide a fallback URL for legacy user agents that do not
+                    support the <em>srcdoc</em> attribute. If the global <em>itemprop</em> attribute
+                    is specified on an &lt;iframe> element, then the src attribute must also be
+                    specified: <code>&lt;iframe src=<em>"value"</em>></code>
+                    { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                    <code>src="http://www.website.com/source_page.htm"</code> | <em>Relative
+                        URL</em> - Points to a file within a web site, like: <code>src="local_source.htm"</code>
+                    }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>srcdoc</strong></dt>
+                <dd>The srcdoc attribute gives the content of the page, that the element's content
+                    navigable (nested browsing context) is to contain. The value of the attribute is
+                    the source of an iframe srcdoc document, and specifies the HTML content of the
+                    page to show in the &lt;iframe>.
+                    This attribute is expected to be used together with the <em>sandbox and
+                        seamless</em> attributes: <code>&lt;iframe srcdoc=<em>"value"</em>></code>
+                    - If the <em>src</em> and srcdoc attribute are both specified together, the <em>srcdoc</em>
+                    attribute takes priority. If a browser does not support the srcdoc attribute, it
+                    will show the file specified in the <em>src</em> attribute instead (if present).
+                    This allows authors to provide a fallback URL for legacy user agents that do not
+                    support the srcdoc attribute.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>name</strong></dt>
+                <dd>The name attribute specifies a name for an iframe, if present, it must be a
+                    valid navigable target name. This can then reference the element in either a
+                    JavaScript, as the value of the <em>target</em> attribute of &lt;a> or &lt;form>
+                    elements; or the <em>formtarget</em> attribute of &lt;input> or &lt;button>
+                    elements: <code>&lt;iframe name=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>sandbox</strong></dt>
+                <dd>The sandbox attribute, enables a set of extra restrictions (security rules) on
+                    any content hosted by the iframe. When the attribute is set, the content is
+                    treated as being from a unique origin, and it will: <i>block form submission,
+                        prevent using plugins, scripts and various APIs are disabled, also links are
+                        prevented from targeting other navigables</i>.
+                    The value of the attribute can either be empty, witch then all restrictions are
+                    applied, or given as a space-separated list of the pre-defined values that
+                    remove particular restrictions. Its value must be an unordered set of unique
+                    space-separated tokens that are case-insensitive.
+                    The <em>allow-top-navigation and allow-top-navigation-by-user-activation</em>
+                    keywords must not both be specified, as doing so is redundant;only
+                    allow-top-navigation will have an effect in such non-conformant markup.
+                    Similarly, the <em>allow-top-navigation-to-custom-protocols</em> keyword must
+                    not be specified if either <em>allow-top-navigation or allow-popups</em> are
+                    specified (doing so is redundant):
+                    <code>&lt;iframe sandbox=<em>allow-downloads|allow-forms|allow-modals|allow-orientation-lock|allow-pointer-lock|allow-popups|allow-popups-to-escape-sandbox|allow-presentation|allow-same-origin|allow-scripts|allow-top-navigation|allow-top-navigation-by-user-activation|allow-top-navigation-to-custom-protocols</em>></code>
+                    { <em>allow-forms</em> - Allows form submission (re-enable forms). | <em>allow-modals</em>
+                    - Allows to open modal windows (re-enables modal dialogs). | <em>allow-orientation-lock</em>
+                    - Allows to lock the screen orientation (re-enable screen orientation lock). |
+                    <em>allow-pointer-lock</em> - Allows to use the Pointer Lock API (re-enables the
+                    pointer lock API). | <em>allow-popups</em> - Allows popups (re-enable popups). |
+                    <em>allow-popups-to-escape-sandbox</em> - Allows popups to open new windows
+                    without inheriting the sandboxing (it re-enables the creation of unsandboxed
+                    auxiliary browsing contexts).
+                    | <em>allow-presentation</em> - Allows to start a presentation session
+                    (re-enable the presentation API). | <em>allow-same-origin</em> - Allows the
+                    iframe content to be treated as being from the same origin, this causes content
+                    to be treated as being from its real origin instead of forcing it into a unique
+                    origin. | <em>allow-scripts</em> - Allows to run scripts (re-enable scripts). |
+                    <em>allow-top-navigation</em> - Allows the iframe content to navigate its
+                    top-level browsing context.
+                    | <em>allow-top-navigation-by-user-activation</em> - Allows the iframe content
+                    to navigate its top-level browsing context, but only if initiated by user. |
+                    <em>allow-top-navigation-to-custom-protocols</em> - Re-enables navigations
+                    toward non-fetch scheme to be handed off to external software. | <em>[no
+                        value]</em> - Applies all restrictions. | <em>allow-downloads</em> - Allows
+                    content to perform downloads. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>allow</strong></dt>
+                <dd>The allow attribute, determines the container policy used when the permissions
+                    policy for a Document in the iframe's content navigable is initialized. It will
+                    specify the permissions policy (feature policy) to be applied to the iframe's
+                    contents, and its value must be a serialized permissions policy. []
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>allowfullscreen</strong></dt>
+                <dd>The allowfullscreen attribute is a boolean attribute, it indicates the &lt;iframe>
+                    can activate fullscreen mode by calling the requestFullscreen() method. This is
+                    enforced by the process permissions policy attributes algorithm: <code>&lt;iframe
+                        <em>allowfullscreen</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>allowpaymentrequest</strong></dt>
+                <dd>The allowpaymentrequest, is set to true if a cross-origin &lt;iframe> should be
+                    allowed to invoke the Payment Request API: <code>&lt;iframe <em>allowpaymentrequest</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>referrerpolicy</strong></dt>
+                <dd>The referrerpolicy attributes purpose is to set the referrer policy used, when
+                    processing the iframe attributes. It specifies which referrer information
+                    (referrer policy) to send when fetching the iframe: <code>&lt;iframe
+                        referrerpolicy=<em>"no-referrer-when-downgrade|no-referrer|origin|origin-when-cross-origin|same-origin|strict-origin-when-cross-origin|unsafe-url"</em>></code>
+                    { <em>no-referrer-when-downgrade</em> (Default) - The referrer header will not
+                    be sent to origins without HTTPS. | <em>no-referrer</em> - No referrer
+                    information will be sent along with a request. | <em>origin</em> - Send only
+                    scheme, host and port to the request client. | <em>origin-when-cross-origin</em>
+                    - For cross-origin requests, it will send only scheme, host and port; and for
+                    same-origin requests, it will also include the path.
+                    | <em>same-origin</em> - For same-origin requests, the referrer info will be
+                    sent; and for cross-origin requests, no referrer info will be sent. | <em>strict-origin</em>
+                    - Only send referrer info if the security level is the same, and do not send to
+                    a less secure destination (e.g. HTTPS to HTTP). | <em>strict-origin-when-cross-origin</em>
+                    - Send full path when performing a same-origin request, and send only origin
+                    when the security level stays the same; it will send no header to a less secure
+                    destination (HTTPS to HTTP). | <em>unsafe-url</em> - Send origin, path and query
+                    string, but not fragment, password or username - This value is considered
+                    unsafe. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>width</strong></dt>
+                <dd>The width attribute specifies the width (horizontal dimension) of an iframe, in
+                    pixels, such as <em>"100px"</em>, or just <em>"100"</em>); the default width is
+                    300 pixels: <code>&lt;iframe width=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>height</strong></dt>
+                <dd> The height attribute specifies the height (vertical dimension) of an iframe, in
+                    pixels, such as height=<em>"100"</em>; the default height is 150 pixels: <code>&lt;iframe
+                        height=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>loading</strong></dt>
+                <dd>The loading attribute is a lazy loading attribute, its purpose is to indicate
+                    the policy for loading &lt;iframe> elements that are outside the viewport. It is
+                    used when determining loading deferral, and specifies whether a browser should
+                    load an iframe immediately, or to defer loading until some conditions met:
+                    <code>&lt;iframe loading<em>eager|lazy</em>></code></dd>
+            </dl>
+        </details>
+        </p>
+        <h4>HTML YouTube Videos</h4>
+        <p>The easiest way to play videos in HTML, is to use YouTube; as converting videos to
+            different formats can be difficult and time-consuming.
+            YouTube will display an <em>id</em> (like tgbNymZ7vqY), when you save (or play) a video;
+            can use this id, and refer to the video in HTML code.
+            To play a video on your web page, do the following:
+            &lt;iframe width="420" height="315"
+            <em>src="https://www.youtube.com/embed/tgbNymZ7vqY"</em>> &lt;/iframe>
+        <ol>
+            <li>Define an <em><b>&lt;iframe></b></em> element in your web page.</li>
+            <li>Let the <em>src</em> attribute point to the video URL.</li>
+            <li>Use the <em>width and height</em> attributes to specify the dimension of the player.
+            </li>
+        </ol>
+        Add <em>loop=1</em> to let your video loop forever, or <em>controls=0</em> to not display
+        controls in the video player.
+        You can also add <em>mute=1 and autoplay=1</em>, to let your video start playing both
+        automatically and muted:
+        <em>src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></em>
+        <br/><strong>YouTube Playlist</strong> - Add a comma separated list of videos to play, in
+        addition to the original URL.
+        </p>
+
+        <h5>&lt;frame></h5>
+        <p>Element defines a window (a frame) in a frameset - Not supported in HTML5.</p>
+        <h5>&lt;frameset></h5>
+        <p>Element defines a set of frames - Not supported in HTML5.</p>
+        <h5>&lt;noframes></h5>
+        <p>Element defines an alternate content for users that do not support frames - Not supported
+            in HTML5.</p>
+    </section>
+
+    <section><h3>Document metadata</h3>
+        <p>HTML metadata is data about the HTML document (data about data), and is not displayed but
+            is machine parsable.
+            The metadata content, is content that sets up the presentation or behavior of the rest
+            of the content.
+            It also sets up the relationship of the document with other documents, or conveys other
+            "out of band" information.
+            Elements from other namespaces, whose semantics are primarily metadata-related (e.g.
+            RDF) are also metadata content.
+            The &lt;head> element defines metadata about the document, and is a container for the
+            metadata;
+            it is placed between the &lt;html> and &lt;body> tags.
+            The HTML &lt;head> element is a container for the following elements: <em>&lt;base> -
+                &lt;link> - &lt;meta> - &lt;noscript> - &lt;script> - &lt;style> - &lt;template> -
+                &lt;title></em>
+            <br/>Metadata typically defines the document <i>title, character set, styles, scripts,
+                and other meta information</i>.
+            Metadata is used by browsers for how to display content or reload a page, also by search
+            engines for keywords and is used for other web services.
+            To display an HTML page correctly, a web browser must also know the character set used
+            in the page.
+            There is also a method to let web designers take control over the <em>viewport</em> (the
+            web page's visible area), through the &lt;meta> tag.
+        </p>
+
+        <h4>meta Element - &lt;meta> </h4>
+        <p>Element defines metadata about an HTML document, metadata is data about data, and the
+            tags always go inside of the &lt;head> element.
+            The metadata will not be displayed, but is machine parsable; it is used by browsers for
+            how to display content or reload a page, search engines for keywords and other web
+            services.
+            The element is typically used to specify <i>character set, page description, keywords,
+                author of the document and viewport settings</i>.
+            It represents various kinds of metadata that cannot be expressed using the <em>&lt;title>,
+                &lt;base>, &lt;link>, &lt;style> and &lt;script></em> elements.
+            There is also a method to let web designers take control over the <em>viewport</em> (the
+            visible area of a web page), to create a <em><b>Responsive Web Design</b></em>.
+            A responsive web page will automatically adjust for different screen sizes or viewports.
+        </p>
+        <details>
+            <summary><b><em>meta Attributes</em></b> - Exactly one of the <em>name, http-equiv,
+                charset and itemprop</em> attributes must be specified.
+                The &lt;meta> element can represent document-level metadata with the <em>name</em>
+                attribute, pragma directives with the <em>http-equiv</em> attribute and a file's
+                character encoding with the <em>charset</em> attribute.
+                If either <em>name, http-equiv or itemprop</em> is specified, then the
+                <em>content</em> attribute must also be specified; otherwise, it must be omitted.
+                If a &lt;meta> element has no <em>content</em> attribute, then the value part of the
+                metadata name-value pair is the empty string.
+            </summary>
+            <dl>
+                <dt><strong>name</strong></dt>
+                <dd> The name attribute specifies the name for the metadata, it sets the aspect of
+                    the documents metadata. Document metadata is expressed in terms of name-value
+                    pairs, the name attribute giving the name, and the <em>content</em> attribute
+                    (on the same element) giving the value.
+                    If a meta element has no <em>content</em> attribute, then the value part of the
+                    metadata name-value pair is the empty string. If the <em>http-equiv</em>
+                    attribute is set, the name attribute should not be set.
+                    HTML5 has also introduced a method to let web designers take control over the
+                    viewport, through the &lt;meta> tag: <code>&lt;meta name=<em>application-name|author|description|generator|keywords|viewport</em>></code>
+                    { <em>application-name</em> - Specifies the name of the Web application that the
+                    page represents. | <em>author</em> - Specifies the name of the author of the
+                    document: < meta name="author" content="John Doe"> | <em>description</em> -
+                    Specifies a description of the web page, search engines can pick up this
+                    description to show with the results of searches: &lt;meta name="description"
+                    content="Free Web tutorials"> | <em>generator</em> - Specifies one of the
+                    software packages used to generate the document, and is not used on
+                    hand-authored pages: &lt;meta name="generator" content="FrontPage 4.0">
+                    | <em>keywords</em> - Specifies a comma-separated list of keywords, relevant to
+                    the page; always specify keywords, as this is needed by search engines to
+                    catalogize the page: &lt;meta name="keywords" content="HTML, meta tag, tag
+                    reference"> | <em>viewport</em> - Controls the viewport (visible area of a web
+                    page), it gives the browser instructions on how to control the page's dimensions
+                    and scaling. The viewport varies with the device, and will be smaller on a
+                    mobile phone than on a computer screen; you should include the &lt;meta>
+                    viewport element in all your web pages. Setting the viewport to make your
+                    website look good on all devices: <code>&lt;meta <em>name="viewport"</em>
+                        content="width=device-width, initial-scale=1.0"></code>
+                    - The <em>initial-scale=1.0</em>, sets the initial zoom level when the page is
+                    first loaded by the browser. The <em>width=device-width</em>, sets the width of
+                    the page to follow the screen-width of the device (will vary depending on the
+                    device). }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>http-equiv</strong></dt>
+                <dd>The http-equiv attribute provides an HTTP header, for the information/value of
+                    the <em>content</em> attribute; it can be used to simulate an HTTP response
+                    header: <code>&lt;meta http-equiv=<em>content-security-policy|content-type|default-style|refresh</em>></code>
+                    { <em>content-security-policy</em> - Specifies a content policy for the
+                    document: <code>&lt;meta <em>http-equiv="content-security-policy"</em>
+                        content="default-src 'self'"></code> | <em>content-type</em> - Specifies the
+                    character encoding for the document: <code>&lt;meta <em>http-equiv="content-type"</em>
+                        content="text/html; charset=UTF-8"></code>
+                    | <em>default-style</em> - Specified the preferred style sheet to use: <code>&lt;meta
+                        <em>http-equiv="default-style"</em> content="the document's preferred
+                        stylesheet"></code> - The value of the <em>content</em> attribute, must
+                    match the value of the <em>title</em> attribute on a link element in the same
+                    document. Or, it must match the value of the <em>title</em> attribute on a &lt;style>
+                    element in the same document.
+                    | <em>refresh</em> - Defines a time interval for the document to refresh itself,
+                    to refresh the document every 30 seconds: <code>&lt;meta <em>http-equiv="refresh"</em>
+                        content="30"></code> - The value refresh should be used carefully, as it
+                    takes the control of a page away from the user, and will cause a failure in
+                    <a target="_blank" href="http://www.w3.org/WAI/intro/wcag.php">W3C's Web Content
+                        Accessibility Guidelines</a>. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>content</strong></dt>
+                <dd>The content attribute gives the value associated with the <em>http-equiv or
+                    name</em> attribute (pragma directive or document metadata). If a meta element
+                    has no content attribute, then the value part of the metadata name-value pair is
+                    the empty string: <code>&lt;meta content=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>charset</strong></dt>
+                <dd>The charset attribute specifies the character encoding (character set) used by
+                    the document, its value must be an ASCII case-insensitive match for the string
+                    <em>"utf-8"</em>. There must not be more than one &lt;meta> element with a
+                    charset attribute per document.
+                    The HTML5 specification encourages web developers to use the <em>UTF-8</em>
+                    character set, which covers almost all of the characters and symbols in the
+                    world: <code>&lt;meta charset=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt><strong>media</strong></dt>
+                <dd>The media attribute says which media the metadata applies to (the applicable
+                    media), the value must be a valid media query list. Unless the name is
+                    theme-color, the media attribute has no effect on the processing model and must
+                    not be used by authors. []
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <h4>base Element - &lt;base></h4>
+        <p>Element specifies the document base URL/target for the purposes of parsing URLs, and also
+            the name of the default navigable for purposes of following hyperlinks.
+            There can only be one single &lt;base> element in a document, and it must be inside of
+            the &lt;head> element.
+        <details>
+            <summary><b><em>base Attributes</em></b> - A &lt;base> element must have either an <em>href
+                or target</em> attribute, or have both attributes.
+            </summary>
+            <dl>
+                <dt><strong>href</strong></dt>
+                <dd>The href attribute specifies the base URL for all relative URLs on a page, and
+                    must contain a valid URL potentially surrounded by spaces. A &lt;base> element,
+                    if it has an href attribute, must come before any other elements in the tree
+                    that have attributes defined as taking URLs (except the &lt;html> element):
+                    <code>&lt;base href=<em>"value"</em>></code>
+                    { <em>Absolute URL</em> - That acts as the base URL, like: <code>href="http://www.website.com/"</code>
+                    }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>target</strong></dt>
+                <dd>The target attribute specifies the default target for all hyperlinks and forms
+                    in the page, it must contain a valid navigable target name or keyword. This
+                    specifies which navigable is to be used as the default, when hyperlinks and
+                    forms in the Document cause navigation.
+                    A &lt;base> element, if it has a target attribute, must come before any elements
+                    in the tree that represent hyperlinks. This attribute can be overridden by using
+                    the target attribute for each hyperlink/form: <code>&lt;base target=<em>"_self|_blank|_parent|_top"</em>></code>
+                    { <em>_self</em> - (Default) - Opens the link in the same frame as it was
+                    clicked. | <em>_blank</em> - Opens the link in a new window or tab. | <em>_parent</em>
+                    - Opens the link in the parent frame. | <em>_top</em> - Opens the link in the
+                    full body of the window. }
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <h4>link Element - &lt;link> </h4>
+        <p>Element defines the relationship between a document, and an external resource; it allows
+            authors to link their document to other resources.
+            It is an empty element, and contains attributes only; it is most often used to link
+            external style sheets or to add <em>favicon</em> (icons) to a website.
+            Two categories of links can be created using the &lt;link> element, links to <em><b>external
+                resources</b> and <b>hyperlinks</b></em>.
+            One link element can create multiple links, of which some might be external resource
+            links, and some might be hyperlinks.
+        <details>
+            <summary><b><em>link Attributes</em></b> - The address of the link(s) is given by the
+                <em>href</em> attribute, one or both of the <em>href or imagesrcset</em> attributes
+                must be present.
+                The <em>imagesrcset and href</em> attributes, if width descriptors not used,
+                together contribute the image sources to the source set.
+                A link element must also have either a <em>rel or itemprop</em> attribute, but not
+                both.
+                The types of link indicated (the relationships) are given by the value of the <em>rel</em>
+                attribute, if used, the element can only sometimes be used in the page body.
+                When used with the <em>itemprop</em> attribute, the element can be used in the head
+                element and body of the page.
+                Hyperlinks created with the <em>rel</em> attribute apply to the whole document, this
+                contrasts with the rel attribute of &lt;a> and &lt;area> elements.
+            </summary>
+            <dl>
+                <dt><strong>href</strong></dt>
+                <dd>The href attribute specifies the location (URL) of the external resource or
+                    linked document, its value must be a valid non-empty URL potentially surrounded
+                    by spaces. One or both of the <em>href or imagesrcset</em> attributes must be
+                    present: <code>link href=<em>"value"</em>></code>
+                    { Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                    <code>href="http://www.website.com/stylesheet.css"</code> | <em>Relative
+                        URL</em> - Points to a file within a web site, like: <code>href="/local/stylesheet.css"</code>
+                    }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>hreflang</strong></dt>
+                <dd>The hreflang attribute specifies the language of the text in the linked
+                    document, and is only used if the <em>href</em> attribute is set. This attribute
+                    is purely advisory, and does not render as anything special in any of the major
+                    browsers; however, it can be used by search engines, or in scripts. <code>&lt;link
+                        hreflang=<em>"value"</em>></code>
+                    - A two-letter language code specifies the language of the linked document, to
+                    view all available language codes, see the <a target="_blank"
+                                                                  href="https://www.w3schools.com/tags/ref_language_codes.asp">Language
+                        Code Reference</a>.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>crossorigin</strong></dt>
+                <dd>The crossorigin attribute is a CORS settings attribute, it is intended for use
+                    with external resource links. It specifies how the element handles cross-origin
+                    requests []: <code>&lt;crossorigin=<em>"anonymous|use-credentials"</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>rel</strong> (Required)</dt>
+                <dd>The required rel attribute specifies the relationship between the current
+                    document, and the linked document/resource. A &lt;link> element must have either
+                    a <em>rel or itemprop</em> attribute, but not both.
+                    Hyperlinks created with the <em>rel</em> attribute apply to the whole document:
+                    <code>&lt;link rel=<em>"alternate|author|dns-prefetch|help|icon|license|next|pingback|preconnect|prefetch|preload|prerender|prev|search|stylesheet"</em></code>
+                    { <em>alternate</em> - Provides a link to an alternate version of the document
+                    (i.e. print page, translated or mirror): <code>&lt;link <em>rel="alternate"</em>
+                        type="application/atom+xml" title="W3Schools News"
+                        href="/blog/news/atom"></code> | <em>author</em> - Provides a link to the
+                    author of the document. | <em>dns-prefetch</em> - Specifies that the browser
+                    should preemptively perform DNS resolution, for the target resource's origin. |
+                    <em>help</em> - Provides a link to a help document: <code>&lt;link <em>rel="help"</em>
+                        href="/help/"></code>
+                    | <em>icon</em> - Imports an icon to represent the document: <code>&lt;link <em>rel="icon"</em>
+                        href="favicon.ico" type="image/x-icon"></code> | <em>license</em> - Provides
+                    a link to copyright information for the document. | <em>next</em> - Provides a
+                    link to the next document in the series. | <em>pingback</em> - Provides the
+                    address of the pingback server, that handles pingbacks to the current document.
+                    | <em>preconnect</em> - Specifies that the browser should preemptively connect
+                    to the target resource's origin.
+                    | <em>prefetch</em> - Specifies that the browser should preemptively fetch and
+                    cache the target resource, as it is likely to be required for a follow-up
+                    navigation. | <em>preload</em> - Specifies that the browser agent must
+                    preemptively fetch and cache the target resource for current navigation,
+                    according to the destination given by the "as" attribute (and the priority
+                    associated with that destination). | <em>prerender</em> - Specifies that the
+                    browser should pre-render (load), the specified webpage in the background; this
+                    speeds up the page load (page already loaded) - This wastes the user's
+                    bandwidth. | <em>prev</em> - Indicates that the document is a part of a series,
+                    and that the previous document in the series is the referenced document.
+                    | <em>search</em> - Provides a link to a resource, that can be used to search
+                    through the current document and its related pages. | <em>stylesheet</em> -
+                    Imports a style sheet. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>media</strong></dt>
+                <dd>The media attribute specifies what media/device the target resource is optimized
+                    for, the value must be a valid media query list. This attribute is mostly used
+                    with CSS style sheets, to specify different styles for different media types.
+                    If the rel attribute is used, the element can only sometimes be used in the body
+                    of the page. When used with the global <em>itemprop</em> attribute, the element
+                    can be used both in the &lt;head> element and in the body of the page.
+                    The media attribute can accept several values: <code>link media=<em>"value"</em>></code>
+                    <ul><strong>Devices:</strong>
+                        <li><em>all</em> (Default) - Used for all media type devices.</li>
+                        <li><em>print</em> - Used for Print preview mode/printed pages.</li>
+                        <li><em>screen</em> - Used for computer screens, tablets, smart-phones etc.
+                        </li>
+                        <li><em>speech</em> - Used for screenreaders that "reads" the page out loud.
+                        </li>
+                        <li><em>aural</em> - (Deprecated) Speech synthesizers.</li>
+                        <li><em>braille</em> - (Deprecated) Braille feedback devices.</li>
+                        <li><em>handheld</em> - (Deprecated) Handheld devices (small screen, limited
+                            bandwidth).
+                        </li>
+                        <li><em>projection</em> - (Deprecated) Projectors.</li>
+                        <li><em>tty</em> - (Deprecated) Teletypes and similar media using a
+                            fixed-pitch character grid.
+                        </li>
+                        <li><em>tv</em> - (Deprecated) Television type devices (low resolution,
+                            limited scroll ability).
+                        </li>
+                    </ul>
+                    <ul><strong>Possible Operators:</strong>
+                        <li><em>and</em> - Specifies an <strong>AND</strong> operator.</li>
+                        <li><em>not</em> - Specifies a <strong>NOT</strong> operator.</li>
+                        <li><em>,</em> - Specifies an <strong>OR</strong> operator.</li>
+                    </ul>
+                    <ul><strong>Values:</strong>
+                        <li><em>aspect-ratio</em> - Specifies the width/height ratio of the targeted
+                            display area, "min-" and "max-" prefixes can be used: <code>media="screen
+                                and (max-aspect-ratio:16/9)"</code></li>
+                        <li><em>color</em> - Specifies the bits per color of target display, "min-"
+                            and "max-" prefixes can be used: <code>media="screen and
+                                (min-color:3)"</code></li>
+                        <li><em>color-index</em> - Specifies the number of colors the target display
+                            can handle, "min-" and "max-" prefixes can be used: <code>media="screen
+                                and (min-color-index:256)"</code></li>
+                        <li><em>grid</em> - Specifies if the output device is grid or bitmap, the
+                            possible values are <em>"1"</em> for grid, and <em>"0"</em> otherwise:
+                            <code>media="handheld and (grid:1)"</code></li>
+                        <li><em>height</em> - Specifies the height of the targeted display area,
+                            "min-" and "max-" prefixes can be used: <code>media="screen and
+                                (max-height:700px)"</code></li>
+                        <li><em>monochrome</em> - Specifies the bits per pixel in a monochrome frame
+                            buffer, "min-" and "max-" prefixes can be used: <code>media="screen and
+                                (min-monochrome:2)"</code></li>
+                        <li><em>orientation</em> - Specifies the orientation of the target
+                            display/paper, the possible values are <em>"portrait" or
+                                "landscape"</em>: <code>media="all and (orientation:
+                                landscape)"</code></li>
+                        <li><em>resolution</em> - Specifies the pixel density (dpi or dpcm) of the
+                            target display/paper, "min-" and "max-" prefixes can be used: <code>media="print
+                                and (min-resolution:300dpi)"</code></li>
+                        <li><em>scan</em> - Specifies scanning method of a tv display, the possible
+                            values are <em>"progressive" and "interlace"</em>: <code>media="tv and
+                                (scan:interlace)"</code></li>
+                        <li><em>width</em> - Specifies the width of the targeted display area,
+                            "min-" and "max-" prefixes can be used: <code>media="screen and
+                                (min-width:500px)"</code></li>
+                        <li><em>device-aspect-ratio</em> - (Deprecated) Specifies the
+                            device-width/device-height ratio of the target display/paper.
+                        </li>
+                        <li><em>device-width</em> - (Deprecated) Specifies the width of the target
+                            display/paper - Deprecated.
+                        </li>
+                        <li><em>device-height</em> - (Deprecated) Specifies the height of the target
+                            display/paper - Deprecated.
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>integrity</strong></dt>
+                <dd>The integrity attribute represents the integrity metadata, for requests which
+                    this element is responsible for, the value is text. The attribute must only be
+                    specified on link elements that have a <em>rel</em> attribute that contains the
+                    <em>stylesheet, preload or modulepreload</em> keyword.
+                    Integrity metadata used in Subresource Integrity checks. []
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>type</strong></dt>
+                <dd>The type attribute gives the MIME type (media type) of the linked resource, it
+                    is purely advisory; the value must be a valid MIME type string. If omit the type
+                    attribute, the browser will look at the <em>rel</em> attribute to guess the
+                    correct type; the most common value of type is "text/css".
+                    For external resource links, the type attribute is used as a hint to user
+                    agents, so that they can avoid fetching resources they do not support: <code>&lt;link
+                        type=<em>"value"</em>></code>
+                    - Look at <a target="_blank"
+                                 href="http://www.iana.org/assignments/media-types/">IANA Media
+                        Types</a>, for a complete list of standard media types.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>referrerpolicy</strong></dt>
+                <dd>The referrerpolicy attribute is a referrer policy attribute, it specifies which
+                    referrer information to send when fetching an iframe. It is intended for use
+                    with external resource links, where it helps set the referrer policy used when
+                    fetching and processing the linked resource: <code>&lt;iframe
+                        referrerpolicy=<em>"no-referrer-when-downgrade|no-referrer|origin|origin-when-cross-origin|same-origin|strict-origin|strict-origin-when-cross-origin|unsafe-url"</em>></code>
+                    { <em>no-referrer-when-downgrade</em> (Default) - The referrer header will not
+                    be sent to origins without HTTPS. | <em>no-referrer</em> - No referrer
+                    information will be sent along with a request. | <em>origin</em> - Send only
+                    scheme, host and port to the request client. | <em>origin-when-cross-origin</em>
+                    - For cross-origin requests, will send only scheme, host and port; and for
+                    same-origin requests, will also include the path.
+                    | <em>same-origin</em> - For same-origin requests, referrer info will be sent;
+                    and for cross-origin requests, no referrer info will be sent. | <em>strict-origin</em>
+                    - Only send referrer info if the security level is the same, and do not send to
+                    a less secure destination (e.g. HTTPS to HTTP). | <em>strict-origin-when-cross-origin</em>
+                    - Send full path when performing a same-origin request, and send only origin
+                    when the security level stays the same; will send no header to a less secure
+                    destination (HTTPS to HTTP). | <em>unsafe-url</em> - Send origin, path and query
+                    string, but not fragment, password or username - This value is considered
+                    unsafe. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>sizes</strong></dt>
+                <dd>The sizes attribute specifies the sizes of icons for visual media, its value is
+                    merely advisory. If specified, the attribute must have a value that is an
+                    unordered set of unique space-separated tokens, which are case-insensitive.
+                    Each value must be either a match for the string <em>"any"</em>, or a value that
+                    consists of two valid non-negative integers that do not have a leading 0
+                    character; separated by a single small or capital letter 'x'. This attribute
+                    must only be specified on &lt;link> elements that have a <em>rel</em> attribute
+                    that specifies <em>icon</em>, or the <em>apple-touch-icon</em> keyword.
+                    The <em>apple-touch-icon</em> keyword, is a registered extension to the
+                    predefined set of link types, but user agents are not required to support it in
+                    any way: <code>&lt;link sizes=<em>"HeightxWidth|any"</em>></code>
+                    { <em>HeightxWidth</em> - Specifies one or more sizes for the linked icon, <em>height
+                        and width</em> values are separated by an "x" or "X": <code>&lt;link
+                        rel="icon" href="favicon.png" <em>sizes="16x16 32x32"</em> type="image/png">
+                    </code> - Specifies 2 sizes. | <em>any</em> - Specifies that the icon is
+                    scalable (like an SVG image): <code>&lt;link rel="icon" href="icon.svg" <em>sizes="any"</em>
+                        type="image/svg+xml"></code> - Specifies any size. }
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>title</strong></dt>
+                <dd>The title attribute gives the title of the link, it is purely advisory; as it
+                    defines a preferred or an alternate (the value is text). The title attribute on
+                    &lt;link> elements differs from the global <em>title</em> attribute, a link
+                    without a title does not inherit title of the parent element; it merely has no
+                    title. []
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>imagesrcset</strong></dt>
+                <dd>The imagesrcset attribute may be present, and is a srcset attribute for images
+                    to use in different situations (e.g. high-resolution displays, small monitors,
+                    etc). The <em>imagesrcset and imagesizes</em> attributes must only be specified
+                    on &lt;link> elements that have <em>rel="preload"</em>, as well as an as
+                    attribute in the <em>"image"</em> state.
+                    If the imagesrcset attribute is present, and has any image candidate strings
+                    using a <em>width</em> descriptor, the <em>imagesizes</em> attribute must also
+                    be present, and is a <em>sizes</em> attribute. One or both of the <em>href or
+                        imagesrcset</em> attributes must be present.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>imagesizes</strong></dt>
+                <dd>The imagesizes attribute contributes the source size to the source set (the
+                    image sizes for different page layouts). The <em>imagesrcset and imagesizes</em>
+                    attributes must only be specified on &lt;link> elements that have <em>rel="preload"</em>,
+                    as well as an as attribute in the <em>"image"</em> state.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>as</strong></dt>
+                <dd>The as attribute is an enumerated attribute, and specifies the potential
+                    destination for a preload request, for the resource given by the <em>href</em>
+                    attribute. The attribute must be specified on &lt;link> elements, that have <em>rel="preload</em>.
+                    It may also be specified on &lt;link> elements, that have <em>rel="modulepreload"</em>;
+                    in such cases it must have a value which is a script-like destination. []
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>blocking</strong></dt>
+                <dd>The blocking attribute is a blocking attribute, and specifies whether the
+                    element is potentially render-blocking. It is used by link type stylesheet, and
+                    it must only be specified on link elements that have a <em>rel</em> attribute
+                    containing that keyword (rel="stylesheet").
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>color</strong></dt>
+                <dd>The color attribute is used with the <em>mask-icon</em> link type, and it
+                    specifies a color to use when customizing a site's icon. The value must be a
+                    string that matches the CSS color production.
+                    The <em>mask-icon</em> keyword is a registered extension to the predefined set
+                    of link types, but user agents are not required to support it in any way.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>disabled</strong></dt>
+                <dd>The disabled attribute is a boolean attribute that is used with the <em>stylesheet</em>
+                    link type, it specifies whether the link is disabled. The attribute must only be
+                    specified on &lt;link> elements, that have a <em>rel</em> attribute that
+                    contains the <em>stylesheet</em> keyword.
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>fetchpriority</strong></dt>
+                <dd>The fetchpriority attribute sets the priority for fetches initiated by the
+                    element, it is a fetch priority attribute intended for use with external
+                    resource links. It is used to set the priority when fetching, and processing the
+                    linked resource.
+                </dd>
+            </dl>
+        </details>
+        </p>
+    </section>
+
+    <section><h3>Programming</h3>
+        <section><h4>HTML JavaScript</h4>
+            <p>JavaScript is the Programming Language for the Web, it can update or change both <em><b>HTML
+                and CSS</b></em>; JavaScript can also <i>calculate, manipulate and validate data</i>.
+                When a web page is loaded, the browser creates a <strong>Document Object
+                    Model</strong> of the page, the <em><b>HTML DOM model</b></em> is constructed as
+                a tree of Objects;
+                and is an <em><b>API</b> (Application Programming Interface)</em> for JavaScript.
+                Scripts allow authors to add interactivity to their documents, the HTML &lt;script>
+                tag is used to define a client-side script (JavaScript).
+                Script-supporting elements are those that do not represent anything themselves (are
+                not rendered), but are used to support scripts.
+                The &lt;script> element either contains script statements, or it points to an
+                external script file through the <em>src</em> attribute.
+                Common uses for JavaScript are <i>image manipulation, form validation and dynamic
+                    changes of content (such as style or attributes)</i>.
+                Through scripting and using other mechanisms, the values of <i>attributes, text and
+                    the structure of a document</i> may change while a user agent is processing it.
+                User agents update their presentation of the document as this occurs.
+                Servers should use <em>text/javascript</em> for JavaScript resources, in accordance
+                with Updates to <em>ECMAScript Media Types</em>, <em><b>ECMAScript 5</b></em> is
+                also known as <em>JavaScript 5 or ECMAScript 2009</em>.
+            </p>
+            <p>When you want to access HTML elements with <em>JavaScript</em>, you have to find the
+                elements first; there are a couple of ways to do this:
+            <ul>
+                <li>By: <b>id</b>.</li>
+                <li>By: <b>tag name</b></li>
+                <li>By: <b>class name</b></li>
+                <li>By: <b>CSS selectors</b></li>
+                <li>By: <b>object collections</b></li>
+            </ul>
+            JavaScript most often uses the <em>document.getElementById()</em> method, this example
+            writes "Hello JavaScript!" into an HTML element: <code>&lt;script>
+                document.getElementById("demo").innerHTML = "Hello JavaScript!"; &lt;/script></code>
+            - The global <em>id</em> attribute, can also be used by JavaScript to perform tasks for
+            that specific element.
+            <br/>You can also use the <em>comment tag</em> to hide scripts, or comment on code; <em>two
+                forward slashes (<b>//</b>)</em> at the end of a comment line, is the JavaScript
+            comment symbol: <code>&lt;script type="text/javascript"> <em>
+                <!-- function displayMsg() { alert("Hello World!") } - A comment! //--></em> &lt;/script></code>
+            <br/>Authors are encouraged to make their applications degrade gracefully, in the
+            absence of scripting support.
+            Look at the &lt;noscript> element, for users that have disabled scripts, or a browser
+            that doesn't support client-side scripting.
+            </p>
+
+            <h4>script Element - &lt;script></h4>
+            <p>Element allows authors to include <em>dynamic script and data blocks</em> in their
+                documents, it does not represent user content.
+                The element either contains scripting statements/client-side script (JavaScript), or
+                it points to an external script file through the <em>src</em> attribute.
+                There are several ways an external script can be executed.
+            <details>
+                <summary><b><em>script Attributes</em></b></summary>
+                <dl>
+                    <dt><strong>src</strong></dt>
+                    <dd>The src attribute specifies the URL of an external script file (the address
+                        of the resource). If you want to run the same JavaScript on several pages in
+                        a web site, create an external JavaScript file; instead of writing the
+                        script over and over.
+                        The script file (.js file), is then referred to using the src attribute
+                        within the &lt;script> tag: <code>&lt;script src=<em>"value"</em>></code> {
+                        Possible values: <em>Absolute URL</em> - Points to another web site, like:
+                        <code>src="http://www.website.com/script.js"</code> | <em>Relative URL</em>
+                        - Points to a file within a web site (like src="/local/script.js") }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>type</strong></dt>
+                    <dd>The type attribute allows customization of the media type of script
+                        represented (specifies the script type); it identifies the content between
+                        the &lt;script> tags: <code>&lt;script type=<em>"value"</em>></code>
+                        { Some common values are: <em>JavaScript MIME types</em>: Such as
+                        application/javascript (Default), or application/ecmascript |
+                        <em>module</em> | Another MIME type (src attribute ignored) }
+                        - Look at <a target="_blank"
+                                     href="http://www.iana.org/assignments/media-types/">IANA Media
+                            Types</a>, for a complete list of standard media types.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>nomodule</strong></dt>
+                    <dd>The nomodule attribute is a boolean attribute, that prevents a script from
+                        being executed in user agents that support module scripts. This allows
+                        selective execution of module scripts in modern user agents, and classic
+                        scripts in older user agents.
+                        The attribute must not be specified on module scripts (and will be ignored
+                        if it is).[]
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>async</strong></dt>
+                    <dd>The async attribute is a boolean attribute, if set, the script is downloaded
+                        in parallel to parsing the page, and executed as soon as it is available.
+                        The async attribute is only for external scripts, and should only be used if
+                        the <em>src</em> attribute is present; are several ways external script can
+                        be executed: <code>&lt;script <em>async</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>defer</strong></dt>
+                    <dd>The defer attribute is a boolean attribute, if set, it specifies the script
+                        is downloaded in parallel to parsing the page, and executed after the page
+                        has finished parsing. The defer attribute is only for external scripts, and
+                        should only be used if the <em>src</em> attribute is present; are several
+                        ways an external script can be executed: <code>&lt;script
+                            <em>defer</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>crossorigin</strong></dt>
+                    <dd>The crossorigin attribute is a CORS settings attribute, it sets the mode of
+                        the request to an HTTP CORS Request. CORS stands for Cross-Origin Resource
+                        Sharing, and is a mechanism that allows resources on a web page, to be
+                        requested from another domain outside their own.
+                        CORS allows servers to specify who can access the assets on the server,
+                        among many other things. It defines a way of how a browser and server, can
+                        interact to determine whether it is safe to allow the cross-origin request.
+                        The opposite of cross-origin requests is same-origin requests, this means a
+                        web page can only interact with other documents on the same server: <code>&lt;script
+                            crossorigin=<em>"anonymous|use-credentials"</em>></code>
+                        { <em>anonymous</em> - A cross-origin request is performed, and no
+                        credentials are sent. | <em>use-credentials</em> - A cross-origin request is
+                        performed, credentials are sent (e.g. a cookie, a certificate, a HTTP Basic
+                        authentication). }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>integrity</strong></dt>
+                    <dd>The integrity attribute represents the integrity metadata used in
+                        Subresource Integrity checks, for requests which this element is responsible
+                        for, the value is text. It allows a browser to check the fetched script, to
+                        ensure that the code is never loaded if the source has been manipulated.
+                        Subresource Integrity (SRI) is a W3C specification, that allows web
+                        developers to ensure resources hosted on third-party servers have not been
+                        altered - Use of SRI is recommended. When using SRI, the webpage holds the
+                        hash, and the server holds the file, the browser downloads the file, then
+                        checks it, to make sure it is a match with the hash in the integrity
+                        attribute.
+                        If it matches, the file is used, and if not, the file is blocked; you can
+                        use an online <a target="_blank" href="https://www.srihash.org/">SRI hash
+                            generator</a> to generate integrity hashes.
+                        <br/>The integrity attribute must not be specified when the <em>src</em>
+                        attribute is not specified: <code>&lt;script
+                            integrity=<em>"value"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>referrerpolicy</strong></dt>
+                    <dd>The referrerpolicy attribute is a referrer policy attribute, its purpose is
+                        to set the referrer policy used when fetching the script, and any scripts
+                        imported from it: <code>&lt;script referrerpolicy=<em>"no-referrer-when-downgrade|no-referrer|origin|origin-when-cross-origin|same-origin|strict-origin|strict-origin-when-cross-origin|unsafe-url</em>></code>
+                        { <em>no-referrer-when-downgrade</em> (Default) - Sends the origin, path and
+                        query string if protocol security level the same or is higher; and sends
+                        nothing to less secure level (HTTPS to HTTP is not ok). |
+                        <em>no-referrer</em> - No referrer information is sent. | <em>origin</em> -
+                        Sends the origin (scheme, host and port) of the document. | <em>origin-when-cross-origin</em>
+                        - Sends the origin of the document for cross-origin request, and sends the
+                        origin, path and query string for same-origin request.
+                        | <em>same-origin</em> - Sends a referrer for same-origin request, and sends
+                        no referrer for cross-origin request. |
+                        <em>strict-origin-when-cross-origin</em> - Sends the origin if protocol
+                        security level the same or is higher; and sends nothing to less secure level
+                        (HTTPS to HTTP). | <em>unsafe-url</em> - Sends the origin, path and query
+                        string regardless of security - Use this value carefully. }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>blocking</strong></dt>
+                    <dd>The blocking attribute is a blocking attribute, it specifies Whether the
+                        element is potentially render-blocking.[]
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>fetchpriority</strong></dt>
+                    <dd>The fetchpriority attribute is a fetch priority attribute, its purpose is to
+                        set the priority used when fetching the script (for fetches initiated by the
+                        element).[]
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>noscript Element - &lt;noscript></h4>
+            <p>Element defines alternate content/markup to be displayed for users that do not
+                support client-side scripts, or that have disabled scripts in their browser.
+                It represents nothing if scripting is enabled, but represents its children when
+                scripting is disabled.
+                The &lt;noscript> element can be used in both the &lt;head> and &lt;body> elements,
+                when inside &lt;head>, it can only contain &lt;link>, &lt;style> and &lt;meta>
+                elements:
+                <code>&lt;noscript>Your browser does not support JavaScript, or JavaScript is
+                    disabled (check your browser settings)! &lt;/noscript></code>
+            </p>
+
+            <h4>template Element - &lt;template></h4>
+            <p>Element is used to declare fragments of HTML that can be cloned and inserted in the
+                document by script, it defines a container for content that should be hidden when
+                page loads.
+                You can use the tag if you have HTML code you want to use over and over again, but
+                not until you ask for it. </p>
+
+            <h4>slot Element - &lt;slot></h4>
+            <p>Element defines a slot, it represents its assigned nodes, if any, and its contents
+                otherwise; it is typically used in a shadow tree.
+            <details>
+                <summary><b><em>slot Attributes</em></b></summary>
+                <dl>
+                    <dt><strong>name</strong></dt>
+                    <dd>The name attribute may contain any string value, it represents a slot's name
+                        (name of shadow tree slot). The name attribute is used to assign slots to
+                        other elements, it creates a named slot to which any element is assigned.
+                        If that element has a <em>slot</em> attribute whose value matches that name
+                        attribute's value. And the &lt;slot> element is a child of the shadow tree,
+                        whose root's host has that corresponding slot attribute value.
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>progress Element - &lt;progress></h4>
+            <p>Element represents the completion progress of a task, use the tag in conjunction with
+                <em>JavaScript</em>, to display the progress of a task.
+                The progress is either indeterminate, indicating progress being made but it is not
+                clear how much work remains.
+                Or the progress is a number in the range zero to a maximum, giving the fraction of
+                work that has so far been completed.
+                Always add &lt;label> tag for best accessibility practices.
+            <details>
+                <summary><b><em>progress Attributes</em></b> - Authors encouraged to include the
+                    <em>current and maximum</em> attribute values as text inside the element, so the
+                    progress is made available to users of legacy user agents.
+                </summary>
+                <dl>
+                    <dt><strong>value</strong></dt>
+                    <dd>The value attribute specifies how much of the task has been completed, as a
+                        floating point number that specifies the task completion. If present, it
+                        must have a value equal to or greater than zero, and less than or equal to
+                        the value of the <em>max</em> attribute, if present, or 1.0 otherwise:
+                        <code>&lt;progress value=<em>"value"</em>></code>
+                        - To make a determinate progress bar, add a value attribute with the current
+                        progress, and to make an indeterminate progress bar, remove the value
+                        attribute.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>max</strong></dt>
+                    <dd>The max attribute specifies how much work the task requires in total (the
+                        upper bound of range), it must have a floating point number value greater
+                        than zero; the default is 1: <code>&lt;progress max=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+        </section>
+
+        <section><h3>HTML Plug-ins</h3>
+            <p>Plug-ins are computer programs that extend the standard functionality of the browser.
+                The term <em><b>plugin</b></em> refers to an implementation-defined set of content
+                handlers, used by the user agent;
+                and that can take part in the user agent's rendering of a <strong>Document
+                    object</strong>.
+                <br/>Plug-ins were designed to be used for many different purposes:
+            <ul>
+                <li>To run <strong>Java applets</strong> - <em>Most browsers no longer support Java
+                    Applets and Plug-ins.</em></li>
+                <li>To display <strong>maps</strong></li>
+                <li>To <strong>scan for viruses</strong></li>
+                <li>To run <strong>Microsoft ActiveX controls</strong> - <em>ActiveX controls are no
+                    longer supported in any browsers.</em></li>
+                <li>To <strong>verify a bank id</strong></li>
+                <li>To display <strong>Flash movies</strong> - <em>The support for Shockwave Flash
+                    has also been turned off in modern browsers.</em></li>
+            </ul>
+            Typically such content handlers are provided by third parties, though a user agent can
+            also designate built-in content handlers as plugins.
+            </p>
+
+            <h4>object Element - &lt;object></h4>
+            <p>Element defines an embedded object, it is a container for an external resource, and
+                is supported by all browsers;
+                it also supports dimension attributes.
+                The external resource can be a <i>web page, a picture, a media player or a plug-in
+                    application</i>.
+                Plug-ins are computer programs that extend the standard functionality of the
+                browser, and have been used for many different purposes.
+                The &lt;object> tag was originally designed to embed browser Plug-ins (like <i>Java
+                    applets, PDF readers and Flash Players</i>) in web pages.
+                It can also be used to include images, video and HTML in HTML if you like.
+                To embed a picture, it is better to use the &lt;img> tag, for video or audio, it is
+                better to use the &lt;video> and &lt;audio> tags.
+                And, to embed HTML, it is better to use the &lt;iframe> tag.
+            <details>
+                <summary><b><em>object Attributes</em></b> - The <em>data</em> attribute specifies
+                    the URL of the resource, and it must be present.
+                </summary>
+                <dl>
+                    <dt><strong>data</strong></dt>
+                    <dd>The data attribute specifies the URL (the address) of the resource, it must
+                        be present, and contain a valid non-empty URL potentially surrounded by
+                        spaces: <code>- object data=<em>"value"</em>></code>
+                        { Possible values: <em>Absolute URL</em> - Points to data on another web
+                        site, like: <code>href="http://www.website.com/images/animage.jpg"</code> |
+                        <em>Relative URL</em> - Points to data within a web site, like: <code>href="localimage.jpg"</code>
+                        }
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>type</strong></dt>
+                    <dd>The type attribute specifies the Internet media type of the object, the
+                        attribute must be a valid MIME type string: <code>&lt;object type=<em>"value"</em>></code>
+                        - Look at <a target="_blank"
+                                     href="http://www.iana.org/assignments/media-types/">IANA Media
+                            Types</a>, for a complete list of standard media types.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>name</strong></dt>
+                    <dd>The name attribute specifies the name of an &lt;object> element, it must be
+                        a valid navigable target name. The attribute is used for referencing an &lt;object>
+                        element in JavaScript; an alternative, is to reference it by using its <em>id</em>
+                        attribute: <code>&lt;object name=<em>"value"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>form</strong></dt>
+                    <dd>The form attribute is used to explicitly associate the object element with
+                        its form owner, it specifies the form the object belongs to. The value of
+                        this attribute must be equal to the <em>id</em> attribute of a &lt;form>
+                        element in the same document: <code>&lt;object form=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>width</strong></dt>
+                    <dd>The width attribute specifies the width (horizontal dimension) of the
+                        object, in pixels (i.e. width="100"): <code>&lt;object
+                            width=<em>"value"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>height</strong></dt>
+                    <dd>The height attribute specifies the height (vertical dimension) of the
+                        object, in pixels (i.e. height="100"): <code>&lt;object
+                            height=<em>"value"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>typemustmatch</strong></dt>
+                    <dd>The typemustmatch attribute specifies whether the <em>type</em> attribute,
+                        and the actual content of the resource must match to be displayed: <code>&lt;object
+                            typemustmatch=<em>"true|false"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>usemap</strong></dt>
+                    <dd>The usemap attribute specifies the name of an image map (an image with
+                        clickable areas), to use with the object; using a hash character ("#") plus
+                        the name of the map element. The usemap attribute is associated with a &lt;map>
+                        element's name attribute, and creates a relationship between the object and
+                        the map: <code>&lt;object usemap=<em>"value"</em>></code></dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>param Element - &lt;param></h4>
+            <p>Element defines parameters for parameters or plugins invoked by &lt;object elements>,
+                it does not represent anything on its own.
+                The tag is supported in all major browsers, however, the file format defined in the
+                &lt;object> element may not be:
+                <code>&lt;object data="sounds.wav"> <em>&lt;param name="autoplay" value="true"></em>
+                    &lt;/object></code>
+            <details>
+                <summary><b><em>param Attributes</em></b> - Both the <em>name and value</em>
+                    attributes must be present, they may have any value.
+                </summary>
+                <dl>
+                    <dt><strong>name</strong></dt>
+                    <dd>The name attribute specifies the name of a &lt;param> element (name of the
+                        parameter), the value can be any name supported by the specified object. The
+                        attribute is used together with the <em>value</em> attribute, to specify
+                        parameters for the plugin specified with the &lt;object> element: <code>&lt;param
+                            name=<em>"value"</em>></code></dd>
+                </dl>
+                <dl>
+                    <dt><strong>value</strong></dt>
+                    <dd>The value attribute specifies the value of a &lt;param> element (gives the
+                        value of the parameter), the value can be any value supported by the
+                        specified object. This attribute is used together with the <em>name</em>
+                        attribute, to specify parameters for the plugin specified with the &lt;object>
+                        tag: <code>&lt;param value=<em>"value"</em>></code></dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>embed Element - &lt;embed></h4>
+            <p>Element provides an integration point, for an external application or interactive
+                content; such as a <i>web page, a picture, a media player or a plug-in
+                    application</i>.
+                The &lt;embed element also defines an embedded object within an HTML document, and
+                can be used to include HTML in HTML;
+                it can not contain alternative text.
+                It does not have a closing tag, and it also supports dimension attributes.
+                However, to display a picture, is better to use the &lt;img> tag, for video or
+                audio, it is better to use the &lt;video> and &lt;audio> tags.
+                And, to display HTML, it is better to use the &lt;iframe> tag.
+                The &lt;embed> element is supported in all major browsers, web browsers have
+                supported it for a long time.
+                However, it has not been a part of the HTML specification before <em>HTML5</em>.
+            <details>
+                <summary><b><em>embed Attributes</em></b> - If both the <em>type</em> and
+                    <em>src</em> attributes are present, the <em>type</em> attribute must specify
+                    the same type as the explicit Content-Type metadata of the resource given by the
+                    <em>src</em> attribute.
+                    If the global <em>itemprop</em> attribute is specified on an &lt;embed> element,
+                    then the <em>src</em> attribute must also be specified.
+                </summary>
+                <dl>
+                    <dt><strong>src</strong></dt>
+                    <dd>The src attribute gives the URL (the address) of the resource being
+                        embedded, it must contain a valid non-empty URL potentially surrounded by
+                        spaces: <code>&lt;embed src=<em>"value"</em>></code>
+                        {<em>Absolute URL</em> - Points to another web site, like: <code>href="http://www.website.com/hello.swf"</code>
+                        | <em>Relative URL</em> - Points to a file within a web site, like: <code>href="localhello.swf"</code>
+                        }
+                        - If both the <em>type</em> and <em>src</em> attributes are present, the
+                        type attribute must specify the same type as the explicit Content-Type
+                        metadata of the resource given by the src attribute. If the global <em>itemprop</em>
+                        attribute is specified on an &lt;embed> element, then the <em>src</em>
+                        attribute must also be specified.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>type</strong></dt>
+                    <dd>The type attribute specifies the Internet media type (formerly known as MIME
+                        type) of the embedded content/resource, the value must be a valid MIME type
+                        string. If present, this gives the MIME type by which the plugin to
+                        instantiate is selected.
+                        If both the <em>type</em> and <em>src</em> attributes are present, the type
+                        attribute must specify the same type as the explicit Content-Type metadata
+                        of the resource given by the src attribute: <code>&lt;embed
+                            type=<em>"value"</em>></code>
+                        - Look at <a target="_blank"
+                                     href="http://www.iana.org/assignments/media-types/">IANA Media
+                            Types</a>, for a complete list of standard media types.
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>width</strong></dt>
+                    <dd>The width attribute specifies the width (horizontal dimension) of the
+                        embedded content, in pixels (i.e. width="100"): <code>&lt;embed width=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>height</strong></dt>
+                    <dd>The height attribute specifies the height (vertical dimension) of the
+                        embedded content, in pixels (i.e. height="100"): <code>&lt;embed height=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h5>&lt;applet></h5>
+            <p>Defines an embedded applet - Not supported in HTML5, use <em>&lt;embed> or &lt;object></em>
+                instead.</p>
+        </section>
+
+        <section><h3>Programming - Microdata</h3>
+            <h4>data Element - &lt;data></h4>
+            <p>Element adds a <em>machine-readable translation</em> of a given content, and
+                represents its contents; along with a machine-readable form of those contents in the
+                <em>value</em> attribute.
+                The element can also, be used in conjunction with scripts in the page, for when a
+                script has a literal value to store alongside a human-readable value.
+                In such cases, the format to be used depends only on the needs of the script; the
+                global <em>data-*</em> attributes can also be useful in such situations.
+                If the content is time- or date-related, use the &lt;time> element instead.
+            <details>
+                <summary><b><em>data Attributes</em></b> - The <em>value</em> attribute must be
+                    present, and its value must be a representation of the element's contents in a
+                    machine-readable format.
+                </summary>
+                <dl>
+                    <dt><strong>value</strong></dt>
+                    <dd>The value attribute specifies the machine-readable translation of the
+                        content of the element: <code>&lt;data value=<em>"value">Content to
+                            Translate</em>&lt;/data></code></dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>time Element - &lt;time></h4>
+            <p>Element defines a specific time (or datetime), along with a <em>machine-readable
+                form</em> of those contents in the <em>datetime</em> attribute.
+                The kind of content is limited to various kinds of <i>dates, times, time-zone
+                    offsets and durations</i>.
+                The format used "on the wire" (i.e. HTML markup or form submissions), is intended to
+                be computer-readable and consistent; irrespective of a user's locale.
+                A date for instance, is always written in the format <em>"YYYY-MM-DD"</em>, as in
+                "2003-02-01", some users might see this format;
+                others may see <i>"01.02.2003" or "February 1, 2003"</i>.
+            <details>
+                <summary><b><em>time Attributes</em></b> - A &lt;time> element that does not have a
+                    <em>datetime</em> attribute, must not have any element descendants.
+                </summary>
+                <dl>
+                    <dt><strong>datetime</strong></dt>
+                    <dd>The datetime attribute represent a machine-readable format of a &lt;time>
+                        element. Is used translate time into a machine-readable format, so browsers
+                        can add date reminders through a user's calendar, and search engines can
+                        produce smarter results.
+                        A &lt;time> element that does not have a datetime attribute, must not have
+                        any element descendants: <code>&lt;time datetime=<em>"YYYY-MM-DDThh:mm:ssTZD|YYYY-W|PTDHMS"</em>></code>
+                        { <em>YYYY</em> - A year: <code>datetime=<em>"2010"</em></code> |
+                        <em>MM</em> - A month: <code>datetime=<em>"2010-12"</em></code> |
+                        <em>DD</em> - A day of the month (can also be a valid yearless date string):
+                        <code>datetime=<em>"2010-12-22|12-20"</em></code>
+                        | <em>T or a space</em> - Is a separator, required if the time is also
+                        specified: <code>datetime=<code>"2011-11-18T14:54:39.929|1914-12-20
+                            08:30:45.687"</code></code> | <em>hh</em> - An hour (e.g. 22 for
+                        10.00pm): <code>datetime=<em>"22:00"</em></code> | <em>mm</em> - In minutes:
+                        <code>datetime=<em>"22:40"</em></code> | <em>ss</em> - In seconds: <code>datetime=<em>"22:45:25|22:45:25.255"</em></code>
+                        | <em>TZD</em> - Time Zone Designator (Z denotes Zulu, also known as
+                        Greenwich Mean Time): <code>datetime=<em>"08:00-03:00|20:45:12Z"</em></code>
+                        - <em>W</em> - A valid week string (the week number) - <code>datetime=<em>"2011-W15"</em></code>
+                        - <em>P</em> - A prefix for "Period", witch is a duration: <em>D</em> - a
+                        prefix for "Days" (the number of days): <code>datetime=<em>"P2D"</em></code>
+                        | <em>T or a space</em> - Is a separator, required if the time is also
+                        specified: <code>datetime=<em>"PT15H10M22S"</em></code> | <em>H</em> - a
+                        prefix for "Hours": <code>datetime=<em>"PT2H"</em></code> | <em>M</em> - a
+                        prefix for "Minutes": <code>datetime=<em>"PT20M"</em></code> | <em>S</em> -
+                        a prefix for "Seconds" <code>datetime=<em>"PT15S"</em></code> }
+                    </dd>
+                </dl>
+            </details>
+            </p>
+        </section>
+
+    </section>
+
+    <section><h3>HTML Graphics - Canvas</h3>
+        <p>The HTML &lt;canvas> element can be used to draw graphics on a web page.
+            A canvas is a rectangular area on an HTML page, by default, a canvas has no border and
+            no content.
+            Canvas has several methods for drawing <i>paths, boxes, circles, text and adding
+                images</i>.
+            The &lt;canvas> element is only a container for graphics, you must use
+            <em><b>JavaScript</b></em> to actually draw the graphics.
+        </p>
+        <h4>canvas Element - &lt;canvas></h4>
+        <p>Element is used to draw graphics via scripting, it is only a container for graphics; you
+            must use JavaScript to actually draw graphics.
+            The &lt;canvas> element provides scripts with a resolution-dependent bitmap canvas,
+            which can be used for rendering graphs, game graphics, art, or other visual images.
+            Canvas has several methods for drawing paths, boxes, circles, text and adding images.
+            Authors must also provide content that conveys essentially the same function or purpose
+            as the canvas's bitmap.
+            This content may be placed as content of the &lt;canvas> element, this content is the
+            element's fallback content.
+            Any text inside the element will be displayed in browsers when JavaScript is disabled,
+            and also in browsers that do not support the &lt;canvas> tag.
+            Always specify an <em>id</em> attribute to be referred to in a script, and to add a
+            border, use the <em>style</em> attribute.
+        <details>
+            <summary><b><em></em></b> - The canvas element has two attributes to control the size of
+                the element's bitmap, width and height; always specify a width and height attribute.
+            </summary>
+            <dl>
+                <dt>width</dt>
+                <dd>The width attribute specifies the width (horizontal dimension) of the &lt;canvas>
+                    element in pixels, the default value is 300:
+                    <code>&lt;canvas width=<em>"value"</em>></code></dd>
+            </dl>
+            <dl>
+                <dt>height</dt>
+                <dd>The height attribute specifies the height (vertical dimension) of the &lt;canvas>
+                    element in pixels, the default value is 150:
+                    <code>&lt;canvas height=<em>"value"</em>></code></dd>
+            </dl>
+        </details>
+        </p>
+
+        <h3>HTML Graphics - Scalable Vector Graphics (SVG)</h3>
+        <p>SVG stands for Scalable Vector Graphics, it defines vector-based graphics in
+            <strong>XML</strong> format.
+            SVG is used to define graphics for the Web, and is a W3C recommendation.
+            The HTML &lt;svg> element is a container for SVG graphics, and has several methods for
+            drawing <i>paths, boxes, circles, text and graphic images</i>.
+        </p>
+        <h4>svg Element - &lt;svg></h4>
+        <p>The &lt;svg> tag defines a container for SVG graphics, and has several methods for
+            drawing <i>paths, boxes, circles, text and graphic images</i>:
+            <code>&lt;svg width="200" height="100"> <em>SVG Content</em> &lt;/svg></code>
+        </p>
+        <h4>Differences Between SVG and Canvas</h4>
+        <p><em><b>SVG</b></em> is a language for describing 2D graphics in <em>XML</em>, while
+            <em><b>Canvas</b></em> draws 2D graphics, with a <em>JavaScript</em>.
+            Since SVG is XML based, this means every element is available within the <em>SVG
+                DOM</em>; you can then attach JavaScript event handlers for an element.
+            Each drawn shape is remembered as an object, and if the attributes of an SVG object are
+            changed, the browser can automatically re-render the shape.
+            <br/>Canvas is rendered pixel by pixel, once the graphic is drawn, it is forgotten by
+            the browser.
+            If its position should be changed, the entire scene needs to be redrawn, including any
+            objects that might have been covered by the graphic.
+        </p>
+        <table>
+            <caption>This table shows some important differences between <em><b>Canvas</b> and <b>SVG</b></em>:
+            </caption>
+            <tr>
+                <th>Canvas</th>
+                <th>SVG</th>
+            </tr>
+            <tr>
+                <td>Resolution dependent</td>
+                <td>Resolution independent</td>
+            </tr>
+            <tr>
+                <td>No support for event handlers</td>
+                <td>Support for event handlers</td>
+            </tr>
+            <tr>
+                <td>Poor text rendering capabilities</td>
+                <td>Best suited for applications with large rendering areas (like Google Maps)</td>
+            </tr>
+            <tr>
+                <td>You can save the resulting image as .png or .jpg</td>
+                <td>Slow rendering if complex, as anything that uses the DOM a lot will be slow</td>
+            </tr>
+            <tr>
+                <td>Well suited for graphic-intensive games</td>
+                <td>Not suited for game applications</td>
+            </tr>
+        </table>
+    </section>
+
+</main>
+<hr>
+<footer>
+    <nav>
+        <a href="index.html">Main-Webpage</a> |
+        <a href="html_basics.html">1. HTML Basics: Elements and Attributes</a> |
+        <a href="formatting_and_css.html">2. HTML Formatting and Style(CSS)</a> |
+        <a href="tables_and_input.html">3. HTML Tables and Input</a> |
+        <a href="embedded_content_and_apis.html">4. HTML Embedded Content and APIs</a> | &emsp; | -
+        <a href="history.html">The History of HTML</a> - | <br/> &#9635; ||
+        <a href="#">Web Accessibility - <i>{Coming Soon}</i></a> |
+        <a href="#">HTML Graphics - SVG and Canvas - <i>{Coming Soon}</i></a> || &#9635; ||
+        <a href="#">CSS - <i>{Coming Soon}</i></a> |
+        <a href="#">Javascript and HTML DOM - <i>{Coming Soon}</i></a> || &#9635;
+    </nav>
+    <hr>
+    <p><strong>Note:</strong> In particular, familiarity with the basics of DOM is necessary for a
+        complete understanding of some of the more technical parts.
+        An understanding of Web IDL, HTTP, XML, Unicode, character encodings, JavaScript, and CSS
+        will also be helpful in places but is not essential.
+    </p>
+    <p>This HTML Web Site was created by: <br/> <em>Stefano DeRose</em> <br/>
+        <br/> <em><strong>Site References:</strong> </em> <br/>
+        <cite>
+            <a href="https://www.w3schools.com/html/default.asp">W3Schools.com - HTML Tutorial</a>
+            <br/>
+            <a href="https://html.spec.whatwg.org/multipage/">HTML - Living Standard</a>
+        </cite>
+    </p>
+</footer>
+
+</body>
+</html>
