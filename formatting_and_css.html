@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Hyper Text Markup Language - 2. Formatting and Style (CSS)</title>
+    <link rel="icon" type="image/x-icon" href="page_icon.ico">
+</head>
+
+<body><h1>Hyper Text Markup Language (HTML): 2. Formatting and Style (CSS)</h1> - Follows the latest
+standard: <em>HTML5</em>
+<nav>
+    <hr>
+    <a href="HTML.html">Main-Webpage</a> |
+    <a href="HTML Basics.html">1. HTML Basics: Elements and Attributes</a> |
+    <a href="Formatting and Style (CSS).html">2. HTML Formatting and Style(CSS)</a> |
+    <a href="Tables and Input.html">3. HTML Tables and Input</a> |
+    <a href="Embedded Content and APIs.html">4. HTML Embedded Content and APIs</a> | &emsp; | -
+    <a href="History.html">The History of HTML</a> - | <br/> &#9635; ||
+    <a href="#">Web Accessibility - <i>{Coming Soon}</i></a> |
+    <a href="#">HTML Graphics - SVG and Canvas - <i>{Coming Soon}</i></a> || &#9635; ||
+    <a href="#">CSS - <i>{Coming Soon}</i></a> |
+    <a href="#">Javascript and HTML DOM - <i>{Coming Soon}</i></a> || &#9635;
+</nav>
+<hr>
+
+<main><h2>Semantic and Style Elements</h2>
+    <section><h3>Semantic Elements</h3>
+        <p>Elements in the DOM represent things, they have intrinsic meaning, also known as <em>semantics</em>.
+            <i>Elements, attributes and attribute values</i> in HTML are defined to have certain
+            semantics or meanings.
+            In HTML there are semantic elements that can be used to define different parts of a web
+            page.
+            These definitions allow HTML processors, such as <i>web browsers or search engines</i>,
+            to present and use documents and applications in a wide variety of contexts.
+        <ul>
+            <li><em>Semantic Elements</em> - A semantic element clearly describes its
+                meaning/content to both the browser and the developer;
+                some semantic elements include: <em>&lt;main>, &lt;summary> and &lt;article></em>
+            </li>
+            <li><em>Non-Semantic Elements</em> - Non-semantic elements, tell/represent nothing about
+                its content, some examples of non-semantic elements are:
+                &lt;div> and &lt;span>
+            </li>
+        </ul>
+        Authors must not use <i>elements, attributes or attribute values</i> for purposes other than
+        their appropriate intended semantic purpose, as doing so prevents software from correctly
+        processing the page.
+        According to the W3C: <cite>"A semantic Web allows data to be shared and reused across
+            applications, enterprises, and communities."</cite>
+        </p>
+        <aside><h4>Block and Inline Elements</h4>
+            <p>Every HTML element has a default display value, depending on what type of element it
+                is; there are two display values, <em><b>block</b> and <b>inline</b></em>:
+            <ul>
+                <li><strong>Block-level Elements</strong> - A block-level element always starts on a
+                    new line, and browsers automatically add some space (a margin) before and after
+                    the element.
+                    A block-level element always takes up the full width available, as it stretches
+                    out to the left and right as far as it can.
+                    The block-level elements in HTML are the following: <em><b>&lt;address> &lt;article>
+                        &lt;aside> &lt;blockquote> &lt;canvas> &lt;dd> &lt;div>
+                        &lt;dl> &lt;dt> &lt;fieldset> &lt;figcaption> &lt;figure> &lt;footer> &lt;form>
+                        &lt;h1>-&lt;h6> &lt;header> &lt;hr> &lt;li> &lt;main>
+                        &lt;nav> &lt;noscript> &lt;ol> &lt;p> &lt;pre> &lt;section> &lt;table> &lt;tfoot>
+                        &lt;ul> &lt;video></b></em>
+                </li>
+                <li><strong>Inline Elements</strong> - An inline element does not start on a new
+                    line, and will only take up as much width as necessary; it cannot contain a
+                    block-level element.
+                    The inline elements in HTML are the following: <em><b>&lt;a> &lt;abbr> &lt;acronym>
+                        &lt;b> &lt;bdo> &lt;big> &lt;br> &lt;button> &lt;cite>
+                        &lt;code> &lt;dfn> &lt;em> &lt;i> &lt;img> &lt;input> &lt;kbd> &lt;label>
+                        &lt;map> &lt;object> &lt;output> &lt;q> &lt;samp> &lt;script>
+                        &lt;select> &lt;small> &lt;span> &lt;strong> &lt;sub> &lt;sup> &lt;textarea>
+                        &lt;time> &lt;tt> &lt;var></b></em>
+                </li>
+            </ul>
+            </p>
+
+        </aside>
+
+        <h4>h1, h2, h3, h4, h5 and h6 Elements - &lt;h1> &lt;h2> &lt;h3> &lt;h4> &lt;h5>
+            &lt;h6></h4>
+        <p>These elements represent <i>headings</i> for their sections, and have a rank (heading
+            level) given by the number in their name;
+            the level corresponds to levels of nested sections.
+            The <em>&lt;h1></em> element defines the most important heading, and <em>&lt;h6></em>
+            the least; browsers automatically add whitespace (margin) before and after a heading.
+            <br/> <b><em>Headings Are Important</em></b> - Users often skim a page by its headings,
+            and search engines use the headings to index the structure and content of web pages;
+            is important to use headings to show the document structure.
+            User agents are encouraged to expose page outlines to users to aid in navigation, this
+            is especially true for non-visual media, e.g. screen readers.
+            Use HTML headings for headings only, don't use them to make text big or bold.
+        </p>
+
+        <h4>hgroup Element - &lt;hgroup></h4>
+        <p>Element is used to group a set of <em>&lt;h1>–&lt;h6></em> elements when the heading has
+            multiple levels, such as <i>subheadings, alternative titles or taglines</i>.
+            The element may be used to group an &lt;h1>–&lt;h6> element with one or more
+            <em>&lt;p></em> elements containing content representing a <i>subheading, alternative
+                title or tagline</i>.
+            Other &lt;h1>–&lt;h6> elements of heading content in the &lt;hgroup> element indicate
+            <i>subheadings, subtitles or alternative titles</i>.
+        </p>
+
+        <h4>p Element - &lt;p></h4>
+        <p>Element represents a paragraph, a paragraph always starts on a new line and usually is a
+            block of text;
+            browsers add some whitespace (margin) before and after a paragraph.
+        </p>
+
+        <h4>hr Element - &lt;hr></h4>
+        <p>Element defines a thematic break in an HTML page, is used to separate content or define a
+            change in an HTML page - the HTML <em><b>Horizontal Rule</b></em>.
+        </p>
+
+        <h4>main Element - &lt;main></h4>
+        <p>Element specifies the main content of a document, each &lt;main> element must be a <em>hierarchically
+            correct</em> main element.
+            A <strong>hierarchically correct</strong> main element is one whose <em>ancestor
+                elements</em> are limited to <i>html, body, div, form (without an accessible name)
+                and autonomous custom elements</i>.
+            The element should not be a descendant of: <em>&lt;article>, &lt;aside>, &lt;footer>,
+                &lt;header> or &lt;nav></em>.
+            A document must not have more than one &lt;main> element that does not have the <em>hidden</em>
+            attribute specified.
+            The content inside the &lt;main> element should be unique to the document, and should
+            not contain any content repeated across documents such as <i>sidebars, navigation links,
+                copyright information, site logos and search forms</i>.
+        </p>
+
+        <h4>header Element - &lt;header></h4>
+        <p>Element represents a group of introductory or navigational aids, and is intended to
+            usually contain the section's heading, but is not required.
+            The &lt;header> element can also be used to <i>wrap a section's table of contents,
+                authorship information, a search form or any relevant logos</i>.
+        </p>
+
+        <h4>footer Element - &lt;footer></h4>
+        <p>Element represents a footer for its nearest <em>ancestor sectioning content or sectioning
+            root element</em>.
+            A footer typically contains information about its section such as <i>who wrote it, links
+                to related documents, copyright data and the like</i>.
+            When the &lt;footer> element contains entire sections, they represent <i>appendices,
+                indexes, long colophons, verbose license agreements and other such content</i>.
+        </p>
+
+        <h4>section Element - &lt;section></h4>
+        <p>Element represents a section in a document, a thematic grouping of content; typically
+            with a heading.
+            A general rule is that the section element is appropriate only if the element's contents
+            would be listed explicitly in the document's outline.
+            Examples of sections would be <i>chapters, various tabbed pages in a tabbed dialog box
+                or the numbered sections of a thesis</i>.
+            A web site's home page could be split into sections for an <i>introduction, news items
+                and contact information</i>.
+        </p>
+
+        <h4>article Element - &lt;article></h4>
+        <p>Element defines an article or self-contained independent item of content.
+            When article elements are nested, the <em>inner article</em> elements represent articles
+            that are in principle related to contents of the <em>outer article</em>.
+        </p>
+
+        <h4>aside Element - &lt;aside> </h4>
+        <p>Element defines content that consists of content tangentially related to the content
+            around the element's content, and which could be considered separate from that content.
+            Can be used for typographical effects like <i>pull quotes or sidebars for advertising,
+                groups of nav elements and other content considered separate from the main
+                content</i>.
+        </p>
+
+        <section><h4><big><em>Interactive Elements</em></big></h4>
+            <h4>details Element - &lt;details></h4>
+            <p>Element represents a disclosure widget from which the user can obtain additional
+                information or controls, that the user can view or hide;
+                by default the widget is closed.
+                When open it expands and displays the content within, any sort of content can be put
+                inside.
+                The &lt;summary> element child of the element, if any, represents the <i>summary or
+                    legend</i> of the details;
+                the rest of element's contents represents the <i>additional information or
+                    controls</i>.
+            <details>
+                <summary><b><em>details Attributes</em></b></summary>
+                <dl>
+                    <dt><strong>open</strong></dt>
+                    <dd>The open content attribute is a <em>boolean attribute</em>, if present,
+                        indicates that both the summary and additional information is to be shown to
+                        the user:
+                        <code>&lt;details <em>open</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+            <h4>summary Element - &lt;summary></h4>
+            <p>Element represents a <i>summary caption or legend</i> for the rest of the contents of
+                the summary element's parent details element.
+                The tag defines a visible heading for the details element, the heading can be
+                clicked to view/hide details;
+                it should be the first child element of the details element.
+            </p>
+
+            <h4>dialog Element - &lt;dialog></h4>
+            <p>Element represents a transitory part of an application, in the form of a small window
+                (dialog box), which the user interacts with to perform a task or gather information.
+                Once the user is done, the dialog can be automatically closed by the application, or
+                manually closed by the user.
+                Especially for modal dialogs (a familiar pattern across applications), authors
+                should ensure dialogs behave familiar to users of <i>non-web applications</i>.
+                Authors should use the <em>autofocus</em> attribute on the descendant element of the
+                dialog that the user is expected to immediately interact with after the dialog
+                opens.
+                Another important aspect of user behavior is whether dialogs are scrollable or not,
+                in some cases, overflow
+                (thus scroll-ability) cannot be avoided, e.g., when caused by user's high text zoom
+                settings.
+                Adding large text nodes directly to dialog elements is particularly bad, as it is
+                likely to cause the dialog element to overflow - are best off avoiding them.
+            <details>
+                <summary><b><em>dialog Attributes</em></b></summary>
+                <dl>
+                    <dt><strong>open</strong></dt>
+                    <dd>The open attribute is a <em>boolean attribute</em>, when specified indicates
+                        the dialog element is active and that the user can interact with it:
+                        <code>&lt;dialog <em>open</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+        </section>
+
+        <section><h3>Non-Semantic Elements</h3>
+            <h4>div Element - &lt;div></h4>
+            <p>Element defines a section in a document, it has no special meaning, but represents
+                its children;
+                it is used as a container for HTML elements.
+                By default, browsers place a line break before and after the element;
+                are strongly encouraged to view as an element of last resort, when no other element
+                is suitable.
+                Use of more appropriate elements instead of the &lt;div> element leads to better
+                accessibility for readers and easier maintainability for authors.
+                On the other hand, &lt;div> elements can be useful for stylistic purposes or to wrap
+                paragraphs within a section that are annotated a similar way.
+                Is then styled with <em>CSS</em> or manipulated with <em>JavaScript</em>, it is
+                easily styled by using the <em>class or id</em> attributes.
+            </p>
+
+            <h4>span Element - &lt;span></h4>
+            <p>Element defines a section in a document, and it doesn't mean anything on its own, but
+                represents its children.
+                Can be useful when used together with the <em>global attributes</em>, and the &lt;span>
+                tag is also easily styled by <em>CSS</em> or manipulated with <em>JavaScript</em>
+                using <em>class or id</em> attributes.
+                Is much like the <em>&lt;div></em> element, but &lt;div> is a <em><b>block-level</b></em>
+                element, and &lt;span> an <em><b>inline element</b></em>;
+                it is an inline container used to mark up part of a text or document.
+            </p>
+        </section>
+
+    </section>
+
+    <section><h2>Text Formatting and Semantics</h2>
+        <p>HTML contains several elements for defining text with a special meaning.
+            <em><b>Phrasing content</b></em> is the text of the document, as well as elements that
+            mark up that text at the <em>intra-paragraph</em> level.
+            Most elements categorized as <em>phrasing content</em>, can only contain elements that
+            are themselves categorized phrasing content.
+        </p>
+
+        <h4>b Element - &lt;b></h4>
+        <p>Element specifies bold text, and is a text to which attention is being drawn; such as <i>key
+            words, product names, article lede or actionable words in text-driven software</i>.
+        </p>
+
+        <h4>bdi Element - &lt;bdi></h4>
+        <p>Element isolates a part of text that might be formatted in a different direction from
+            other text outside it, <em>BDI</em> stands for "<strong><em>Bi-Directional
+                Isolation</em></strong>".
+            This element is especially useful when embedding user-generated content, with an unknown
+            directionality.
+            The global <em>dir</em> attribute, defaults to auto on this element, and never inherits
+            from the parent element like with other elements.
+        </p>
+        <h4>bdo Element - &lt;bdo></h4>
+        <p>Element represents explicit text directionality formatting control for its children, <em>BDO</em>
+            stands for "<em><b>Bi-Directional Override</b></em>".
+            It allows authors to override the <em>Unicode bidirectional algorithm</em>, by
+            explicitly specifying a direction override.
+        <details>
+            <summary><b><em>bdo Attributes</em></b> - Authors must specify the global <em>dir</em>
+                attribute, with the value ltr to specify left-to-right override, and rtl to specify
+                right-to-left override;
+                the auto value must not be specified.
+            </summary>
+            <dl>
+                <dt><strong>dir</strong> - (Required)</dt>
+                <dd>Specifies the direction of text inside the &lt;bdo> element: <code>&lt;bdo
+                    dir=<em>"value"</em>></code>
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <h4>em Element - &lt;em></h4>
+        <p>Element defines emphasized text, typically displayed in italic; placement of stress
+            emphasis changes meaning of the sentence, thus it forms an integral part of the content.
+            The level of stress a piece of content has is given by its number of ancestor &lt;em>
+            elements;
+            way in which stress is used in this way depends on the language.
+            A <i>screen reader</i> will pronounce the words in emphasis, using verbal stress.
+        </p>
+
+        <h4>i Element - &lt;i></h4>
+        <p>Element defines a part of text in an alternate voice or mood, the content inside is
+            typically displayed in italic.
+            The tag is often used to indicate a <i>technical term, phrase from another language,
+                thought, name, etc</i>.
+            Terms in languages different from the main text, should be annotated with the global
+            <em>lang</em> attribute.
+        </p>
+
+        <h4>strong Element - &lt;strong></h4>
+        <p>Element represents <i>strong importance, seriousness or urgency</i> for its contents;
+            content inside is typically displayed in bold.
+            The relative level of importance of content is given by its number of ancestor &lt;strong>
+            elements;
+            each &lt;strong> element increases importance of its contents.
+        </p>
+
+        <h4>u Element - &lt;u></h4>
+        <p>Element defines span of text articulated and styled differently from normal text, such
+            as <i>misspelled words or proper names</i>;
+            content inside is typically displayed with an underline.
+            The default rendering in visual presentations clashes with conventional rendering of <i>hyperlinks</i>,
+            as both have underlining.
+            Authors are encouraged to avoid using the &lt;u> element, where it could be confused for
+            a hyperlink.
+        </p>
+        <aside><h3>Line Breaking & Whitespace Elements</h3>
+            <h4>br Element - &lt;br></h4>
+            <p>Element defines a line break (a new line) without starting a new paragraph, it is an
+                <em>empty element</em>, which means it has no end tag.
+                The &lt;br> element is useful when writing <i>addresses or poems</i>.
+            </p>
+
+            <h4>pre element - &lt;pre> </h4>
+            <p>Element represents a block of <i>preformatted text</i>, in which structure is
+                represented by typographic conventions rather than by elements.
+                The text is displayed in a fixed-width font (usually Courier), and preserves both
+                <i>spaces and line breaks</i>;
+                it is displayed as written in the HTML source code.
+                Authors are encouraged to consider how preformatted text will be experienced, as
+                will be the case for users of <i>speech synthesizers, braille displays and the
+                    like</i>.
+            </p>
+
+            <h4>wbr Element - &lt;wbr></h4>
+            <p>Element defines a possible line-break, a '<em>Word Break Opportunity</em>', the tag
+                specifies where in a text it would be ok to add a line-break.
+                When a word is too long, the browser might break it at the wrong place; you can use
+                the &lt;wbr> element to add word break opportunities.
+            </p>
+        </aside>
+
+        <section><h3>Quotation and Citation</h3>
+            <h4>abbr Element - &lt;abbr></h4>
+            <p>Element defines an abbreviation or an acronym, optionally with its expansion like <i>"HTML",
+                "CSS", "Mr.", "Dr.", "ASAP", "ATM"</i>.
+                The <em>title</em> attribute may be used to provide an expansion (a description) of
+                the abbreviation, when you mouse over the element.
+                Marking abbreviations can give useful information to <i>browsers, translation
+                    systems and search-engines</i>.
+            </p>
+
+            <h4>address Element - &lt;address></h4>
+            <p>Element defines contact information for the author/owner of a document or article,
+                and usually renders in italic;
+                browsers will add a line break before and after.
+                Element represents contact information for its nearest &lt;article> or &lt;body>
+                element ancestor.
+                The contact information can be an <i>email address, URL, physical address, phone
+                    number, social media handle, etc</i>.
+            </p>
+
+            <h4>blockquote Element - &lt;blockquote></h4>
+            <p>Element defines a section that is quoted from another source, a browsers will usually
+                indent &lt;blockquote> elements.
+            <details>
+                <summary><b><em>blockquote Attributes</em></b>
+                    - Content inside a blockquote quoted from another source, may be cited in the
+                    <em>cite</em> attribute.
+                </summary>
+                <dl>
+                    <dt><strong>cite</strong></dt>
+                    <dd>Specifies the source of the quotation, a link to the source of the quotation
+                        or more information about the edit:
+                        <code>&lt;blockquote cite=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>cite Element - &lt;cite></h4>
+            <p>Element defines the title of a work, and the element will usually render in italic.
+                It can be work quoted/referenced in detail (a citation), or it can be a work
+                mentioned in passing.
+            </p>
+
+            <h4>dfn Element - &lt;dfn></h4>
+            <p>Element specifies the defining instance of a term that is going to be defined within
+                the content.
+                The <i>paragraph, description list group or section</i> that is the nearest ancestor
+                of the &lt;dfn> element, also contains the definition(s) for the term given by the
+                element.
+                If the <em>title</em> attribute is present, it must contain only the term being
+                defined; the exact value of that attribute is the term being defined.
+                The term inside the &lt;dfn> tag can be with an &lt;abbr> tag, or with the
+                <em>id</em> attribute added.
+                Then, whenever a term is used, it can refer back to the definition with a link.[]
+            </p>
+
+            <h4>figure Element - &lt;figure></h4>
+            <p>Element specifies self-contained content (flow content), optionally with a caption
+                and typically referenced as a single unit from the main flow of the document.
+                The &lt;figcaption> element child of the element, if any, represents the caption of
+                the &lt;figure> element's contents.
+                When a figure is referred to from the main content by identifying it by its caption
+                (e.g., figure number), it enables such content to be easily moved away from that
+                primary content.
+                The element can thus be used to annotate <i>illustrations, diagrams, photos, code
+                    listings, etc</i>.
+            </p>
+            <h4>figcaption Element - &lt;figcaption></h4>
+            <p>Element represents a caption or legend for the contents of the element's parent &lt;figure>
+                element, and can contain additional information about the source.
+                The &lt;figcaption> element, can be placed as the first or last child of the &lt;figure>
+                element.
+            </p>
+
+            <h4>mark Element - &lt;mark></h4>
+            <p>Element defines run of text, marked or highlighted for reference purpose due to its
+                relevance in another context.
+                When used in the main prose of a document, it indicates part of the document that
+                has been highlighted due to its likely relevance to user's current activity.
+            </p>
+
+            <h4>q Element - &lt;q></h4>
+            <p>Element defines a short quotation or phrasing content from another source, browsers
+                normally insert quotation marks around the quotation
+                - Use the &lt;blockquote> element for long quotations.
+                Quotation punctuation, quoting contents of the element, must not appear immediately
+                before, after or inside of &lt;q> elements;
+                they will be inserted into the rendering by the user agent.
+            <details>
+                <summary><b><em>q Attributes</em></b>
+                    - Content inside a &lt;q> element quoted from another source, may be cited in
+                    the <em>cite</em> attribute.
+                </summary>
+                <dl>
+                    <dt><strong>cite</strong></dt>
+                    <dd>Specifies the source of the quote, a link to the source of the quotation or
+                        more information about the edit:
+                        <code>&lt;q cite=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>ruby Element - &lt;ruby></h4>
+            <p>Element defines a <em>ruby annotation</em>, it allows one or more spans of phrasing
+                content to be marked with ruby annotations.
+                <em><b>Ruby annotations</b></em> are short runs of text presented alongside base
+                text, and is primarily used in East Asian typography, as a guide for pronunciation
+                or to include other annotations.
+                This kind of annotation is often used in Japanese publications, in Japanese, this
+                form of typography is also known as <i>furigana</i>.
+                Use ruby together with &lt;rt> and &lt;rp> elements, the ruby element consists of
+                one or more characters that needs an explanation/pronunciation.
+                An &lt;rt> element gives that information, and an optional &lt;rp> tag, defines what
+                to show for browsers that do not support <em>ruby annotations</em>.
+                The &lt;ruby> element represents the union of the segments of base text it contains,
+                along with the mapping from those base text segments to annotation segments.
+                The &lt;ruby> and &lt;rt> elements can be used for a variety of kinds of
+                annotations, including in particular those described
+                <a target="_blank"
+                   href="https://html.spec.whatwg.org/dev/text-level-semantics.html#the-ruby-element">here
+                    - {the <em>ruby</em> element}</a>.
+            </p>
+            <h4>rt Element - &lt;rt> </h4>
+            <p>Element defines an explanation/pronunciation of characters for East Asian typography.
+                The element marks the ruby text component of a <em>ruby annotation</em>, when it is
+                the child of a &lt;ruby> element;
+                it doesn't represent anything itself.
+                Use the &lt;rt> tag together with &lt;ruby> and &lt;rp> elements, the &lt;ruby>
+                element consists of one or more characters that needs an explanation/pronunciation.
+                And an &lt;rt> element gives that information, an optional &lt;rp> element defines
+                what to show for browsers that do not support ruby annotations.
+            </p>
+            <h4>rp Element - &lt;rp></h4>
+            <p>Element can be used to provide parentheses or other content around a ruby text
+                component of a <em>ruby annotation</em>, to be shown by user agents that don't
+                support ruby annotations.
+                Use the &lt;rp> tag together with &lt;ruby> and &lt;rt> elements, the &lt;ruby>
+                element consists of one or more characters that needs an explanation/pronunciation.
+                An &lt;rt> element gives that information, and the optional &lt;rp> element defines
+                what to show for browsers that do not support ruby annotations.
+            </p>
+
+            <h4>small Element - &lt;small></h4>
+            <p>Element defines smaller text, represents side comments such as small print; it is
+                only intended for short runs of text.
+                Small print typically features <i>disclaimers, caveats, legal restrictions or
+                    copyrights</i>;
+                it is also sometimes used for <i>attribution, or licensing requirements</i>.
+            </p>
+
+            <h4>sub Element - &lt;sub></h4>
+            <p>Element defines <em>subscripted</em> text, the text appears half a character below
+                the normal line, and is sometimes rendered in a smaller font.
+                It can be used for <i>chemical formulas (H2O), and mathematical expressions</i> also
+                often use <em><b>subscripts</b> and <b>superscripts</b></em>
+                - Use the &lt;sup> tag to define <em>superscripted</em> text.
+            </p>
+            <h4>sup Element - &lt;sup></h4>
+            <p>Element defines <em>superscripted</em> text, the appears half a character above the
+                normal line, and is sometimes rendered in a smaller font.
+                In certain languages, <em><b>superscripts</b></em> are part of typographical
+                conventions for abbreviations.
+                Mathematical expressions also often use <em>subscripts and superscripts</em> - Use
+                the &lt;sub> tag to define <em>subscript</em> text.
+            </p>
+
+            <h5>&lt;acronym></h5>
+            <p>Element defines an acronym, the tag was used in HTML 4 to define an acronym - Not
+                supported in HTML5, use <em>&lt;abbr></em> instead.
+            </p>
+        </section>
+
+        <aside><h3>Computer Code Elements</h3>
+            <p>HTML contains several elements for defining user input and computer code.
+            </p>
+            <h4>code Element - &lt;code></h4>
+            <p>Element represents a fragment of computer code, the content inside is displayed in
+                the browser's default monospace font.
+            </p>
+
+            <h4>kbd Element - &lt;kbd></h4>
+            <p>Element defines user input, although it may also be used to represent other input
+                (eg: voice commands);
+                content inside is displayed in the browser's default monospace font.
+                When nested inside another &lt;kbd> element, it represents an <i>actual key, or
+                    other single unit of input</i> as appropriate for the input mechanism.
+            </p>
+
+            <h4>var Element - &lt;var></h4>
+            <p>Element represents a variable, and could be used in a <i>mathematical or programming
+                context, a constant, symbol, function parameter or term used as a placeholder in
+                prose</i>.
+                The content inside the &lt;var> element, is typically displayed in italic.
+            </p>
+
+            <h4>samp Element - &lt;samp></h4>
+            <p>Element represents sample/quoted output from another program or computing system, the
+                content is displayed in the browser's default monospace font.
+            </p>
+        </aside>
+
+        <section><h3>Document Edits</h3>
+            <h4>del Element - &lt;del></h4>
+            <p>Element defines text that has been deleted (a removal) from a document, browsers
+                usually strike a line through deleted text.
+            <details>
+                <summary><b><em>del Attributes</em></b>
+                    - The <em>cite</em> attribute may be used to specify a document, that explains
+                    the change; they are primarily intended for private use, and not readers.
+                </summary>
+                <dl>
+                    <dt><strong>cite</strong></dt>
+                    <dd>The source of the quotation or more information about the edit, that
+                        explains reason why the text was inserted/changed:
+                        <code>&lt;del cite=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>datetime</strong></dt>
+                    <dd>May be used to specify the date, and optionally a time, when the text was
+                        inserted or changed.
+                        If present, the datetime attribute's value, must be a valid date string with
+                        an optional time:
+                        <code>&lt;del datetime=<em>"YYYY-MM-DDThh:mm:ssTZD"</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>ins Element - &lt;ins></h4>
+            <p>Element defines text that has been inserted into a document (an addition), browsers
+                usually underline inserted text.
+            <details>
+                <summary><b><em>ins Attributes</em></b></summary>
+                <dl>
+                    <dt><strong>cite</strong></dt>
+                    <dd>The source of the quotation, or more information about the edit; this
+                        explains the reason why the text was inserted or changed:
+                        <code>&lt;ins cite=<em>"value"</em>></code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><strong>datetime</strong></dt>
+                    <dd>May be used to specify the date, and optionally a time, of when the text was
+                        inserted or changed.
+                        If present, the datetime attribute's value must be a valid date string with
+                        an optional time: <code>&lt;ins datetime=<em>"YYYY-MM-DDThh:mm:ssTZD"</em>></code>
+                    </dd>
+                </dl>
+            </details>
+            </p>
+
+            <h4>s Element - &lt;s></h4>
+            <p>Element defines text that is no longer <i>correct, accurate or relevant</i>; the text
+                will be displayed with a line through it in the browser's default monospace font.
+                Is not appropriate when indicating document edits, to mark a span of text as having
+                been removed from a document, use the &lt;del> element.
+            </p>
+
+            <h5>&lt;strike></h5>
+            <p>Element defines strikethrough text - Not supported in HTML5, use <em>&lt;del> or &lt;s></em>
+                instead.
+            </p>
+        </section>
+
+    </section>
+
+    <section><h2>Lists</h2>
+        <p>Lists allow web developers to group a set of related items in lists, the lists can also
+            be nested (a <i>list</i> inside of a list).
+        </p>
+        <h4>li Element - &lt;li></h4>
+        <p>Element represents a list item, if its parent element is an &lt;ol>, &lt;ul> or &lt;menu>
+            element, then the element is an item of the parent element's list, as defined for those
+            elements.
+            Otherwise, the item has no defined list-related relationship to any other &lt;li>
+            element.
+        <details>
+            <summary><b><em>li Attributes</em></b></summary>
+            <dl>
+                <dt><strong>value</strong></dt>
+                <dd>Is used to determine the ordinal value (start value) of the list item, when the
+                    &lt;li>'s tag list owner is an &lt;ol> element.
+                    The value attribute, if present, must be a valid integer; list items will
+                    increment from that number:
+                    <code>&lt;li value=<em>"value"</em>></code>
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <h3>Unordered HTML List</h3>
+        <p>An unordered list starts with the &lt;ul> tag, and each list item starts with the &lt;li>
+            tag.
+            The list items will be marked with bullets (small black circles) by default.
+        </p>
+        <h4>ul Element - &lt;ul> </h4>
+        <p>Element defines an unordered list, the items will be marked with bullets (small black
+            circles) by default;
+            items are the &lt;li> element child nodes of the element.
+        </p>
+
+        <h4>menu Element - &lt;menu></h4>
+        <p>Element is a semantic alternative to the &lt;ul> element, to express an unordered list of
+            commands, as a "toolbar";
+            list items will usually be displayed with bullet points.
+            Each of which represents a command the user can perform or activate, it is used for <i>context
+                menus, toolbars and listing form controls or commands</i>.
+        <details>
+            <summary><b><em>menu Attributes</em> </b></summary>
+            <dl>
+                <dt><strong>label</strong></dt>
+                <dd>Specifies a visible label for the menu, this attribute is often used to label
+                    nested menus (a menu within a menu):
+                    <code>&lt;menu label=<em>"value"</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>type</strong></dt>
+                <dd>Specifies which type of menu to display: <code>&lt;menu type=<em>"list|context|toolbar"</em>></code>
+                    { <em>list</em> - (Default) Specifies a list menu, a list of commands (&lt;li>
+                    elements).
+                    | <em>context</em> - Specifies a context menu, the menu must be activated before
+                    user can interact with commands.
+                    | <em>toolbar</em> - Specifies a toolbar menu, active commands, allows user to
+                    interact with commands immediately. }
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <h5>&lt;dir></h5>
+        <p>Element defines a directory list - Not supported in HTML5, use <em>&lt;ul></em> instead.
+        </p>
+
+        <h3>Ordered HTML List</h3>
+        <p>An ordered list starts with the &lt;ol> tag, and each list item starts with the &lt;li>
+            tag;
+            the list items will be marked with numbers by default.
+        </p>
+        <h4>ol Element - &lt;ol> </h4>
+        <p>Element defines an ordered list, where items are intentionally ordered as numerical or
+            alphabetical;
+            the items are &lt;li> element child nodes of the &lt;ol> element.
+        <details>
+            <summary><b><em>ol Attributes</em></b></summary>
+            <dl>
+                <dt><strong>reversed</strong></dt>
+                <dd>The reversed attribute is a <em>boolean attribute</em>, if present, it indicates
+                    that the list is a descending list
+                    (order should be reversed: 3, 2, 1): <code>&lt;ol <em>reversed</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>start</strong></dt>
+                <dd>The start attribute, if present, must be a valid integer; it is used to
+                    determine the starting value of the list.
+                    This value is always an integer, even when the numbering type is letters or
+                    roman;
+                    by default, an ordered list will start counting from 1: <code>&lt;ol start<em>"value"</em>></code>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>type</strong></dt>
+                <dd>The type attribute can be used to specify the kind of marker to use in the list,
+                    in cases where that matters
+                    (e.g. items are to be referenced by their number/letter).
+                    If specified, it must have a value that is identical to one of the characters
+                    given:
+                    <code>&lt;ol type=<em>"1|a|A|i|I"</em>></code> { <em>1</em> - Decimal numbers.
+                    | <em>a</em> - Lowercase latin alphabet. | <em>A</em> - Uppercase latin
+                    alphabet.
+                    | <em>i</em> - Lowercase roman numerals. | <em>I</em> - Uppercase roman
+                    numerals. }
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <h3>HTML Description Lists</h3>
+        <p>HTML also supports description lists, a description list is a list of terms, with a
+            description of each term.
+            The &lt;dl> tag defines the description list, the &lt;dt> tag defines the term (name)
+            and the &lt;dd> tag describes each term.
+        </p>
+        <h4>dl Element - &lt;dl></h4>
+        <p>Element defines a description/association list, a description list is a list of terms
+            with a description (name-value) for each.
+            A <em>name-value group</em> consists of one or more names (&lt;dt> elements), followed
+            by one or more values (&lt;dd> elements).
+            Within a single &lt;dl> element, there should not be more than one &lt;dt> element for
+            each name.
+            <em><b>Name-value groups</b></em> may be <i>terms and definitions, metadata topics and
+                values, questions and answers, or any other groups of name-value data</i>.
+        </p>
+        <h4>dt Element - &lt;dt></h4>
+        <p>Element defines the term or name of a description group in a description list (&lt;dl>
+            element).
+            The tag is used in conjunction with the &lt;dl> tag, witch defines a description list,
+            and &lt;dd> witch describes each term/name.
+        </p>
+        <h4>dd Element - &lt;dd></h4>
+        <p>Element represents the description, definition or value, part of a term-description or
+            name group in a description list (&lt;dl> element).
+            The tag is used in conjunction with &lt;dl>, witch defines a description list and &lt;dt>
+            witch defines terms/names.
+            Inside a &lt;dd> tag, you can put <i>paragraphs, line breaks, images, links, lists,
+                etc</i>.
+        </p>
+    </section>
+
+    <section><h2>Cascading Style Sheets (CSS)</h2>
+        <p>CSS stands for <em><b>Cascading Style Sheets</b></em>, it's the language used to style
+            HTML and describes how HTML elements should be displayed.
+            With CSS you can control <i>color, font, text size, spacing, elements position,
+                background images or colors, and much more</i>.
+            The word <em>cascading</em> means a style applied to a parent element, will also apply
+            to all children elements within the parent.
+            If color of the body text is set to "blue", all headings, paragraphs and other text
+            elements within the body, will also get the same color (unless specify something else).
+            CSS can save a lot of work, you can control the layout of multiple web pages at once,
+            including the layout and variations for different devices and screen sizes.
+            <br/> <strong>CSS is added to HTML documents in 3 ways:</strong>
+        </p>
+        <ol class="css-types">
+            <li> Inline - An inline CSS is used to apply a unique style to a single HTML element,
+                and uses the global <em>style</em> attribute on an HTML element:
+                <code>&lt;p style="color:red;">A red paragraph.&lt;/p> </code>
+                - <abbr style="color:red;">A red paragraph.</abbr> - The property is a CSS property,
+                and the value is a CSS value.
+            </li>
+            <li>Internal - An internal CSS is used to define a style for a single HTML page, using
+                the &lt;style> element, in the webpage's &lt;head> section:
+                <code>&lt;style> .css-types {list-style-type:upper-roman;
+                    background-color:lightblue} &lt;/style></code>
+                - This internal style is what changes our list type (using the <em>class</em>
+                attribute 'css-types') to ‘upper-roman’ characters, and gives it a ‘lightblue’
+                background.
+                <style>
+                    .css-types { list-style-type: upper-roman; background-color: lightblue }
+                </style>
+            </li>
+            <li>External - To use an external style sheet, add a &lt;link> Element in the &lt;head>
+                section of each HTML page;
+                to link to the external CSS file(s).
+                The most common way to add CSS is to keep the styles in external CSS files, the
+                external style sheet can be written in any text editor.
+                The file must not contain any HTML code, and must be saved with a
+                <em><b>.css</b></em> extension: <code>&lt;link rel="stylesheet"
+                    href="stylesheet.css"></code>
+                - External style sheets can also be referenced with a full URL or with a path
+                relative to the current web page.
+                With an external style sheet, you can change the look of an entire web site, by
+                changing one file.
+            </li>
+        </ol>
+        <table>
+            <caption><b><i>Some commonly used CSS properties</i></b></caption>
+            <tr>
+                <th>Property</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Defines the text color to be used.</td>
+            </tr>
+            <tr>
+                <td>font-family</td>
+                <td>Defines the font to be used.</td>
+            </tr>
+            <tr>
+                <td>font-size</td>
+                <td>Defines the text size to be used.</td>
+            </tr>
+            <tr>
+                <td>border</td>
+                <td>Defines a border around an HTML element.</td>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td>Defines a padding (space) between the text and the border.</td>
+            </tr>
+            <tr>
+                <td>margin</td>
+                <td>Defines a margin (space) outside the border.</td>
+            </tr>
+        </table>
+        <p><strong><em>The id and class Attributes</em></strong>
+            - The global <em>id</em> attribute is used to point to a specific style declaration, and
+            the global <em>class</em> attribute is often used to point to a class name in a style
+            sheet.
+        <ul>
+            <li><em>Syntax for id</em>: Write a <em>hash character (<b>#</b>)</em>, followed by an
+                <em>id name</em>;
+                then define the CSS properties within <em>curly braces <b>{}</b></em>: <code>#ElementId
+                    { <em>property1: value; property2: value;</em> }</code>
+            </li>
+            <li><em>Syntax for class</em>: Write a <em>period character (<b>.</b>)</em>, followed by
+                a <em>class name</em>;
+                then define the CSS properties within <em>curly braces <b>{}</b></em>: <code>.className
+                    { <em>property1: value; property2: value;</em> }</code>
+            </li>
+        </ul>
+        </p>
+
+        <h4>style Element - &lt;style></h4>
+        <p>Element is used to define style information (<em><b>CSS</b></em>) for a document, inside
+            of the &lt;style> element you specify how HTML elements should render.
+            It allows authors to embed CSS style sheets into their documents, the element does not
+            represent any content for the user.
+            When a browser reads a <em>style sheet</em>, it will format the HTML document according
+            to the information in the style sheet;
+            to link to an external style sheet, use the &lt;link> tag.
+            If properties have been defined for the same 'selector' (element), in different style
+            sheets; the value from the last read style sheet will be used.
+        </p>
+        <details>
+            <summary><b><em>style Attributes</em></b> - The <em>title</em> attribute on style
+                elements defines CSS style sheet sets.
+                The <em>title</em> attribute on style elements, like &lt;link>, will differ from the
+                <em>global title attribute</em>;
+                in that a style block without a title, does not inherit the title of the parent
+                element, it merely has no title.
+            </summary>
+            <dl>
+                <dt><strong>media</strong></dt>
+                <dd>The media attribute says which media/device the styles apply to or are optimized
+                    for, the value must be a valid <em>media query list</em>.
+                    This attribute is used to specify that the style is for special devices (like
+                    iPhone), speech or print media:
+                    <code>&lt;style media=<em>"value"</em></code>
+                    - The default, if this attribute omitted, is "all"; meaning by default styles
+                    apply to all media.
+                    <ul><strong>Devices:</strong>
+                        <li><em>all</em> - (Default) Suitable for all devices.</li>
+                        <li><em>aural</em> - Speech synthesizers.</li>
+                        <li><em>braille</em> - Braille feedback devices.</li>
+                        <li><em>handheld</em> - Handheld devices (small screen and limited
+                            bandwidth).
+                        </li>
+                        <li><em>projection</em> - Projectors.</li>
+                        <li><em>print</em> - Print preview mode/printed pages.</li>
+                        <li><em>screen</em> - Computer screens.</li>
+                        <li><em>tty</em> - Teletypes and similar media using a fixed-pitch character
+                            grid.
+                        </li>
+                        <li><em>tv</em> - Television type devices (low resolution and limited scroll
+                            ability).
+                        </li>
+                    </ul>
+                    <ul><strong>Possible Operators:</strong>
+                        <li><em>and</em> - Specifies an <em>AND</em> operator.</li>
+                        <li><em>not</em> - Specifies a <em>NOT</em> operator.</li>
+                        <li><em>,</em> - Specifies an <em>OR</em> operator.</li>
+                    </ul>
+                    <ul><strong>Values:</strong>
+                        <li><em>width</em> - Specifies the width of the targeted display area,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (min-width:500px)"</em></code></li>
+                        <li><em>height</em> - Specifies the height of the targeted display area,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (max-height:700px)"</em></code></li>
+                        <li><em>device-width</em> - Specifies the width of the target display/paper,
+                            "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (device-width:500px)"</em></code></li>
+                        <li><em>device-height</em> - Specifies the height of the target
+                            display/paper, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (device-height:500px)"</em></code></li>
+                        <li><em>orientation</em> - Specifies the orientation of the target
+                            display/paper, possible values are <em>"portrait" or "landscape"</em>:
+                            <code>media=<em>"all and (orientation: landscape)"</em></code></li>
+                        <li><em>aspect-ratio</em> - Specifies the width/height ratio of the targeted
+                            display area, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                        <li><em>device-aspect-ratio</em> - Specifies the device-width/device-height
+                            ratio of the target display/paper, "min-" and "max-" prefixes can be
+                            used:
+                            <code>media=<em>"screen and (aspect-ratio:16/9)"</em></code></li>
+                        <li><em>color</em> - Specifies the bits per color of target display, "min-"
+                            and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (color:3)"</em></code></li>
+                        <li><em>color-index</em> - Specifies the number of colors the target display
+                            can handle, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (min-color-index:256)"</em></code></li>
+                        <li><em>monochrome</em> - Specifies the bits per pixel in a monochrome frame
+                            buffer, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"screen and (monochrome:2)"</em></code></li>
+                        <li><em>resolution</em> - Specifies the pixel density (dpi or dpcm) of the
+                            target display/paper, "min-" and "max-" prefixes can be used:
+                            <code>media=<em>"print and (resolution:300dpi)"</em></code></li>
+                        <li><em>scan</em> - Specifies scanning method of a tv display, possible
+                            values are <em>"progressive" and "interlace"</em>:
+                            <code>media=<em>"tv and (scan:interlace)"</em></code></li>
+                        <li><em>grid</em> - Specifies if the output device is grid or bitmap,
+                            possible values are <em>"1"</em> for grid, and <em>"0"</em> otherwise:
+                            <code>media=<em>"handheld and (grid:1)"</em></code></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>type</strong></dt>
+                <dd>The type attribute specifies the Internet media type (formerly known as
+                    <em>MIME</em> type) of the style tag or style sheet.
+                    For now, the only supported value and the default value, is "<em><b>text/css</b></em>",
+                    which indicates that the content is CSS:
+                    <code>&lt;style type=<em>"value"</em>></code> - Look at <a target="_blank"
+                                                                               href="http://www.iana.org/assignments/media-types/media-types.xhtml">IANA
+                        Media Types</a>
+                    , for a complete list of <i>standard media types</i>.
+                </dd>
+            </dl>
+        </details>
+
+        <h5>&lt;basefont></h5>
+        <p>Specifies a default <i>color, size and font</i> for all text in a document - Not
+            supported in HTML5, use <em>CSS</em> instead.</p>
+        <h5>&lt;big></h5>
+        <p>Defines big text - Not supported in HTML5, use <em>CSS</em> instead.</p>
+        <h5>&lt;font></h5>
+        <p>Defines <i>font, color and size</i> for text - Not supported in HTML5, use <em>CSS</em>
+            instead.</p>
+        <h5>&lt;tt></h5>
+        <p>Was used in HTML 4 to define teletype/monospace text - Not Supported in HTML5.
+            Consider the <em>&lt;kbd></em> element for keyboard input, the <em>&lt;var></em> element
+            for variables, the <em>&lt;code></em> element for computer code, and <em>&lt;samp></em>
+            element for computer output.
+            Or, you can use <em>CSS</em> instead.
+        </p>
+
+        <h3>HTML Colors</h3>
+        <p>HTML colors are specified with predefined <em>color names and HEX, RGB, RGBA, HSL or
+            HSLA</em> values:
+        <ul>
+            <li><b><i>Color Names</i></b> - In HTML, a color can be specified by using a color name,
+                HTML supports 140 standard color names;
+                all modern browsers support them - See the <a target="_blank"
+                                                              href="https://www.w3schools.com/colors/colors_names.asp">Complete
+                    List</a>.
+            </li>
+            <li><b><i>Hexadecimal Color</i></b> - In HTML, a hexadecimal color is specified with:
+                <em>#RRGGBB</em> - The hexadecimal integers, <em><b>RR</b> for red</em>,
+                <em><b>GG</b> for green</em> and <em><b>BB</b> for blue</em> specify the components
+                of the color.
+                Where <em>RR, GG and BB</em> are hexadecimal values between <em>00 and ff</em> (same
+                as decimal 0-255).
+            </li>
+            <li><b><i>RGB</i></b> - An RGB color value represents Red, Green, and Blue light
+                sources: <em>rgb(red, green, blue)</em>
+                - Each parameter for <em>red, green and blue</em>, defines the intensity of the
+                color; with a value between <em>0 and 255</em>.
+            </li>
+            <li><b><i>RGBA</i></b> - RGBA color values are an extension of <em>RGB</em> color values
+                with an <em>Alpha channel</em>, which specifies the opacity for a color:
+                <em>rgba(red, green, blue, alpha)</em>
+                - The alpha parameter is a number between <em>0.0 (fully transparent) and 1.0 (not
+                    transparent at all)</em>.
+            </li>
+            <li><b><i>HSL</i></b> - HSL stands for <em>hue, saturation and lightness</em>, in HTML,
+                a color can be specified in the form: <em>hsl(hue, saturation, lightness)</em>
+                - Hue is a degree on the color wheel from <em>0 to 360</em>, 0 is red, 120 is green,
+                and 240 is blue.
+                Saturation is a percentage value, 0% means a shade of gray and 100% is the full
+                color;
+                saturation can be described as the intensity of a color.
+                Lightness is also a percentage value, 0% is black and 100% is white; the lightness
+                of a color can be described as how much light to give the color.
+            </li>
+            <li><b><i>HSLA</i></b> - HSLA color values are an extension of <em>HSL</em> color
+                values, with an <em>Alpha channel</em>, which specifies the opacity for a color:
+                <em>hsla(hue, saturation, lightness, alpha)</em>
+                - The alpha parameter is a number between <em>0.0 (fully transparent) and 1.0 (not
+                    transparent at all)</em>.
+            </li>
+        </ul>
+        </p>
+        <aside><b><em>Note:</em></b> HTML was never intended to contain tags for formatting a web
+            page, it was created to describe the content (using elements) of a web page.
+            When <i>font and color</i> attributes were added to HTML 3.2, it started a nightmare for
+            web developers;
+            information was added to every page, a long and expensive process.
+            To solve this, the World Wide Web Consortium (W3C) created CSS; CSS removed the style
+            formatting from the HTML page.
+        </aside>
+    </section>
+
+</main>
+<hr>
+<footer>
+    <nav>
+        <a href="index.html">Main-Webpage</a> |
+        <a href="html_basics.html">1. HTML Basics: Elements and Attributes</a> |
+        <a href="formatting_and_css.html">2. HTML Formatting and Style(CSS)</a> |
+        <a href="tables_and_input.html">3. HTML Tables and Input</a> |
+        <a href="embedded_content_and_apis.html">4. HTML Embedded Content and APIs</a> | &emsp; | -
+        <a href="history.html">The History of HTML</a> - | <br/> &#9635; ||
+        <a href="#">Web Accessibility - <i>{Coming Soon}</i></a> |
+        <a href="#">HTML Graphics - SVG and Canvas - <i>{Coming Soon}</i></a> || &#9635; ||
+        <a href="#">CSS - <i>{Coming Soon}</i></a> |
+        <a href="#">Javascript and HTML DOM - <i>{Coming Soon}</i></a> || &#9635;
+    </nav>
+    <hr>
+    <p><strong>Note:</strong> In particular, familiarity with the basics of DOM is necessary for a
+        complete understanding of some of the more technical parts.
+        An understanding of Web IDL, HTTP, XML, Unicode, character encodings, JavaScript, and CSS
+        will also be helpful in places but is not essential.
+    </p>
+    <p>This HTML Web Site was created by: <br/> <em>Stefano DeRose</em> <br/>
+        <br/> <em><strong>Site References:</strong> </em> <br/>
+        <cite>
+            <a href="https://www.w3schools.com/html/default.asp">W3Schools.com - HTML Tutorial</a>
+            <br/>
+            <a href="https://html.spec.whatwg.org/multipage/">HTML - Living Standard</a>
+        </cite>
+    </p>
+</footer>
+
+</body>
+</html>
