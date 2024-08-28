@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Hyper Text Markup Language - 1. Basics: Elements and Attributes</title>
+    <link rel="icon" type="image/x-icon" href="page_icon.ico">
+</head>
+
+<body><h1>Hyper Text Markup Language (HTML): 1. HTML Basics: Elements and Attributes</h1> - Follows
+the latest standard: <em>HTML5</em>
+<nav>
+    <hr>
+    <a href="index.html">Main-Webpage</a> |
+    <a href="html_basics.html">1. HTML Basics: Elements and Attributes</a> |
+    <a href="formatting_and_css.html">2. HTML Formatting and Style(CSS)</a> |
+    <a href="tables_and_input.html">3. HTML Tables and Input</a> |
+    <a href="embedded_content_and_apis.html">4. HTML Embedded Content and APIs</a> | &emsp; | -
+    <a href="history.html">The History of HTML</a> - | <br/> &#9635; ||
+    <a href="#">Web Accessibility - <i>{Coming Soon}</i></a> |
+    <a href="#">HTML Graphics - SVG and Canvas - <i>{Coming Soon}</i></a> || &#9635; ||
+    <a href="#">CSS - <i>{Coming Soon}</i></a> |
+    <a href="#">Javascript and HTML DOM - <i>{Coming Soon}</i></a> || &#9635;
+</nav>
+<hr>
+
+<main><h2>HTML Elements</h2>
+    <p><strong>Element Tags</strong> are used to delimit the start and end of Elements in the
+        markup:
+        <code><b> &lt;Start-Tag> <em>Element's Content!</em> &lt;/End-Tag> </b></code>
+        - Start and end tags, in certain cases, can be omitted and are implied by other tags.
+        Some HTML elements will display correctly, even if you forget the end tag;
+        however, never rely on this, as unexpected results and errors may occur - Never skip the
+        <em>End Tag</em>.
+        Elements whose content model is nothing are also, for convenience <em><b>Void Elements</b>
+            or <b>Empty Elements</b></em> and are Elements that have no <em>end tag</em>:
+        <code><b> &lt;Empty Element> </b></code>. <br/>
+        HTML tags are not <em>case sensitive</em>, the HTML standard does not require lowercase
+        tags, but W3C recommends lowercase in HTML
+        - In stricter document types like <em><b>XHTML</b></em>, it demands lowercase.
+    </p>
+    <h3>Nested Elements</h3>
+    <p>HTML elements can be 'nested' (contain other elements), all HTML Documents consist of <em>Nested
+        HTML Elements</em>.
+        Tags have to be nested, such that elements are all completely within each other, without
+        overlapping
+        (such as in the <a target="_blank" href="HTML.html#sample_html">Sample HTML</a> on the
+        site's <em>Main page</em>):
+        <code>&lt;head> &lt;title>Page Tile&lt;/title> &lt;/head></code>
+    </p>
+
+    <h2>HTML Element Attributes</h2>
+    <p>All Elements can have <em><b>Attributes</b></em> which control how the elements work, they
+        provide additional information about <em>elements</em>.
+        Attributes are always specified in the <em>start tag</em> and usually come in <em>name value
+            pairs</em>, separated by an "<strong>=</strong>" character:
+        <code><b>name=<em>"value"</em></b></code> <br/>
+        An <em>attribute value</em> is a text string, except where otherwise specified, the value
+        can remain unquoted if it doesn't contain <em>whitespace</em>, or the following characters:
+        <em>" ' ` = < ></em>.
+        Otherwise, it has to be quoted using either <em>single or double quotes</em>; double quotes
+        around attribute values are the most common, but single quotes can also be used.
+        When the attribute value itself contains double quotes, it is necessary to use single
+        quotes, or vice versa.
+        The HTML Standard also does not require lowercase attribute names, however, W3C recommends
+        to always use lowercase attributes names and quotes with attribute values.
+    </p>
+
+    <h4>HTML Global Attributes</h4>
+    <details>
+        <summary> Global attributes are attributes that can be used with all HTML elements - Click
+            to see the HTML Global Attributes.
+        </summary>
+        <dl>
+            <dt><strong>accesskey</strong></dt>
+            <dd>The accesskey attribute's value is used by the user agent as a guide for creating a
+                keyboard shortcut that activates or focuses the element.
+                Each element that can be activated or focused can be assigned a single key
+                combination to activate it.
+                The accesskey attribute value must be a single character letter or digit, none of
+                which identical to another token:
+                <code>accesskey=<em>"value"</em></code>
+                <br/>Using accesskeys is difficult because they may conflict with other key
+                standards in the browser, the way of accessing the shortcut key element is varying
+                in different browsers.
+                Most browsers will use accesskeys only if pressed together with the Alt key.
+                Adapting accesskeys to all international languages are difficult, the accesskey
+                value may not be present on all keyboards.
+                Because of these concerns, it is advised not to use accesskeys.
+            </dd> &emsp;
+
+            <dt><strong>autocapitalize</strong></dt>
+            <dd>Some methods of entering text, for example on mobile virtual keyboards and voice
+                input, often assist users by capitalizing the first letter of sentences.
+                The autocapitalize attribute allows authors to control such behavior: <code>autocapitalize=<em>"value"</em></code>
+                <br/>A virtual keyboard that implements autocapitalization might automatically
+                switch to showing uppercase letters.
+                Other types of input, for example voice input, may perform autocapitalization in a
+                way that does not give users an option to intervene first.
+                The autocapitalize attribute, as typically implemented, does not affect behavior
+                when typing on a physical keyboard.
+                For this reason, as well as the ability for users to override or edit the behavior
+                in some cases, the attribute must not be relied on for any input validation.
+                <br/>The autocapitalization processing model is based on selecting among five
+                autocapitalization hints, defined as follows:
+                <ul>
+                    <li><em>default</em> - The user agent and input method should make their own
+                        determination of whether or not to enable autocapitalization.
+                    </li>
+                    <li><em>none</em> - No autocapitalization should be applied (all letters should
+                        default to lowercase).
+                    </li>
+                    <li><em>sentences | on</em> - The first letter of each sentence should default
+                        to a capital letter; all other letters should default to lowercase.
+                    </li>
+                    <li><em>words</em> - The first letter of each word should default to a capital
+                        letter;
+                        all other letters should default to lowercase.
+                    </li>
+                    <li><em>characters</em> - All letters should default to uppercase.
+                    </li>
+                </ul>
+                The autocapitalize attribute never causes autocapitalization to be enabled for input
+                elements whose type attribute is in one of the URL, Email or Password states.
+            </dd> &emsp;
+
+            <dt><strong>autofocus</strong></dt>
+            <dd>The autofocus content attribute allows to indicate an element is to be focused as
+                soon as the page is loaded, allowing user to start typing without having to focus
+                the element:
+                <code>&lt;element <em>autofocus</em>></code>
+            </dd> &emsp;
+
+            <dt><strong>class</strong></dt>
+            <dd>The HTML class attribute specifies one or more classnames for an element, multiple
+                HTML elements can share the same class:
+                <code>class=<em>"value"</em></code>
+                <br/>The class name is case sensitive, and there are no additional restrictions on
+                tokens authors can use, but encouraged to use values that describe the nature of the
+                content.
+                HTML elements can also belong to more than one class, to define multiple classes,
+                separate the class names with a space:
+                <code>class=<em>"Name1 Name2 Next-Name"</em></code>
+            </dd> &emsp;
+
+            <dt><strong>contenteditable</strong></dt>
+            <dd>The contenteditable attribute specifies whether content of an element is editable or
+                not, and is an enumerated attribute whose keywords are true, plaintext-only and
+                false:
+                <code>contenteditable=<em>"true|plaintext-only|false"</em></code>
+                <br/>In addition, there is a fourth state, the inherit state, which is the missing
+                value default and the invalid value default.
+                <ul>
+                    <li><em>true</em> - The true state indicates that the element is editable, an
+                        'empty-string' and the true keyword map to the true state.
+                    </li>
+                    <li><em>plaintext-only</em> - The plaintext-only state indicates that only the
+                        element's raw text content is editable, but rich text formatting is
+                        disabled.
+                    </li>
+                    <li><em>false</em> - The false state indicates that the element is not editable,
+                        false keyword maps to the false state.
+                    </li>
+                    <li><em>inherit</em> - The inherit state indicates that the element is the same
+                        kind of editable (or not editable) as the parent element.
+                    </li>
+                </ul>
+            </dd> &emsp;
+
+            <dt><strong>data-*</strong></dt>
+            <dd>The data-* attributes is used to store custom data private to the page or
+                application, it gives the ability to embed custom data attributes on all HTML
+                elements.
+                The stored/custom data can then be used in the page's JavaScript to create a more
+                engaging user experience (without Ajax calls or server-side database queries).
+                Custom attributes prefixed with "data-" will be completely ignored by the user
+                agent.
+                <br/> The data-* attributes consist of two parts: <code>data-<em>name</em>=<em>"value"</em></code>
+                <ol>
+                    <li><em>attribute name</em> - The attribute name should not contain any
+                        uppercase letters, and must be at least one character long after the prefix
+                        "data-".
+                    </li>
+                    <li><em>attribute value</em> - The attribute value can be any string.
+                    </li>
+                </ol>
+            </dd> &emsp;
+
+            <dt><strong>dir</strong></dt>
+            <dd>The dir attribute specifies the text direction of the element's content, and is an
+                enumerated attribute with the following keywords and states:
+                <code>dir=<em>"ltr||rtl|auto"</em></code>
+                <ul>
+                    <li><em>ltr</em> - (Default) The ltr keyword, maps to the ltr state, the
+                        contents of the element are explicitly directionally isolated left-to-right
+                        text.
+                    </li>
+                    <li><em>rtl</em> - The rtl keyword, maps to the rtl state, the contents of the
+                        element are explicitly directionally isolated right-to-left text.
+                    </li>
+                    <li><em>auto</em> - The auto keyword, maps to the auto state, the contents of
+                        the element are explicitly directionally isolated text.
+                        The direction is to be determined programmatically using the contents of the
+                        element (only recommended if the text direction is unknown).
+                    </li>
+                </ul>
+                Authors are strongly encouraged to use the dir attribute to indicate text direction
+                rather than using <em>CSS</em>, that way documents will continue to render correctly
+                even in the absence of CSS (e.g. as interpreted by search engines).
+            </dd> &emsp;
+
+            <dt><strong>draggable</strong></dt>
+            <dd>The draggable attribute specifies whether an element is draggable or not, an
+                enumerated attribute; it has three states, true, false and auto:
+                <code>draggable=<em>"auto|true|false"</em></code>
+                <ol>
+                    <li><em>auto</em> - (Default) The first state is auto; it has no keywords but it
+                        is the missing value default and the invalid value default.
+                        The auto state uses the default behavior of the user agent (the browser).
+                    </li>
+                    <li><em>true</em> - The second state is true and it has the keyword true, the
+                        true state means the element is draggable.
+                    </li>
+                    <li><em>false</em> - The third state is false and it has the keyword false, the
+                        false state means that the element is not draggable.
+                    </li>
+                </ol>
+                An element with a draggable attribute should also have a <em>title</em> attribute
+                that names the element for the purpose of non-visual interactions.
+                Links and images are draggable by default, the draggable attribute is often used in
+                drag and drop operations (JavaScript API).
+            </dd> &emsp;
+
+            <dt><strong>enterkeyhint</strong></dt>
+            <dd>The enterkeyhint content attribute is an enumerated attribute, that specifies what
+                action label (or icon) to present for the enter key on virtual keyboards.
+                Allows authors to customize the presentation of the enter key in order to make it
+                more helpful for users.
+                User agents can support the enterkeyhint attribute on form controls, or in elements
+                in an editing host (e.g., using contenteditable):
+                <code>enterkeyhint=<em>"enter|done|go|next|previous|search|send"</em></code>
+                <ul>
+                    <li><em>v</em> - The user agent should present a cue for the operation 'enter',
+                        typically inserting a new line.
+                    </li>
+                    <li><em>done</em> - The user agent should present a cue for the operation
+                        'done', typically meaning is nothing more to input and the input method
+                        editor (IME) will be closed.
+                    </li>
+                    <li><em>go</em> - The user agent should present a cue for the operation 'go',
+                        typically meaning to take the user to the target of the text they typed.
+                    </li>
+                    <li><em>next</em> - The user agent should present a cue for the operation
+                        'next', typically taking the user to the next field that will accept text.
+                    </li>
+                    <li><em>previous</em> - The user agent should present a cue for the operation
+                        'previous', typically taking the user to the previous field that will accept
+                        text.
+                    </li>
+                    <li><em>search</em> - The user agent should present a cue for the operation
+                        'search', typically taking user to the results of searching for the text
+                        they have typed.
+                    </li>
+                    <li><em>send</em> - The user agent should present a cue for the operation
+                        'send', typically delivering the text to its target.
+                    </li>
+                </ul>
+            </dd> &emsp;
+
+            <dt><strong>hidden</strong></dt>
+            <dd>When specified on an element, indicates the element is not yet, or no longer,
+                directly relevant to the page's current state.
+                Or that it is being used to declare content to be reused by other parts of the page
+                as opposed to being directly accessed by the user.
+                The hidden attribute can be used to keep a user from seeing an element until some
+                other condition has been met (like selecting a checkbox).
+                Then, a JavaScript could remove the hidden attribute, and make the element visible.
+                <br/>The hidden attribute is an enumerated attribute, following lists the states for
+                this attribute:
+                <code>&lt;element <em>hidden</em>></code> | <code>&lt;element hidden=<em>"hidden|until-found"</em>></code>
+                <ul>
+                    <li><em>hidden</em> - When an element has the hidden attribute in the hidden
+                        state, user agents should not render elements.
+                    </li>
+                    <li><em>until-found</em> - When an element has the hidden attribute in the
+                        hidden until found state, the element is hidden but content inside the
+                        element will be accessible to find-in-page and fragment navigation.
+                        When these features attempt to scroll to a target which is in the element's
+                        subtree, the user agent will remove the hidden attribute in order to reveal
+                        the content before scrolling to it.
+                    </li>
+                </ul>
+                Because this attribute is typically implemented using <em>CSS</em>, it's also
+                possible to override it using CSS.
+                Authors are encouraged to make sure their style sheets don't change the 'display' or
+                'content-visibility' properties of hidden until found elements (legacy user agents).
+                The for attributes of label and output elements that are not themselves hidden must
+                similarly not refer to elements that are hidden;
+                such references would cause user confusion.
+                Elements and scripts may, however, refer to elements that are hidden in other
+                contexts.
+            </dd> &emsp;
+
+            <dt><strong>id</strong></dt>
+            <dd>The id attribute specifies its element's unique identifier (id), the value of the id
+                attribute must be unique within the HTML document.
+                Can not have more than one element with the same id in an HTML document:
+                <code>id=<em>"value"</em></code>
+                <br/>The id name is case sensitive, must contain at least one character, and must
+                not contain any space characters (ASCII whitespace).
+                There are no other restrictions on what form an ID can take, IDs can consist of just
+                digits, punctuation, or start with an underscore.
+                The id attribute most used to point to a style in a style sheet in CSS, and by
+                JavaScript (via the HTML DOM) to manipulate the element with the specific id.
+            </dd> &emsp;
+
+            <dt><strong>inert</strong></dt>
+            <dd>Inert nodes generally cannot be focused, and user agents do not expose the inert
+                nodes to accessibility APIs or assistive technologies.
+                The inert content cannot be interacted with by anyone, user agents may allow to
+                override the restrictions on find-in-page and text selection:
+                <code>&lt;element <em>inert</em>></code>
+                <br/>An inert subtree should not contain content or controls which are critical to
+                aspects of the page which are not in the inert state.
+                Authors should not specify elements as inert unless the content they represent are
+                also visually obscured in some way.
+                In most cases, authors should not specify the attribute on individual form controls;
+                these instances, the disabled attribute probably more appropriate.
+                However, for many other situations authors strongly encouraged to clearly mark what
+                parts of their document are active and which are inert, to avoid user confusion.
+            </dd> &emsp;
+
+            <dt><strong>inputmode</strong></dt>
+            <dd>The inputmode content attribute is an enumerated attribute, that specifies what kind
+                of input mechanism would be most helpful for users entering content.
+                User agents can support the inputmode attribute on form controls, or in elements in
+                an editing host: <code>inputmode=<em>"none|text|tel|url|email|numeric|decimal|search"</em></code>
+                <ul>
+                    <li><em>none</em> - The user agent should not display a virtual keyboard, this
+                        keyword useful for content that renders its own keyboard control.
+                    </li>
+                    <li><em>text</em> - The user agent should display a virtual keyboard capable of
+                        text input in the user's locale.
+                    </li>
+                    <li><em>tel</em> - The user agent should display a virtual keyboard capable of
+                        telephone number input, including keys for the digits 0 to 9, the "#" and
+                        "*" characters.
+                        In some locales, this can also include alphabetic mnemonic labels, in the
+                        US, the key "2" historically also labeled with the letters A, B and C.
+                    </li>
+                    <li><em>url</em> - The user agent should display a virtual keyboard capable of
+                        text input in the user's locale, for aiding in input of URLs.
+                        The "/" and "." characters, and quick input of strings commonly found in
+                        domain names such as "www." or ".com".
+                    </li>
+                    <li><em>email</em> - The user agent should display a virtual keyboard capable of
+                        text input in the user's locale, with keys for aiding in input of email
+                        addresses, such the "@" character and "." characters.
+                    </li>
+                    <li><em>numeric</em> - The user agent should display a virtual keyboard capable
+                        of numeric input, this keyword is useful for PIN entry.
+                    </li>
+                    <li><em>decimal</em> - The user agent should display a virtual keyboard capable
+                        of fractional numeric input, numeric keys and the format separator for the
+                        locale should be shown.
+                    </li>
+                    <li><em>search</em> - The user agent should display a virtual keyboard optimized
+                        for search.
+                    </li>
+                </ul>
+            </dd> &emsp;
+
+            <dt><strong>is</strong></dt>
+            <dd>A customized built-in element, defined with an extends option - These types of
+                custom elements have a local name equal to the value passed in their extends option.
+                Their defined name is used as the value of the is attribute, which therefore must be
+                a valid custom element name []: <code>is=<em>"value"</em></code>
+            </dd> &emsp;
+
+            <dt><strong>itemid</strong></dt>
+            <dd>Elements with an <em>itemscope and itemtype</em> attribute may also have an itemid
+                attribute specified, this is to give a global identifier for the item.
+                So it can be related to other items on pages elsewhere on the web, must have a value
+                that is a valid URL potentially surrounded by spaces.
+                The global identifier of an item is the value of its element's itemid attribute:
+                <code>itemid=<em>"value"</em></code>
+                <br/>The itemid attribute must not be specified on elements that do not have both an
+                itemscope attribute and an itemtype attribute specified.
+            </dd> &emsp;
+
+            <dt><strong>itemprop</strong></dt>
+            <dd>Every HTML element may have an itemprop attribute specified, if doing so adds one or
+                more properties to one or more items.
+                The attribute if specified, must have a value that is an unordered set of unique
+                space-separated tokens none of which are identical to another token:
+                <code>&lt;element <em>itemprop="name">value</em>&lt;/element></code>
+                <br/>Must ensure property names contain no full stop characters (.), colon
+                characters (:) and no ASCII whitespace.
+                The rules disallow colon characters (:) in non-URL values because otherwise they
+                could not be distinguished from URLs.
+                Values with full stop characters (.) reserved for future extensions, whitespace is
+                disallowed because otherwise values would be parsed as multiple tokens.
+            </dd> &emsp;
+
+            <dt><strong>itemref</strong></dt>
+            <dd>Elements with an <em>itemscope</em> attribute may have an itemref attribute
+                specified to give a list of additional elements to crawl to find the name-value
+                pairs of the item.
+                If specified, must have a value that is an unordered set of unique space-separated
+                tokens none of which are identical to another token and consisting of IDs of
+                elements in the same tree:
+                <code>itemref=<em>"value"</em></code>
+                <br/>The itemref attribute must not be specified on elements that do not have an
+                itemscope attribute specified.
+            </dd> &emsp;
+
+            <dt><strong>itemscope</strong></dt>
+            <dd>Every HTML element may have an itemscope attribute specified, creates a new item, a
+                group of name-value pairs:
+                &lt;element <em>itemscope</em>>
+                <br/>Elements with an itemscope attribute may have an itemtype attribute specified,
+                to give the item types of the item.
+                Elements with an itemscope attribute may have an itemref attribute specified, to
+                give a list of additional elements to crawl to find the name-value pairs of the
+                item.
+                Elements with an itemscope and itemtype attribute may also have an itemid attribute
+                specified, to give a global identifier for the item, so it can be related to other
+                items on pages elsewhere on the web.
+            </dd> &emsp;
+
+            <dt><strong>itemtype</strong></dt>
+            <dd>Elements with an <em>itemscope</em> attribute may have an itemtype attribute
+                specified, to give the item types of the item.
+                If specified, must have a value that is an unordered set of unique space-separated
+                tokens.
+                None of which are identical to another token and each of which is a valid URL string
+                that is an absolute URL:
+                <code>itemtype=<em>"value1 value2"</em></code>
+                <br/>The item types of an item are the tokens obtained by splitting the element's
+                itemtype attribute's value on whitespace.
+                Elements with an itemscope and itemtype attribute may also have an itemid attribute
+                specified, to give a global identifier for the item, so it can be related to other
+                items on pages elsewhere on the web.
+            </dd> &emsp;
+
+            <dt><strong>lang</strong></dt>
+            <dd>The lang attribute specifies the primary language for the element's contents and for
+                any of the element's attributes that contain text.
+                Its value must be a valid <em>BCP 47 language tag, or the empty string</em>; setting
+                to the empty string indicates the primary language is unknown: <code>lang=<em>"value"</em></code>
+                <br/>If these attributes are omitted from an element, then the language of this
+                element is the same as the language of its parent element.
+                Are encouraged to specify a document lang attribute, common examples are "en" for
+                English, "es" for Spanish, "fr" for French, and so on.
+                Country codes can also be added to the language code, the first two characters
+                define language, and the last two characters define the country:
+                <code>&lt;html lang=<em>"en-US"</em>></code> - Specifies the HTML language as
+                English, and United States as the country.
+                <br/>See the <a target="_blank"
+                                href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML
+                    Language Code Reference</a>
+                and the <a target="_blank"
+                           href="https://www.w3schools.com/tags/ref_country_codes.asp">Reference for
+                    Country Codes</a>.
+            </dd> &emsp;
+
+            <dt><strong>nonce</strong></dt>
+            <dd>A nonce content attribute represents a cryptographic nonce (a number used once), the
+                value is text.
+                Elements that have a nonce content attribute, ensure that the cryptographic nonce is
+                only exposed to script: <code>nonce=<em>"value"</em></code>
+                <br/>Can be used by Content Security Policy to determine whether or not a given
+                fetch will be allowed to proceed.
+            </dd> &emsp;
+
+            <dt><strong>popover</strong></dt>
+            <dd>When specified, the element won't be rendered until it becomes shown, at which point
+                it will be rendered on top of other page content.
+                The popover attribute is an enumerated attribute with the auto or manual keywords
+                and states: <code>popover=<em>"auto|manual"</em></code>
+                <ul>
+                    <li><em>auto</em> - Closes other popovers when opened; has light dismiss.</li>
+                    <li><em>manual</em> - Does not close other popovers, does not light dismiss.
+                    </li>
+                </ul>
+                Light dismiss means that pressing Esc key or clicking outside of a popover whose
+                popover attribute is in the auto state will close the popover.
+                A popover can be useful for rendering a status message, confirming the action
+                performed by the user.
+                Authors should use the appropriate ARIA attributes to ensure the popover is
+                accessible.
+                Inserting a popover element into an output element will generally cause screen
+                readers to announce the content when it becomes visible.
+            </dd> &emsp;
+
+            <dt><strong>slot</strong></dt>
+            <dd>The slot attribute is used to assign a slot to an element.
+                An element with a slot attribute is assigned to the slot created by the slot
+                element, whose name attribute's value matches that slot attribute's value.
+                But only if that slot element finds itself in the shadow tree, whose root's host has
+                the corresponding slot attribute value.[]
+            </dd> &emsp;
+
+            <dt><strong>spellcheck</strong></dt>
+            <dd>The spellcheck attribute specifies whether the element is to have its spelling and
+                grammar checked or not, an enumerated attribute whose keywords are true and false:
+                <code>spellcheck=<em>"true|false|default"</em></code>
+                <ul>
+                    <li><em>true</em> - The true keyword (or an empty string) map to the true state,
+                        indicates that the element is to have its spelling and grammar checked.
+                    </li>
+                    <li><em>false</em> - The false keyword maps to the false state, indicates that
+                        the element is not to be checked.
+                    </li>
+                    <li><em>default</em> - In addition, is a third state, the default state,
+                        indicates element to act according to a default behavior;
+                        possibly based on parent element's own spellcheck state.
+                    </li>
+                </ul>
+                Text values in input elements (not password), can be spellchecked; or text in
+                textarea elements and in editable elements.
+            </dd> &emsp;
+
+            <dt><strong>style</strong></dt>
+            <dd>The style attribute specifies an inline style for an element, and is a style
+                attribute as defined by the <em>CSS Style Attributes</em>.
+                The property is a CSS property, the value is a CSS value, and it is used to add
+                styles to an element; such as <i>color, font, size and more</i>.
+                One or more CSS properties and values separated by semicolons: <code>style=<em>"property:value;property:value;"</em>></code>
+            </dd> &emsp;
+
+            <dt><strong>tabindex</strong></dt>
+            <dd>The tabindex attribute specifies the tab order of an element, when the "tab" button
+                is used for navigating.
+                Allow or prevent them from being sequentially focusable, and determine their
+                relative ordering for sequential focus navigation:
+                <code>tabindex=<em>"value"</em>></code>
+                <br/>The name "tab index" comes from common use of the Tab key to navigate through
+                focusable elements, term "tabbing" refers to moving forward through sequentially
+                focusable areas.
+                The attribute if specified, must have a value that is a valid integer; the tabbing
+                order of the element, 1 is first.
+                Positive numbers specify the relative position of the element's focusable areas in
+                sequential focus navigation order;
+                negative numbers indicate the control is not sequentially focusable.
+                Should use caution when using values other than 0 or −1 for their tabindex
+                attributes as this is complicated to do correctly.
+                <ul>
+                    <li><em>omitted or non-integer values</em> - The user agent will decide whether
+                        the element is focusable, and if is, whether sequentially focusable, click
+                        focusable or both.
+                    </li>
+                    <li><em>-1 or negative integer values</em> - Causes element to be focusable, and
+                        indicates the author would prefer the element to be click focusable but not
+                        sequentially focusable.
+                        The user agent might ignore this preference for click and sequential
+                        focusability, for example;
+                        specific element types according to platform conventions or for
+                        keyboard-only users.
+                    </li>
+                    <li><em>0 </em> - Causes element to be focusable, and indicates author would
+                        prefer element to be both click focusable and sequentially focusable.
+                        The user agent might ignore this preference for click and sequential
+                        focusability.
+                    </li>
+                    <li><em>positive integer values</em> - Behaves same as 0, but in addition
+                        creates a relative ordering within a tabindex-ordered focus navigation
+                        scope, so elements with higher value come later.
+                    </li>
+                </ul>
+                The tabindex attribute cannot be used to make an element non-focusable, can do that
+                by disabling element, or making it inert.
+            </dd> &emsp;
+
+            <dt><strong>title</strong></dt>
+            <dd>The title attribute represents advisory information or extra information for the
+                element, such as would be appropriate for a tooltip.
+                The information is most often shown as a tooltip text when the mouse moves over the
+                element:
+                <code>title=<em>"value"</em></code>
+                <br/>On a link, could be the title or a description of the target resource, an image
+                the image credit or a description of the image, a paragraph a footnote or commentary
+                on the text.
+                Relying on the title attribute is currently discouraged as many user agents do not
+                expose the attribute in an accessible manner as required by specification.
+                For example, requiring a pointing device, which excludes keyboard-only users and
+                touch-only users.
+                If this attribute is omitted from an element, it implies the title attribute of the
+                nearest ancestor HTML element with a title attribute set;
+                setting the attribute overrides this.
+                If the title attribute's value contains line feed (LF) characters, the content is
+                split into multiple lines.
+                Setting the attribute to the empty string indicates the element has no advisory
+                information.
+            </dd> &emsp;
+
+            <dt><strong>translate</strong></dt>
+            <dd>The translate attribute specifies whether content of an element should be translated
+                when the page is localized, and is an enumerated attribute;
+                the keywords are yes and no: <code>translate=<em>"yes|no|inherit"</em></code>
+                <ul>
+                    <li><em>yes</em> - The empty string and the yes keyword map to the yes state,
+                        specifies that the content of the element should be translated.
+                        When an element is in the translate-enabled state, the element's
+                        translatable attributes and the values of its Text node children are to be
+                        translated when the page is localized.
+                    </li>
+                    <li><em>no</em> - The no keyword maps to the no state, specifies that the
+                        content of the element must not be translated.
+                        When an element is in the no-translate state, the element's attribute values
+                        and values of its Text node children are to be left as-is when page is
+                        localized.
+                    </li>
+                    <li><em>inherit</em> - In addition, there is a third state, the inherit state,
+                        which is the missing value default and the invalid value default.
+                        The element's translation mode is in the same state as its parent element's,
+                        if any.
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+    </details>
+
+    <h3>Accessible Rich Internet Applications (ARIA)</h3>
+    <p>A screen reader is a software program that reads the HTML code, and allows the user to
+        "listen" to the content.
+        Screen readers are useful for people who are visually impaired or learning disabled.
+        To enable assistive technology to expose a more fine-grained interface, a set of annotations
+        for assistive technology products can be specified;
+        the <em>ARIA <b>role</b> and <b>aria-*</b> attributes</em>.
+        The role attribute is defined in <em>Accessible Rich Internet Applications (ARIA)</em>; in
+        addition with the aria-* content attributes.
+        <br/>Learn more about <em>Web Accessibility</em> at W3's <a target="_blank"
+                                                                    href="https://www.w3schools.com/accessibility/accessibility_intro.php">Accessibility
+            Introduction</a>.
+    </p>
+
+    <section>
+        <hr>
+        <h2>Main Elements</h2>
+        <h3>document Element - &lt;!DOCTYPE> </h3>
+        <p>HTML documents must start with &lt;!DOCTYPE>, the declaration is not an HTML tag, it is
+            information to the browser about what document type to expect.
+            It must only appear once, at the top of the page (before any HTML tags);
+            if omitted browsers tend to use a different rendering mode incompatible with some
+            specifications.
+            Every HTML document is represented by a <strong>Document Object</strong>; the Document
+            object's origin is defined in <em><b>DOM</b></em>.
+            The declaration not case sensitive, in HTML5, the declaration is: <code>&lt;!DOCTYPE
+                html></code>
+        <ul>
+            <li>Each Document has a policy container, initially a new policy container, which
+                contains policies which apply to the Document.
+            </li>
+            <li>Each Document has a permissions policy, which is initially empty.
+            </li>
+            <li>Each Document has a module map, which is initially empty.
+            </li>
+            <li>Each Document has a cross-origin opener policy, which is initially a new
+                cross-origin opener policy.
+            </li>
+            <li>Each Document has a navigation id, which is initially null.
+            </li>
+        </ul>
+        In older documents, the declaration is more complicated because the declaration must refer
+        to a DTD (Document Type Definition):
+        <code>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+            "http://www.w3.org/TR/html4/loose.dtd"></code> - <i>HTML 4.01</i>
+        </p>
+
+        <h3>html Element - &lt;html> </h3>
+        <p>The html element represents the root of an HTML document, the tag is the container for
+            all other HTML elements (except <em>&lt;!DOCTYPE></em>);
+            it is what the HTML document itself begins with.
+            Authors are encouraged to specify a <em>lang</em> attribute on the root html element,
+            giving the document's language.
+            This is meant to assist <i>search engines, browsers and aids speech synthesis or
+                translation tools</i> to determine what pronunciation or rules to use:
+            <code>&lt;html <em>lang="en"</em>></code> - Declares the document's language is English.
+            <br/>See all the language codes in the <a target="_blank"
+                                                      href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML
+                ISO Language Code Reference</a>.
+        <details>
+            <summary><b><em>html Attributes</em></b></summary>
+            <dl>
+                <dt><strong>xmlns</strong></dt>
+                <dd>Specifies the XML namespace attribute, if need content to conform to XHTML.
+                    The namespace <em>"xmlns=http://www.w3.org/1999/xhtml"</em> is default, and will
+                    be added to the html tag even if you do not include it.
+                </dd>
+            </dl>
+        </details>
+        </p>
+
+        <h3>head Element - &lt;head> </h3>
+        <p>The head element is used as the first element in an html element, and represents a
+            container/collection of <em>metadata</em> for the Document (data about data).
+            <strong>Metadata</strong> is data about the HTML document, it is not displayed and
+            typically defines the document <i>title, character set, styles, scripts and other meta
+                information</i>. []
+        </p>
+
+        <h3>title Element - &lt;title> </h3>
+        <p>The title element represents the document's title or name, the title must be text-only,
+            and is shown in the browser's title bar or page's tab.
+            There must be no more than one title element per document: <code>&lt;title><em>A
+                Meaningful Page-Title</em>&lt;/title></code>
+            <br/>Authors should use titles that identify their documents even when they are used out
+            of context, try to make the title as accurate and meaningful as possible.
+            If it's reasonable for the Document to have no title, then the title element is probably
+            not required.
+            The title element provides a title for the page when it is added to favorites and
+            displays a title for the page in search engine-results.
+            The content of a page title very important for <em>search engine optimization (SEO)</em>,
+            and is used by search engine algorithms to decide order when listing pages in search
+            results.
+        </p>
+
+        <h3>body Element - &lt;body> </h3>
+        <p>The body element contains and represents all contents of an HTML document, the tag
+            defines the visible part of the document's body.
+            It contains all the contents of an HTML document, such as <i>headings, paragraphs,
+                images, hyperlinks, tables, lists, etc</i>.
+            There can only be one body element in an HTML document:
+            <i>See the <a target="_blank" href="HTML.html#sample_html">Sample HTML</a> example on
+                the sites Main webpage.</i>
+
+        </p>
+
+        <h3>HTML Comments</h3>
+        <p>The comment tag is used to insert comments in the <em>source code</em>, HTML comments are
+            not displayed in browsers;
+            but can help document the HTML source code.
+            You can add comments to HTML source code, by using the following syntax: <code> &lt;!--
+                <em>This is an HTML comment</em> --> </code>
+            - Notice there is an <em>exclamation point (<b>!</b>)</em> in the <em>start tag</em>,
+            but not in the end tag.
+            Place <i>notifications and reminders</i> in HTML code, or explain code, which can help
+            to edit it later;
+            this is especially useful if you have a lot of code.
+            Comments can also be used to hide content, and they can hide parts in the middle of the
+            HTML code.
+            You can even hide more than one line, everything between the comment tag will be hidden
+            from the display.
+            Thus, comments are great for <em><b>Debugging</b></em> HTML, because you can comment out
+            any HTML lines of code, one at a time, to search for errors.
+        </p>
+    </section>
+
+</main>
+<hr>
+<footer>
+    <nav>
+        <a href="index.html">Main-Webpage</a> |
+        <a href="html_basics.html">1. HTML Basics: Elements and Attributes</a> |
+        <a href="formatting_and_css.html">2. HTML Formatting and Style(CSS)</a> |
+        <a href="tables_and_input.html">3. HTML Tables and Input</a> |
+        <a href="embedded_content_and_apis.html">4. HTML Embedded Content and APIs</a> | &emsp; | -
+        <a href="history.html">The History of HTML</a> - | <br/> &#9635; ||
+        <a href="#">Web Accessibility - <i>{Coming Soon}</i></a> |
+        <a href="#">HTML Graphics - SVG and Canvas - <i>{Coming Soon}</i></a> || &#9635; ||
+        <a href="#">CSS - <i>{Coming Soon}</i></a> |
+        <a href="#">Javascript and HTML DOM - <i>{Coming Soon}</i></a> || &#9635;
+    </nav>
+    <hr>
+    <p><strong>Note:</strong> In particular, familiarity with the basics of <strong>DOM</strong> is
+        necessary for a complete understanding of some of the more technical parts.
+        An understanding of <em>Web IDL, HTTP, XML, Unicode, character encodings, JavaScript and
+            CSS</em> will also be helpful in places but is not essential.
+    </p>
+    <p>This HTML Web Site was created by: <em>Stefano DeRose</em> <br/>
+        <br/> <em><strong>Site References:</strong> </em> <br/>
+        <cite>
+            <a target="_blank" href="https://www.w3schools.com/html/default.asp">W3Schools.com -
+                HTML Tutorial</a> <br/>
+            <a target="_blank" href="https://html.spec.whatwg.org/multipage/">HTML - Living
+                Standard</a>
+        </cite>
+    </p>
+</footer>
+
+</body>
+</html>
